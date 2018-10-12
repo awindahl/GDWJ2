@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Tiles/DoorTile.gd" type="Script" id=1]
+[ext_resource path="res://Asset Lib/Art/door_L.png" type="Texture" id=2]
+[ext_resource path="res://Asset Lib/Art/doorR.png" type="Texture" id=3]
+[ext_resource path="res://Asset Lib/Art/doorU.png" type="Texture" id=4]
+[ext_resource path="res://Asset Lib/Art/doorD.png" type="Texture" id=5]
+
+[node name="DoorTile" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+doorLeft = null
+doorRight = null
+doorUp = null
+doorDown = null
+
+[node name="Door Left" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+
+[node name="Door Right" type="Sprite" parent="." index="1"]
+
+texture = ExtResource( 3 )
+
+[node name="Door Up" type="Sprite" parent="." index="2"]
+
+texture = ExtResource( 4 )
+
+[node name="Door Down" type="Sprite" parent="." index="3"]
+
+texture = ExtResource( 5 )
+
+
