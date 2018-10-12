@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/door_L.png-26fd294e1beff576957853f81d4da4b2.stex"
+path="res://.import/walledDoorL.png-38aaac451acf75f6932d1b094eaca9ef.stex"
 
 [deps]
 
-source_file="res://Asset Lib/Art/door_L.png"
-dest_files=[ "res://.import/door_L.png-26fd294e1beff576957853f81d4da4b2.stex" ]
+source_file="res://Asset Lib/Art/walledDoorL.png"
+dest_files=[ "res://.import/walledDoorL.png-38aaac451acf75f6932d1b094eaca9ef.stex" ]
 
 [params]
 
