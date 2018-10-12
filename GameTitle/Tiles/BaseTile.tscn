@@ -15,19 +15,19 @@ closed = true
 cull_mode = 0
 polygon = PoolVector2Array( 18.8512, 29.3465, -41.1065, 29.3345, -40.8961, -179.753, 156.817, -179.697, 156.871, -120.267, 18.7606, -120.267 )
 
-[sub_resource type="OccluderPolygon2D" id=4]
+[sub_resource type="OccluderPolygon2D" id=3]
 
 closed = true
 cull_mode = 0
 polygon = PoolVector2Array( 18.8512, 29.3465, -41.1065, 29.3345, -41.2891, -169.964, 165.793, -170.129, 165.457, -110.215, 18.7315, -109.415 )
 
-[sub_resource type="OccluderPolygon2D" id=5]
+[sub_resource type="OccluderPolygon2D" id=4]
 
 closed = true
 cull_mode = 0
 polygon = PoolVector2Array( 18.8512, 29.3465, -41.1065, 29.3345, -41.3644, -168.833, 154.707, -168.718, 154.676, -108.9, 18.7315, -109.415 )
 
-[sub_resource type="OccluderPolygon2D" id=3]
+[sub_resource type="OccluderPolygon2D" id=5]
 
 closed = true
 cull_mode = 0
@@ -222,7 +222,7 @@ light_mask = 1
 
 position = Vector2( 214.754, 85.9224 )
 rotation = 3.14159
-occluder = SubResource( 4 )
+occluder = SubResource( 3 )
 light_mask = 1
 _sections_unfolded = [ "Transform" ]
 
@@ -230,7 +230,7 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( -87.4318, 214.774 )
 rotation = 4.71239
-occluder = SubResource( 5 )
+occluder = SubResource( 4 )
 light_mask = 1
 _sections_unfolded = [ "Transform" ]
 
@@ -238,13 +238,12 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 78.7305, -215.27 )
 rotation = 1.5708
-occluder = SubResource( 3 )
+occluder = SubResource( 5 )
 light_mask = 1
 _sections_unfolded = [ "Transform" ]
 
 [node name="DoorTile" parent="." index="1" instance=ExtResource( 2 )]
 
-visible = false
 _sections_unfolded = [ "Transform" ]
 doorLeft = true
 doorRight = true
