@@ -33,7 +33,7 @@ closed = true
 cull_mode = 0
 polygon = PoolVector2Array( 18.8226, 26.0702, -40.9079, 26.1864, -40.7391, -177.64, 161.638, -177.242, 161.175, -117.279, 19.2681, -117.376 )
 
-[node name="FloorTile" type="Node2D"]
+[node name="FloorTile" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -240,35 +240,23 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( -208, 0 )
 rotation = 1.5708
-doorLeft = true
-doorRight = true
-doorUp = true
-doorDown = true
+pos = null
 
 [node name="DoorUp" parent="." index="2" instance=ExtResource( 2 )]
 
 position = Vector2( 0, -209 )
-doorLeft = true
-doorRight = true
-doorUp = true
-doorDown = true
+pos = null
 
 [node name="DoorRight" parent="." index="3" instance=ExtResource( 2 )]
 
 position = Vector2( 208, 0 )
 rotation = 1.5708
-doorLeft = true
-doorRight = true
-doorUp = true
-doorDown = true
+pos = null
 
 [node name="DoorDown" parent="." index="4" instance=ExtResource( 2 )]
 
 position = Vector2( 0, 208 )
-doorLeft = true
-doorRight = true
-doorUp = true
-doorDown = true
+pos = null
 
 [node name="Roof" type="Sprite" parent="." index="5"]
 

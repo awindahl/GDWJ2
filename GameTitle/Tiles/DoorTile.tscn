@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Tiles/DoorTile.gd" type="Script" id=1]
+[ext_resource path="res://Tiles/Door.gd" type="Script" id=1]
 [ext_resource path="res://Asset Lib/Art/door.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -14,7 +14,7 @@ closed = true
 cull_mode = 0
 polygon = PoolVector2Array( -53.8435, -12.5346, -53.6896, 12.2417, 53.8328, 12.3483, 53.7282, -12.4595 )
 
-[node name="DoorTile" type="StaticBody2D" index="0"]
+[node name="DoorTile" type="StaticBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -25,10 +25,7 @@ friction = 1.0
 bounce = 0.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index" ]
-doorLeft = null
-doorRight = null
-doorUp = null
-doorDown = null
+pos = null
 
 [node name="Door" type="Sprite" parent="." index="0"]
 
