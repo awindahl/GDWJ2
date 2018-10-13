@@ -5,7 +5,7 @@
 [ext_resource path="res://Asset Lib/Animations/fadeIn.tres" type="Animation" id=3]
 [ext_resource path="res://Asset Lib/Animations/fadeOut.tres" type="Animation" id=4]
 
-[node name="CanvasLayer" type="CanvasLayer" index="0"]
+[node name="CanvasLayer" type="CanvasLayer"]
 
 pause_mode = 2
 layer = 1
