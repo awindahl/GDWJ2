@@ -13,33 +13,32 @@ extents = Vector2( 100, 30 )
 
 closed = true
 cull_mode = 0
-polygon = PoolVector2Array( 18.8512, 29.3465, -41.1065, 29.3345, -40.8961, -179.753, 156.817, -179.697, 156.871, -120.267, 18.7606, -120.267 )
+polygon = PoolVector2Array( 18.3835, 23.6529, -40.9664, 23.0249, -40.8961, -179.753, 160.517, -179.601, 160.825, -119.67, 18.7606, -120.267 )
 
 [sub_resource type="OccluderPolygon2D" id=3]
 
 closed = true
 cull_mode = 0
-polygon = PoolVector2Array( 18.8512, 29.3465, -41.1065, 29.3345, -41.2891, -169.964, 165.793, -170.129, 165.457, -110.215, 18.7315, -109.415 )
+polygon = PoolVector2Array( 18.579, 32.4564, -40.9422, 32.4562, -41.2891, -169.964, 160.114, -169.849, 160.587, -110.208, 18.7315, -109.415 )
 
 [sub_resource type="OccluderPolygon2D" id=4]
 
 closed = true
 cull_mode = 0
-polygon = PoolVector2Array( 18.8512, 29.3465, -41.1065, 29.3345, -41.3644, -168.833, 154.707, -168.718, 154.676, -108.9, 18.7315, -109.415 )
+polygon = PoolVector2Array( 18.6804, 33.712, -41.2036, 33.7121, -41.3644, -168.833, 160.851, -168.706, 160.536, -108.789, 18.7315, -109.415 )
 
 [sub_resource type="OccluderPolygon2D" id=5]
 
 closed = true
 cull_mode = 0
-polygon = PoolVector2Array( 18.8512, 29.3465, -41.1065, 29.3345, -40.7391, -177.64, 165.008, -177.286, 165.019, -116.875, 19.2681, -117.376 )
+polygon = PoolVector2Array( 18.8226, 26.0702, -40.9079, 26.1864, -40.7391, -177.64, 161.638, -177.242, 161.175, -117.279, 19.2681, -117.376 )
 
-[node name="FloorTile" type="Node2D"]
+[node name="FloorTile" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 
 [node name="Floor" type="Sprite" parent="." index="0"]
 
-editor/display_folded = true
 z_index = -1
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
@@ -47,7 +46,7 @@ _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 [node name="StaticBody2D" type="StaticBody2D" parent="Floor" index="0"]
 
 editor/display_folded = true
-position = Vector2( 155, -225 )
+position = Vector2( 152.536, -226 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -68,7 +67,7 @@ _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index"
 [node name="StaticBody2D8" type="StaticBody2D" parent="Floor" index="1"]
 
 editor/display_folded = true
-position = Vector2( -157.286, -225.942 )
+position = Vector2( -154.286, -225.942 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -87,7 +86,7 @@ shape = SubResource( 1 )
 [node name="StaticBody2D3" type="StaticBody2D" parent="Floor" index="2"]
 
 editor/display_folded = true
-position = Vector2( 149.08, 225.762 )
+position = Vector2( 154.08, 225.762 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -106,7 +105,7 @@ shape = SubResource( 1 )
 [node name="StaticBody2D6" type="StaticBody2D" parent="Floor" index="3"]
 
 editor/display_folded = true
-position = Vector2( -157.972, 225.762 )
+position = Vector2( -153.972, 225.762 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -125,7 +124,7 @@ shape = SubResource( 1 )
 [node name="StaticBody2D2" type="StaticBody2D" parent="Floor" index="4"]
 
 editor/display_folded = true
-position = Vector2( 226.017, -150.149 )
+position = Vector2( 226.017, -154.149 )
 rotation = 1.5708
 input_pickable = false
 collision_layer = 1
@@ -146,7 +145,7 @@ shape = SubResource( 1 )
 [node name="StaticBody2D4" type="StaticBody2D" parent="Floor" index="5"]
 
 editor/display_folded = true
-position = Vector2( 225.808, 156.596 )
+position = Vector2( 225.808, 153.596 )
 rotation = 1.5708
 input_pickable = false
 collision_layer = 1
@@ -167,7 +166,7 @@ shape = SubResource( 1 )
 [node name="StaticBody2D5" type="StaticBody2D" parent="Floor" index="6"]
 
 editor/display_folded = true
-position = Vector2( -226.077, 159.763 )
+position = Vector2( -226.077, 153.763 )
 rotation = 1.5708
 input_pickable = false
 collision_layer = 1
@@ -188,7 +187,7 @@ shape = SubResource( 1 )
 [node name="StaticBody2D7" type="StaticBody2D" parent="Floor" index="7"]
 
 editor/display_folded = true
-position = Vector2( -226.077, -146.521 )
+position = Vector2( -226.077, -152.521 )
 rotation = 1.5708
 input_pickable = false
 collision_layer = 1
@@ -238,6 +237,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="DoorLeft" parent="." index="1" instance=ExtResource( 2 )]
 
+visible = false
 position = Vector2( -208, 0 )
 rotation = 1.5708
 doorLeft = true
@@ -247,6 +247,7 @@ doorDown = true
 
 [node name="DoorUp" parent="." index="2" instance=ExtResource( 2 )]
 
+visible = false
 position = Vector2( 0, -209 )
 doorLeft = true
 doorRight = true
@@ -255,6 +256,7 @@ doorDown = true
 
 [node name="DoorRight" parent="." index="3" instance=ExtResource( 2 )]
 
+visible = false
 position = Vector2( 208, 0 )
 rotation = 1.5708
 doorLeft = true
@@ -264,6 +266,7 @@ doorDown = true
 
 [node name="DoorDown" parent="." index="4" instance=ExtResource( 2 )]
 
+visible = false
 position = Vector2( 0, 208 )
 doorLeft = true
 doorRight = true
@@ -272,6 +275,7 @@ doorDown = true
 
 [node name="Roof" type="Sprite" parent="." index="5"]
 
+visible = false
 z_index = 1
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform", "Z Index" ]
