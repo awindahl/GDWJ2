@@ -15,6 +15,10 @@ run/main_scene="res://menu.tscn"
 boot_splash/image="res://Asset Lib/Art/9E1Yfr.png"
 config/icon="res://icon.png"
 
+[autoload]
+
+transition="*res://transition.tscn"
+
 [display]
 
 window/size/width=1280

@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://transition.gd" type="Script" id=1]
+[ext_resource path="res://Asset Lib/Art/menubackground.png" type="Texture" id=2]
+[ext_resource path="res://Asset Lib/Animations/fadeIn.tres" type="Animation" id=3]
+[ext_resource path="res://Asset Lib/Animations/fadeOut.tres" type="Animation" id=4]
+
+[node name="CanvasLayer" type="CanvasLayer" index="0"]
+
+pause_mode = 2
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="TextureRect" type="TextureRect" parent="." index="0"]
+
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -251.0
+margin_top = -153.0
+margin_right = 1669.0
+margin_bottom = 927.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Mouse", "Visibility" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/fadeIn = ExtResource( 3 )
+anims/fadeOut = ExtResource( 4 )
+blend_times = [  ]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+
+

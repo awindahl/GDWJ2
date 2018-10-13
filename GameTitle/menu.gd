@@ -17,7 +17,7 @@ func _on_quit_btn_down():
 	get_tree().quit()
 
 func _on_play_btn_down():
-	get_tree().change_scene("res://Main.tscn")
+	transition.fade_to("res://Main.tscn")
 
 func _on_fullscreen_pressed():
 	OS.set_window_resizable(true)

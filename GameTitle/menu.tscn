@@ -7,7 +7,7 @@
 [ext_resource path="res://Asset Lib/Art/mute_btn_active.png" type="Texture" id=5]
 [ext_resource path="res://Asset Lib/Font/TypewriterFont.tres" type="DynamicFont" id=6]
 
-[node name="root" type="Node" index="0"]
+[node name="root" type="Node"]
 
 script = ExtResource( 1 )
 
