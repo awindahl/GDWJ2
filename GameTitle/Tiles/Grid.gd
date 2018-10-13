@@ -1,7 +1,7 @@
 extends Node2D
 
 var upper_landing
-var BaseTile = load("res://Tiles/BaseTile.tscn")
+var BaseTile = preload("res://Tiles/Tile.tscn")
 
 func add_tile(tile):
 	tile.add_to_group('tiles')
@@ -13,15 +13,12 @@ func remove_tile(tile):
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
-	# Initialization here
 	upper_landing = BaseTile.instance()
+	# Initialization here, unfortunately
+	upper_landing.grid_pos = [0,0]
 	self.add_tile(upper_landing)
-	# Put tile in right place before adding child
-	
 	
 
-
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+func _on_door_opened(door):
+	print("A door has been opened!")
+	print(door)
