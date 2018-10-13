@@ -30,6 +30,4 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[connection signal="door_opened" from="." to="." method="_on_Door_door_opened" flags=6]
-
 

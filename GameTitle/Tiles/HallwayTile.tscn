@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Asset Lib/Art/hallwaytile.png" type="Texture" id=1]
-[ext_resource path="res://Tiles/DoorTile.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Tiles/Tile.gd" type="Script" id=1]
+[ext_resource path="res://Asset Lib/Art/hallwaytile.png" type="Texture" id=2]
 [ext_resource path="res://Asset Lib/Art/walls.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -35,12 +35,13 @@ polygon = PoolVector2Array( 18.8512, 29.3465, -41.1065, 29.3345, -40.7391, -177.
 
 [node name="FloorTile" type="Node2D" index="0"]
 
+script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Floor" type="Sprite" parent="." index="0"]
 
 z_index = -1
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Floor" index="0"]
@@ -241,15 +242,7 @@ occluder = SubResource( 5 )
 light_mask = 1
 _sections_unfolded = [ "Transform" ]
 
-[node name="DoorTile" parent="." index="1" instance=ExtResource( 2 )]
-
-_sections_unfolded = [ "Transform" ]
-doorLeft = false
-doorRight = false
-doorUp = true
-doorDown = true
-
-[node name="Roof" type="Sprite" parent="." index="2"]
+[node name="Roof" type="Sprite" parent="." index="1"]
 
 z_index = 1
 texture = ExtResource( 3 )
