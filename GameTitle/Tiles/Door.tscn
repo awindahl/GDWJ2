@@ -19,7 +19,6 @@ friction = 1.0
 bounce = 0.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index" ]
-pos = null
 
 [node name="DoorSprite" type="Sprite" parent="." index="0"]
 
@@ -29,7 +28,5 @@ texture = ExtResource( 2 )
 
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
-
-[connection signal="door_opened" from="." to="." method="_on_Door_door_opened" flags=6]
 
 

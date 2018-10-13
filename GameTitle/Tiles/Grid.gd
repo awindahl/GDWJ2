@@ -15,10 +15,13 @@ func _ready():
 	# Called when the node is added to the scene for the first time.
 	upper_landing = BaseTile.instance()
 	# Initialization here, unfortunately
-	upper_landing.grid_pos = [0,0]
+	upper_landing.tile_pos = Vector2(0, 0)
 	self.add_tile(upper_landing)
 	
 
 func _on_door_opened(door):
-	print("A door has been opened!")
-	print(door)
+	print("A door has been opened! Let's make instantiate a new Tile object")
+	var tile_with_door = door.get_parent()
+	var new_tile = BaseTile.instance()
+	new_tile.tile_pos = tile_with_door.tile_pos + door.door_pos
+	self.add_tile(new_tile)
