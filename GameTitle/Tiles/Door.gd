@@ -2,7 +2,6 @@ extends Node2D
 
 signal door_opened(door)
 
-var BaseTile = preload("res://Tiles/Tile.tscn")
 
 export(int) var pos
 
