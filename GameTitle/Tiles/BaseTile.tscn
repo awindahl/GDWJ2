@@ -33,9 +33,8 @@ closed = true
 cull_mode = 0
 polygon = PoolVector2Array( 18.8512, 29.3465, -41.1065, 29.3345, -40.7391, -177.64, 165.008, -177.286, 165.019, -116.875, 19.2681, -117.376 )
 
-[node name="FloorTile" type="Node2D" index="0"]
+[node name="FloorTile" type="Node2D"]
 
-scale = Vector2( 0.6, 0.6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Floor" type="Sprite" parent="." index="0"]
@@ -46,9 +45,7 @@ _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Floor" index="0"]
 
-editor/display_folded = true
-visible = false
-position = Vector2( 148.558, -225.942 )
+position = Vector2( 155, -225 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -56,6 +53,7 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -63,6 +61,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D" index="0"]
 
 shape = SubResource( 1 )
+_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 
 [node name="StaticBody2D8" type="StaticBody2D" parent="Floor" index="1"]
 
@@ -192,6 +191,7 @@ shape = SubResource( 1 )
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="Floor" index="7"]
 
+editor/display_folded = true
 visible = false
 position = Vector2( -226.077, -146.521 )
 rotation = 1.5708
@@ -241,15 +241,41 @@ occluder = SubResource( 5 )
 light_mask = 1
 _sections_unfolded = [ "Transform" ]
 
-[node name="DoorTile" parent="." index="1" instance=ExtResource( 2 )]
+[node name="DoorLeft" parent="." index="1" instance=ExtResource( 2 )]
 
-_sections_unfolded = [ "Transform" ]
+position = Vector2( -208, 0 )
+rotation = 1.5708
 doorLeft = true
 doorRight = true
 doorUp = true
 doorDown = true
 
-[node name="Roof" type="Sprite" parent="." index="2"]
+[node name="DoorUp" parent="." index="2" instance=ExtResource( 2 )]
+
+position = Vector2( 0, -208 )
+doorLeft = true
+doorRight = true
+doorUp = true
+doorDown = true
+
+[node name="DoorRight" parent="." index="3" instance=ExtResource( 2 )]
+
+position = Vector2( 208, 8.74228e-008 )
+rotation = 1.5708
+doorLeft = true
+doorRight = true
+doorUp = true
+doorDown = true
+
+[node name="DoorDown" parent="." index="4" instance=ExtResource( 2 )]
+
+position = Vector2( 0, 208 )
+doorLeft = true
+doorRight = true
+doorUp = true
+doorDown = true
+
+[node name="Roof" type="Sprite" parent="." index="5"]
 
 visible = false
 z_index = 1

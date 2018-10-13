@@ -19,4 +19,11 @@ func _process(delta):
 		velocity.y -= 1
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
-	self.move_and_collide(velocity * delta)
+	var body = self.move_and_collide(velocity * delta)
+	
+	# Check for collisions
+	if body:
+		var cs = body.collider_shape
+		# If collision is with door
+		if cs.name == "DoorCollisionShape":
+			cs.owner.open()

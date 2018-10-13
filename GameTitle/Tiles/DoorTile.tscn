@@ -1,285 +1,36 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Tiles/DoorTile.gd" type="Script" id=1]
-[ext_resource path="res://Asset Lib/Art/doorL.png" type="Texture" id=2]
-[ext_resource path="res://Asset Lib/Art/doorR.png" type="Texture" id=3]
-[ext_resource path="res://Asset Lib/Art/doorU.png" type="Texture" id=4]
-[ext_resource path="res://Asset Lib/Art/doorD.png" type="Texture" id=5]
-[ext_resource path="res://Asset Lib/Art/walledDoorL.png" type="Texture" id=6]
-[ext_resource path="res://Asset Lib/Art/walledDoorR.png" type="Texture" id=7]
-[ext_resource path="res://Asset Lib/Art/walledDoorU.png" type="Texture" id=8]
-[ext_resource path="res://Asset Lib/Art/walledDoorD.png" type="Texture" id=9]
+[ext_resource path="res://Asset Lib/Art/door.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 13, 54 )
+extents = Vector2( 53.9332, 12.472 )
 
-[sub_resource type="OccluderPolygon2D" id=2]
+[node name="DoorTile" type="StaticBody2D"]
 
-closed = true
-cull_mode = 0
-polygon = PoolVector2Array( -221.368, -47.2474, -195.64, -47.2085, -195.704, 59.925, -221.4, 59.925 )
-
-[node name="DoorTile" type="Node2D" index="0"]
-
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index" ]
 doorLeft = null
 doorRight = null
 doorUp = null
 doorDown = null
 
-[node name="Door Left" type="Sprite" parent="." index="0"]
+[node name="Door" type="Sprite" parent="." index="0"]
 
-editor/display_folded = true
-visible = false
 texture = ExtResource( 2 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Door Left" index="0"]
-
-visible = false
-position = Vector2( -208.51, 6.49299 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door Left/StaticBody2D" index="0"]
+[node name="DoorCollisionShape" type="CollisionShape2D" parent="." index="1"]
 
 shape = SubResource( 1 )
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Door Left" index="1"]
-
-occluder = SubResource( 2 )
-light_mask = 1
-
-[node name="Door Right" type="Sprite" parent="." index="1"]
-
-editor/display_folded = true
-visible = false
-texture = ExtResource( 3 )
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="Door Right" index="0"]
-
-position = Vector2( 208.49, 3.49299 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door Right/StaticBody2D2" index="0"]
-
-shape = SubResource( 1 )
-
-[node name="LightOccluder2D2" type="LightOccluder2D" parent="Door Right" index="1"]
-
-position = Vector2( -7.86805e-007, 9 )
-rotation = 3.14159
-occluder = SubResource( 2 )
-light_mask = 1
-_sections_unfolded = [ "Transform" ]
-
-[node name="Door Up" type="Sprite" parent="." index="2"]
-
-editor/display_folded = true
-visible = false
-texture = ExtResource( 4 )
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="Door Up" index="0"]
-
-position = Vector2( -4.50969, -208.507 )
-rotation = 1.5708
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-_sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door Up/StaticBody2D3" index="0"]
-
-shape = SubResource( 1 )
-
-[node name="LightOccluder2D3" type="LightOccluder2D" parent="Door Up" index="1"]
-
-position = Vector2( 1.67191, -0.0596313 )
-rotation = 1.5708
-occluder = SubResource( 2 )
-light_mask = 1
-_sections_unfolded = [ "Transform" ]
-
-[node name="Door Down" type="Sprite" parent="." index="3"]
-
-editor/display_folded = true
-visible = false
-texture = ExtResource( 5 )
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="Door Down" index="0"]
-
-position = Vector2( -4.50971, 209.493 )
-rotation = 1.5708
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-_sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door Down/StaticBody2D4" index="0"]
-
-shape = SubResource( 1 )
-
-[node name="LightOccluder2D4" type="LightOccluder2D" parent="Door Down" index="1"]
-
-position = Vector2( -9.32809, -0.0596315 )
-rotation = 4.71239
-occluder = SubResource( 2 )
-light_mask = 1
-_sections_unfolded = [ "Transform" ]
-
-[node name="Wall Left" type="Sprite" parent="." index="4"]
-
-texture = ExtResource( 6 )
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="Wall Left" index="0"]
-
-position = Vector2( -208.51, 6.49299 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall Left/StaticBody2D2" index="0"]
-
-shape = SubResource( 1 )
-
-[node name="LightOccluder2D2" type="LightOccluder2D" parent="Wall Left" index="1"]
-
-occluder = SubResource( 2 )
-light_mask = 1
-
-[node name="Wall Right" type="Sprite" parent="." index="5"]
-
-texture = ExtResource( 7 )
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="Wall Right" index="0"]
-
-position = Vector2( 208.49, 3.49299 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall Right/StaticBody2D3" index="0"]
-
-shape = SubResource( 1 )
-
-[node name="LightOccluder2D3" type="LightOccluder2D" parent="Wall Right" index="1"]
-
-position = Vector2( -7.86805e-007, 9 )
-rotation = -3.14159
-occluder = SubResource( 2 )
-light_mask = 1
-_sections_unfolded = [ "Transform" ]
-
-[node name="Wall Up" type="Sprite" parent="." index="6"]
-
-editor/display_folded = true
-texture = ExtResource( 8 )
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="Wall Up" index="0"]
-
-position = Vector2( -4.50969, -208.507 )
-rotation = 1.5708
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-_sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall Up/StaticBody2D4" index="0"]
-
-shape = SubResource( 1 )
-
-[node name="LightOccluder2D4" type="LightOccluder2D" parent="Wall Up" index="1"]
-
-position = Vector2( 1.67191, -0.0596313 )
-rotation = 1.5708
-occluder = SubResource( 2 )
-light_mask = 1
-_sections_unfolded = [ "Transform" ]
-
-[node name="Wall Down" type="Sprite" parent="." index="7"]
-
-editor/display_folded = true
-texture = ExtResource( 9 )
-
-[node name="StaticBody2D5" type="StaticBody2D" parent="Wall Down" index="0"]
-
-position = Vector2( -4.50971, 209.493 )
-rotation = 1.5708
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-_sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall Down/StaticBody2D5" index="0"]
-
-shape = SubResource( 1 )
-
-[node name="LightOccluder2D5" type="LightOccluder2D" parent="Wall Down" index="1"]
-
-position = Vector2( -10.3281, 0.940369 )
-rotation = -1.5708
-occluder = SubResource( 2 )
-light_mask = 1
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 
