@@ -12,6 +12,7 @@ config_version=3
 
 config/name="House on the Hill"
 run/main_scene="res://menu.tscn"
+boot_splash/image="res://Asset Lib/Art/9E1Yfr.png"
 config/icon="res://icon.png"
 
 [display]
