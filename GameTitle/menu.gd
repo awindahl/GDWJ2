@@ -1,5 +1,6 @@
 extends Node
-
+var mute1 = preload("res://Asset Lib/Art/mute_btn_inactive.png")
+var mute2 = preload("res://Asset Lib/Art/mute_btn_active.png")
 var fullscreen = false
 var muted = false
 var playing = true
@@ -33,9 +34,11 @@ func _on_fullscreen_btn_pressed():
 func _on_music_btn_pressed():
 	if playing:
 		playing = !playing
+		$Control/music_sprite.set_texture(mute1)
 		$Control/AudioStreamPlayer2D.stop()
 	else:
 		playing = !playing
+		$Control/music_sprite.set_texture(mute2)
 		$Control/AudioStreamPlayer2D.volume_db = $Control/VolumeSlider.value-25
 		$Control/AudioStreamPlayer2D.play(0)
 
@@ -50,3 +53,7 @@ func _on_VolumeSlider_value_changed(value):
 				muted = !muted
 				$Control/AudioStreamPlayer2D.play(position)
 			$Control/AudioStreamPlayer2D.volume_db = $Control/VolumeSlider.value-25
+
+
+func _on_AudioStreamPlayer2D_finished():
+	$Control/AudioStreamPlayer2D.play(0)

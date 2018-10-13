@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://menu.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
-[ext_resource path="res://Asset Lib/Sounds/Space_Ambiences_03.wav" type="AudioStream" id=3]
+[ext_resource path="res://Asset Lib/Art/menubackground.png" type="Texture" id=2]
+[ext_resource path="res://Asset Lib/Art/fullscreenicon.png" type="Texture" id=3]
+[ext_resource path="res://Asset Lib/Art/mute_btn_active.png" type="Texture" id=4]
+[ext_resource path="res://Asset Lib/Sounds/Space_Ambiences_03.wav" type="AudioStream" id=5]
 
 [node name="root" type="Node" index="0"]
 
@@ -24,24 +26,16 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="TextureRect" type="TextureRect" parent="Control" index="0"]
+[node name="TextureRect" type="Sprite" parent="Control" index="0"]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 1027.0
-margin_bottom = 602.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-stretch_mode = 0
+position = Vector2( 511.951, 298.314 )
+scale = Vector2( 0.540538, 0.569365 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="menu" type="Container" parent="Control" index="1"]
 
+editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -101,14 +95,24 @@ text = "Quit"
 flat = false
 align = 1
 
-[node name="fullscreen_btn" type="Button" parent="Control" index="2"]
+[node name="fullscreen_sprite" type="Sprite" parent="Control" index="2"]
 
+editor/display_folded = true
+position = Vector2( 43.1672, 564.177 )
+scale = Vector2( 0.644575, 0.644575 )
+texture = ExtResource( 3 )
+
+[node name="fullscreen_btn" type="Button" parent="Control/fullscreen_sprite" index="0"]
+
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 0.0
 anchor_bottom = 1.0
-margin_top = -70.0
-margin_right = 144.0
+margin_left = -62.0
+margin_top = -155.0
+margin_right = 16.0
+margin_bottom = -84.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -121,19 +125,28 @@ enabled_focus_mode = 2
 shortcut = null
 group = null
 text = "Fullscreen"
-icon = ExtResource( 2 )
 flat = false
 align = 1
+_sections_unfolded = [ "Visibility" ]
 
-[node name="music_btn" type="Button" parent="Control" index="3"]
+[node name="music_sprite" type="Sprite" parent="Control" index="3"]
 
+editor/display_folded = true
+position = Vector2( 79.3519, 568.968 )
+scale = Vector2( 0.582062, 0.569653 )
+texture = ExtResource( 4 )
+
+[node name="music_btn" type="Button" parent="Control/music_sprite" index="0"]
+
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 0.0
 anchor_bottom = 1.0
-margin_left = 150.0
-margin_top = -69.0
-margin_right = 226.0
+margin_left = -27.0
+margin_top = -162.0
+margin_right = 49.0
+margin_bottom = -93.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -148,10 +161,11 @@ group = null
 text = "Play/Mute"
 flat = false
 align = 1
+_sections_unfolded = [ "Mouse", "Visibility" ]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Control" index="4"]
 
-stream = ExtResource( 3 )
+stream = ExtResource( 5 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
@@ -159,6 +173,9 @@ max_distance = 2000.0
 attenuation = 1.0
 bus = "Master"
 area_mask = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="VolumeSlider" type="HSlider" parent="Control" index="5"]
 
@@ -166,9 +183,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 231.0
+margin_left = 113.0
 margin_top = 559.0
-margin_right = 401.0
+margin_right = 283.0
 margin_bottom = 575.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -195,17 +212,17 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 236.0
-margin_top = 581.0
-margin_right = 647.0
-margin_bottom = 595.0
+margin_left = 9.0
+margin_top = 7.0
+margin_right = 420.0
+margin_bottom = 21.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-text = "The use of headphones and fullscreen is greatly recommended"
+text = "The use of headphones and fullscreen is recommended"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -214,9 +231,11 @@ max_lines_visible = -1
 
 [connection signal="button_down" from="Control/menu/quit_btn" to="." method="_on_quit_btn_down"]
 
-[connection signal="pressed" from="Control/fullscreen_btn" to="." method="_on_fullscreen_btn_pressed"]
+[connection signal="pressed" from="Control/fullscreen_sprite/fullscreen_btn" to="." method="_on_fullscreen_btn_pressed"]
 
-[connection signal="pressed" from="Control/music_btn" to="." method="_on_music_btn_pressed"]
+[connection signal="pressed" from="Control/music_sprite/music_btn" to="." method="_on_music_btn_pressed"]
+
+[connection signal="finished" from="Control/AudioStreamPlayer2D" to="." method="_on_AudioStreamPlayer2D_finished"]
 
 [connection signal="value_changed" from="Control/VolumeSlider" to="." method="_on_VolumeSlider_value_changed"]
 
