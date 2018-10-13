@@ -17,8 +17,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1028.0
-margin_bottom = 602.0
+margin_right = 1280.0
+margin_bottom = 720.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -29,8 +29,8 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="TextureRect" type="Sprite" parent="Control" index="0"]
 
-position = Vector2( 511.951, 298.314 )
-scale = Vector2( 0.540538, 0.569365 )
+position = Vector2( 638.951, 360.314 )
+scale = Vector2( 0.67, 0.67 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
@@ -51,6 +51,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
 
 [node name="play_btn" type="Button" parent="Control/menu" index="0"]
 
@@ -99,7 +100,7 @@ align = 1
 [node name="fullscreen_sprite" type="Sprite" parent="Control" index="2"]
 
 editor/display_folded = true
-position = Vector2( 43.1672, 564.177 )
+position = Vector2( 73.1672, 664.177 )
 scale = Vector2( 0.644575, 0.644575 )
 texture = ExtResource( 3 )
 
@@ -133,7 +134,7 @@ _sections_unfolded = [ "Visibility" ]
 [node name="music_sprite" type="Sprite" parent="Control" index="3"]
 
 editor/display_folded = true
-position = Vector2( 79.3519, 568.968 )
+position = Vector2( 109.352, 668.968 )
 scale = Vector2( 0.582062, 0.569653 )
 texture = ExtResource( 4 )
 
@@ -179,10 +180,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 113.0
-margin_top = 559.0
-margin_right = 283.0
-margin_bottom = 575.0
+margin_left = 143.0
+margin_top = 659.0
+margin_right = 313.0
+margin_bottom = 675.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
