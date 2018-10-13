@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://menu.gd" type="Script" id=1]
 [ext_resource path="res://Asset Lib/Art/menubackground.png" type="Texture" id=2]
 [ext_resource path="res://Asset Lib/Art/fullscreenicon.png" type="Texture" id=3]
 [ext_resource path="res://Asset Lib/Art/mute_btn_active.png" type="Texture" id=4]
 [ext_resource path="res://Asset Lib/Sounds/Space_Ambiences_03.wav" type="AudioStream" id=5]
+[ext_resource path="res://Asset Lib/Font/TypewriterFont.tres" type="DynamicFont" id=6]
 
 [node name="root" type="Node" index="0"]
 
@@ -214,18 +215,20 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 9.0
 margin_top = 7.0
-margin_right = 420.0
-margin_bottom = 21.0
+margin_right = 304.0
+margin_bottom = 22.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
 text = "The use of headphones and fullscreen is recommended"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Rect", "Theme", "custom_fonts" ]
 
 [connection signal="button_down" from="Control/menu/play_btn" to="." method="_on_play_btn_down"]
 
