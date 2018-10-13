@@ -33,7 +33,7 @@ closed = true
 cull_mode = 0
 polygon = PoolVector2Array( 18.8512, 29.3465, -41.1065, 29.3345, -40.7391, -177.64, 165.008, -177.286, 165.019, -116.875, 19.2681, -117.376 )
 
-[node name="FloorTile" type="Node2D" index="0"]
+[node name="FloorTile" type="Node2D"]
 
 _sections_unfolded = [ "Transform" ]
 
