@@ -25,4 +25,3 @@ func _on_door_opened(door):
 	var new_tile = BaseTile.instance()
 	new_tile.tile_pos = tile_with_door.tile_pos + door.door_pos
 	self.add_tile(new_tile)
-	

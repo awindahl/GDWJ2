@@ -31,3 +31,6 @@ func tile_pos_set(new_tile_pos):
 func tile_pos_get():
 	return self.position/512
 	
+func adjacent_to(other_tile):
+	# 'adjacent' only horizontally and vertically, NOT DIAGONALLY
+	return self.tile_pos.distance_to(other_tile.tile_pos)

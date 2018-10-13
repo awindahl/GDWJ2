@@ -24,3 +24,12 @@ func door_pos_set(new_door_pos):
 	
 func door_pos_get():
 	return self.position/radius
+	
+func is_connected(other_door):
+	var this_tile = self.get_parent()
+	var other_tile = other_door.get_parent()
+	if this_tile.adjacent_to(other_door):
+		#TODO
+		pass
+	else:
+		return false
