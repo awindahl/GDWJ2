@@ -1,7 +1,8 @@
 extends Node2D
 
-var grid_pos setget grid_pos_set, grid_pos_get
+var tile_pos setget tile_pos_set, tile_pos_get
 var Door = preload("res://Tiles/Door.tscn")
+var TILE_WIDTH = 512
 
 var upper_door = Door.instance()
 var right_hand_door = Door.instance()
@@ -24,11 +25,9 @@ func _init():
 func _ready():
 	pass
 
-func grid_pos_set(new_grid_pos):
-	grid_pos = new_grid_pos
-	# Either raise a signal here that the pos has changed and let the Grid deal with it
-	# OR change the position of the Tile on the Grid directly
+func tile_pos_set(new_tile_pos):
+	self.position = new_tile_pos*512
 
-func grid_pos_get():
-	return grid_pos
+func tile_pos_get():
+	return self.position/512
 	
