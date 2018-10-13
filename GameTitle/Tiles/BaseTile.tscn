@@ -33,12 +33,13 @@ closed = true
 cull_mode = 0
 polygon = PoolVector2Array( 18.8226, 26.0702, -40.9079, 26.1864, -40.7391, -177.64, 161.638, -177.242, 161.175, -117.279, 19.2681, -117.376 )
 
-[node name="FloorTile" type="Node2D" index="0"]
+[node name="FloorTile" type="Node2D"]
 
 _sections_unfolded = [ "Transform" ]
 
 [node name="Floor" type="Sprite" parent="." index="0"]
 
+editor/display_folded = true
 z_index = -1
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
@@ -237,7 +238,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="DoorLeft" parent="." index="1" instance=ExtResource( 2 )]
 
-visible = false
 position = Vector2( -208, 0 )
 rotation = 1.5708
 doorLeft = true
@@ -247,7 +247,6 @@ doorDown = true
 
 [node name="DoorUp" parent="." index="2" instance=ExtResource( 2 )]
 
-visible = false
 position = Vector2( 0, -209 )
 doorLeft = true
 doorRight = true
@@ -256,7 +255,6 @@ doorDown = true
 
 [node name="DoorRight" parent="." index="3" instance=ExtResource( 2 )]
 
-visible = false
 position = Vector2( 208, 0 )
 rotation = 1.5708
 doorLeft = true
@@ -266,7 +264,6 @@ doorDown = true
 
 [node name="DoorDown" parent="." index="4" instance=ExtResource( 2 )]
 
-visible = false
 position = Vector2( 0, 208 )
 doorLeft = true
 doorRight = true
