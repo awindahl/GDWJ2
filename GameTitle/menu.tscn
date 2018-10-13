@@ -2,9 +2,9 @@
 
 [ext_resource path="res://menu.gd" type="Script" id=1]
 [ext_resource path="res://Asset Lib/Art/menubackground.png" type="Texture" id=2]
-[ext_resource path="res://Asset Lib/Art/fullscreenicon.png" type="Texture" id=3]
-[ext_resource path="res://Asset Lib/Art/mute_btn_active.png" type="Texture" id=4]
-[ext_resource path="res://Asset Lib/Sounds/Space_Ambiences_03.wav" type="AudioStream" id=5]
+[ext_resource path="res://Asset Lib/Sounds/Space_Ambiences_03.wav" type="AudioStream" id=3]
+[ext_resource path="res://Asset Lib/Art/fullscreenicon.png" type="Texture" id=4]
+[ext_resource path="res://Asset Lib/Art/mute_btn_active.png" type="Texture" id=5]
 [ext_resource path="res://Asset Lib/Font/TypewriterFont.tres" type="DynamicFont" id=6]
 
 [node name="root" type="Node" index="0"]
@@ -17,8 +17,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1280.0
-margin_bottom = 720.0
+margin_right = 1291.0
+margin_bottom = 731.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -29,12 +29,21 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="TextureRect" type="Sprite" parent="Control" index="0"]
 
-position = Vector2( 638.951, 360.314 )
-scale = Vector2( 0.67, 0.67 )
+position = Vector2( 642.035, 360.08 )
+scale = Vector2( 0.671681, 0.677734 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="menu" type="Container" parent="Control" index="1"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Control" index="1"]
+
+stream = ExtResource( 3 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+
+[node name="menu" type="Container" parent="Control" index="2"]
 
 editor/display_folded = true
 anchor_left = 0.5
@@ -51,7 +60,6 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
 
 [node name="play_btn" type="Button" parent="Control/menu" index="0"]
 
@@ -97,12 +105,12 @@ text = "Quit"
 flat = false
 align = 1
 
-[node name="fullscreen_sprite" type="Sprite" parent="Control" index="2"]
+[node name="fullscreen_sprite" type="Sprite" parent="Control" index="3"]
 
 editor/display_folded = true
-position = Vector2( 73.1672, 664.177 )
+position = Vector2( 47.1672, 682.177 )
 scale = Vector2( 0.644575, 0.644575 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="fullscreen_btn" type="Button" parent="Control/fullscreen_sprite" index="0"]
 
@@ -111,9 +119,9 @@ anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 0.0
 anchor_bottom = 1.0
-margin_left = -62.0
-margin_top = -155.0
-margin_right = 16.0
+margin_left = -63.0
+margin_top = -157.0
+margin_right = 12.0
 margin_bottom = -84.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -126,17 +134,16 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Fullscreen"
 flat = false
 align = 1
 _sections_unfolded = [ "Visibility" ]
 
-[node name="music_sprite" type="Sprite" parent="Control" index="3"]
+[node name="music_sprite" type="Sprite" parent="Control" index="4"]
 
 editor/display_folded = true
-position = Vector2( 109.352, 668.968 )
+position = Vector2( 83.3519, 686.968 )
 scale = Vector2( 0.582062, 0.569653 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="music_btn" type="Button" parent="Control/music_sprite" index="0"]
 
@@ -165,25 +172,16 @@ flat = false
 align = 1
 _sections_unfolded = [ "Mouse", "Visibility" ]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Control" index="4"]
-
-stream = ExtResource( 5 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = true
-mix_target = 0
-bus = "Master"
-
 [node name="VolumeSlider" type="HSlider" parent="Control" index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 143.0
-margin_top = 659.0
-margin_right = 313.0
-margin_bottom = 675.0
+margin_left = 117.0
+margin_top = 677.0
+margin_right = 287.0
+margin_bottom = 693.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -226,15 +224,15 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Rect", "Theme", "custom_fonts" ]
 
+[connection signal="finished" from="Control/AudioStreamPlayer2D" to="." method="_on_AudioStreamPlayer2D_finished"]
+
 [connection signal="button_down" from="Control/menu/play_btn" to="." method="_on_play_btn_down"]
 
 [connection signal="button_down" from="Control/menu/quit_btn" to="." method="_on_quit_btn_down"]
 
-[connection signal="pressed" from="Control/fullscreen_sprite/fullscreen_btn" to="." method="_on_fullscreen_btn_pressed"]
+[connection signal="pressed" from="Control/fullscreen_sprite/fullscreen_btn" to="." method="_on_fullscreen_pressed"]
 
 [connection signal="pressed" from="Control/music_sprite/music_btn" to="." method="_on_music_btn_pressed"]
-
-[connection signal="finished" from="Control/AudioStreamPlayer2D" to="." method="_on_AudioStreamPlayer2D_finished"]
 
 [connection signal="value_changed" from="Control/VolumeSlider" to="." method="_on_VolumeSlider_value_changed"]
 

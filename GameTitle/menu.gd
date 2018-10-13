@@ -1,35 +1,31 @@
 extends Node
 var mute1 = preload("res://Asset Lib/Art/mute_btn_inactive.png")
 var mute2 = preload("res://Asset Lib/Art/mute_btn_active.png")
-var fullscreen = false
+
 var muted = false
 var playing = true
 var position
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
 	OS.center_window()
-	OS.set_window_title("Not haunted house on the hill")
-	$Control/VolumeSlider.value = 25
+	OS.set_window_title("Ekin's and Alexander's tilehouse")
+	"""$Control/VolumeSlider.value = 25
 	$Control/AudioStreamPlayer2D.volume_db = 0
-
+	If we want to save variables in the future""" 
 
 func _on_quit_btn_down():
 	get_tree().quit()
 
-
 func _on_play_btn_down():
 	get_tree().change_scene("res://Main.tscn")
 
-
-func _on_fullscreen_btn_pressed():
-	if fullscreen:
-		fullscreen = !fullscreen
-		OS.window_fullscreen = false
+func _on_fullscreen_pressed():
+	OS.set_window_resizable(true)
+	if OS.is_window_fullscreen():
+		OS.set_window_fullscreen(false)
 	else:
-		fullscreen = !fullscreen
-		OS.window_fullscreen = true
+		OS.set_window_fullscreen(true)
+	OS.set_window_resizable(false)
 
 func _on_music_btn_pressed():
 	if playing:
@@ -54,6 +50,6 @@ func _on_VolumeSlider_value_changed(value):
 				$Control/AudioStreamPlayer2D.play(position)
 			$Control/AudioStreamPlayer2D.volume_db = $Control/VolumeSlider.value-25
 
-
 func _on_AudioStreamPlayer2D_finished():
 	$Control/AudioStreamPlayer2D.play(0)
+
