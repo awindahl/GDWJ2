@@ -39,12 +39,14 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Floor" type="Sprite" parent="." index="0"]
 
+editor/display_folded = true
 z_index = -1
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Floor" index="0"]
 
+editor/display_folded = true
 position = Vector2( 155, -225 )
 input_pickable = false
 collision_layer = 1
@@ -65,6 +67,7 @@ _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index"
 
 [node name="StaticBody2D8" type="StaticBody2D" parent="Floor" index="1"]
 
+editor/display_folded = true
 position = Vector2( -157.286, -225.942 )
 input_pickable = false
 collision_layer = 1
@@ -83,6 +86,7 @@ shape = SubResource( 1 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Floor" index="2"]
 
+editor/display_folded = true
 position = Vector2( 149.08, 225.762 )
 input_pickable = false
 collision_layer = 1
@@ -102,7 +106,6 @@ shape = SubResource( 1 )
 [node name="StaticBody2D6" type="StaticBody2D" parent="Floor" index="3"]
 
 editor/display_folded = true
-visible = false
 position = Vector2( -157.972, 225.762 )
 input_pickable = false
 collision_layer = 1
@@ -122,7 +125,6 @@ shape = SubResource( 1 )
 [node name="StaticBody2D2" type="StaticBody2D" parent="Floor" index="4"]
 
 editor/display_folded = true
-visible = false
 position = Vector2( 226.017, -150.149 )
 rotation = 1.5708
 input_pickable = false
@@ -144,7 +146,6 @@ shape = SubResource( 1 )
 [node name="StaticBody2D4" type="StaticBody2D" parent="Floor" index="5"]
 
 editor/display_folded = true
-visible = false
 position = Vector2( 225.808, 156.596 )
 rotation = 1.5708
 input_pickable = false
@@ -166,7 +167,6 @@ shape = SubResource( 1 )
 [node name="StaticBody2D5" type="StaticBody2D" parent="Floor" index="6"]
 
 editor/display_folded = true
-visible = false
 position = Vector2( -226.077, 159.763 )
 rotation = 1.5708
 input_pickable = false
@@ -188,7 +188,6 @@ shape = SubResource( 1 )
 [node name="StaticBody2D7" type="StaticBody2D" parent="Floor" index="7"]
 
 editor/display_folded = true
-visible = false
 position = Vector2( -226.077, -146.521 )
 rotation = 1.5708
 input_pickable = false
@@ -239,7 +238,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="DoorLeft" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( -208, 6 )
+position = Vector2( -208, 0 )
 rotation = 1.5708
 doorLeft = true
 doorRight = true
@@ -248,7 +247,7 @@ doorDown = true
 
 [node name="DoorUp" parent="." index="2" instance=ExtResource( 2 )]
 
-position = Vector2( -6, -209 )
+position = Vector2( 0, -209 )
 doorLeft = true
 doorRight = true
 doorUp = true
@@ -256,7 +255,7 @@ doorDown = true
 
 [node name="DoorRight" parent="." index="3" instance=ExtResource( 2 )]
 
-position = Vector2( 208, 3 )
+position = Vector2( 208, 0 )
 rotation = 1.5708
 doorLeft = true
 doorRight = true
@@ -265,7 +264,7 @@ doorDown = true
 
 [node name="DoorDown" parent="." index="4" instance=ExtResource( 2 )]
 
-position = Vector2( -4, 208 )
+position = Vector2( 0, 208 )
 doorLeft = true
 doorRight = true
 doorUp = true
@@ -273,7 +272,6 @@ doorDown = true
 
 [node name="Roof" type="Sprite" parent="." index="5"]
 
-visible = false
 z_index = 1
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform", "Z Index" ]
