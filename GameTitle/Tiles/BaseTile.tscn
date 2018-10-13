@@ -35,11 +35,11 @@ polygon = PoolVector2Array( 18.8512, 29.3465, -41.1065, 29.3345, -40.7391, -177.
 
 [node name="FloorTile" type="Node2D" index="0"]
 
-_sections_unfolded = [ "Transform", "Z Index" ]
+scale = Vector2( 0.6, 0.6 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Floor" type="Sprite" parent="." index="0"]
 
-editor/display_folded = true
 z_index = -1
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
@@ -192,7 +192,6 @@ shape = SubResource( 1 )
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="Floor" index="7"]
 
-editor/display_folded = true
 visible = false
 position = Vector2( -226.077, -146.521 )
 rotation = 1.5708
