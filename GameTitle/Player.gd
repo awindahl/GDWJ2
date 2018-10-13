@@ -24,6 +24,7 @@ func _process(delta):
 	# Check for collisions
 	if body:
 		var cs = body.collider_shape
-		# If collision is with door
+		# If collision is with a door
 		if cs.name == "DoorCollisionShape":
-			cs.owner.open()
+			var door = cs.owner
+			door.open()

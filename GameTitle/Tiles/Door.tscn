@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Tiles/Door.gd" type="Script" id=1]
+[ext_resource path="res://Asset Lib/Art/door.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 53.9332, 12.472 )
+
+[node name="Door" type="StaticBody2D"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index" ]
+pos = null
+
+[node name="DoorSprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+
+[node name="DoorCollisionShape" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[connection signal="door_opened" from="." to="." method="_on_Door_door_opened" flags=6]
+
+
