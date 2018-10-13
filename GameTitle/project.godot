@@ -10,7 +10,8 @@ config_version=3
 
 [application]
 
-config/name="GameTitle"
+config/name="House on the Hill"
+run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
 [rendering]
