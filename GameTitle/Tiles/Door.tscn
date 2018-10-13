@@ -8,6 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 53.9332, 12.472 )
 
+
 [sub_resource type="OccluderPolygon2D" id=2]
 
 closed = false
@@ -15,6 +16,7 @@ cull_mode = 0
 polygon = PoolVector2Array( -54.2781, -0.420494, 53.6577, -0.278099 )
 
 [node name="Door" type="StaticBody2D" index="0"]
+
 
 input_pickable = false
 collision_layer = 1
@@ -25,7 +27,6 @@ friction = 1.0
 bounce = 0.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index" ]
-pos = null
 
 [node name="DoorSprite" type="Sprite" parent="." index="0"]
 

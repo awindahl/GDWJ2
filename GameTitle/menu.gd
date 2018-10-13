@@ -9,6 +9,7 @@ var position
 func _ready():
 	OS.center_window()
 	OS.set_window_title("Ekin's and Alexander's tilehouse")
+	$AnimationPlayer.play("fadeInSplash1", -1)
 	"""$Control/VolumeSlider.value = 25
 	$Control/AudioStreamPlayer2D.volume_db = 0
 	If we want to save variables in the future""" 
@@ -53,3 +54,13 @@ func _on_VolumeSlider_value_changed(value):
 func _on_AudioStreamPlayer2D_finished():
 	$Control/AudioStreamPlayer2D.play(0)
 
+func splash1():
+	$splash1.hide()
+	$splash2.show()
+	$AnimationPlayer.play("fadeInSplash2", -1)
+
+func splash2():
+	$splash2.hide()
+
+func hide_square():
+	$black_square.hide()
