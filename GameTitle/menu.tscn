@@ -164,19 +164,14 @@ flat = false
 align = 1
 _sections_unfolded = [ "Mouse", "Visibility" ]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Control" index="4"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Control" index="4"]
 
 stream = ExtResource( 5 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
-max_distance = 2000.0
-attenuation = 1.0
+mix_target = 0
 bus = "Master"
-area_mask = 1
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="VolumeSlider" type="HSlider" parent="Control" index="5"]
 
