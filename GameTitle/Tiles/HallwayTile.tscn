@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Asset Lib/Art/basetile.png" type="Texture" id=1]
+[ext_resource path="res://Asset Lib/Art/hallwaytile.png" type="Texture" id=1]
 [ext_resource path="res://Tiles/DoorTile.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Asset Lib/Art/walls.png" type="Texture" id=3]
 
@@ -39,7 +39,6 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Floor" type="Sprite" parent="." index="0"]
 
-editor/display_folded = true
 z_index = -1
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
@@ -245,8 +244,8 @@ _sections_unfolded = [ "Transform" ]
 [node name="DoorTile" parent="." index="1" instance=ExtResource( 2 )]
 
 _sections_unfolded = [ "Transform" ]
-doorLeft = true
-doorRight = true
+doorLeft = false
+doorRight = false
 doorUp = true
 doorDown = true
 
