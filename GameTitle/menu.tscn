@@ -10,7 +10,7 @@
 [ext_resource path="res://Asset Lib/Art/volumesliderbright.tres" type="StyleBox" id=8]
 [ext_resource path="res://Asset Lib/Font/TypewriterFont.tres" type="DynamicFont" id=9]
 
-[node name="root" type="Node" index="0"]
+[node name="root" type="Node"]
 
 script = ExtResource( 1 )
 
