@@ -5,14 +5,35 @@ var mute2 = preload("res://Asset Lib/Art/mute_btn_active.png")
 var muted = false
 var playing = true
 var position
+var swapping = true
 
 func _ready():
 	OS.center_window()
 	OS.set_window_title("Ekin's and Alexander's tilehouse")
 	$AnimationPlayer.play("fadeInSplash1", -1)
+
 	"""$Control/VolumeSlider.value = 25
 	$Control/AudioStreamPlayer2D.volume_db = 0
-	If we want to save variables in the future""" 
+	If we want to save variables in the future"""
+	set_process(true)
+	
+func _process(delta):
+	if swapping:
+		if $AnimationPlayer.get_current_animation() == "fadeInSplash1":
+			if Input.is_action_pressed("ui_splash_skip") and swapping:
+				swapping = false
+				$AnimationPlayer.stop(false)
+				splash1()
+				$timer.start()
+	
+		elif $AnimationPlayer.get_current_animation() == "fadeInSplash2":
+			if Input.is_action_pressed("ui_splash_skip") and swapping:
+				$AnimationPlayer.stop(false)
+				splash2()
+				hide_square()
+	else:
+		if $timer.time_left < 1 :
+			swapping = true
 
 func _on_quit_btn_down():
 	get_tree().quit()
@@ -56,7 +77,6 @@ func _on_AudioStreamPlayer2D_finished():
 
 func splash1():
 	$splash1.hide()
-	$splash2.show()
 	$AnimationPlayer.play("fadeInSplash2", -1)
 
 func splash2():

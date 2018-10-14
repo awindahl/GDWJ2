@@ -134,12 +134,13 @@ expand_margin_bottom = 0.0
 modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 
-[node name="root" type="Node"]
+[node name="root" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
 [node name="Control" type="Control" parent="." index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -379,7 +380,7 @@ anims/fadeInSplash1 = ExtResource( 16 )
 anims/fadeInSplash2 = ExtResource( 17 )
 blend_times = [  ]
 
-[node name="splash1" type="TextureRect" parent="." index="2"]
+[node name="splash2" type="TextureRect" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -399,7 +400,7 @@ texture = ExtResource( 18 )
 stretch_mode = 2
 _sections_unfolded = [ "Visibility" ]
 
-[node name="splash2" type="TextureRect" parent="." index="3"]
+[node name="splash1" type="TextureRect" parent="." index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -439,6 +440,13 @@ size_flags_vertical = 1
 texture = ExtResource( 19 )
 stretch_mode = 2
 _sections_unfolded = [ "Visibility" ]
+
+[node name="timer" type="Timer" parent="." index="5"]
+
+process_mode = 1
+wait_time = 2.0
+one_shot = false
+autostart = false
 
 [connection signal="finished" from="Control/AudioStreamPlayer2D" to="." method="_on_AudioStreamPlayer2D_finished"]
 
