@@ -4,7 +4,7 @@
 [ext_resource path="res://Asset Lib/Animations/slideIn.tres" type="Animation" id=2]
 [ext_resource path="res://Asset Lib/Animations/slideOut.tres" type="Animation" id=3]
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 script = ExtResource( 1 )
 
