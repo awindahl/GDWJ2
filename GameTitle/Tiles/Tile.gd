@@ -17,32 +17,48 @@ export(bool) var LowerDoor = false
 var Grid	# Again we should avoid using parent objects like this in the future - have the grid object do things itself
 
 func _ready():
+	self.doors = []
+	
+	var upper_door = Door.instance()
+	var right_hand_door = Door.instance()
+	var lower_door = Door.instance()
+	var left_hand_door = Door.instance()
+	
+	upper_door.door_pos = Vector2(0, -1)
+	right_hand_door.door_pos = Vector2(1, 0)
+	lower_door.door_pos = Vector2(0, 1)
+	left_hand_door.door_pos = Vector2(-1, 0)
+  
+	self.add_door(upper_door)
+	self.add_door(right_hand_door)
+	self.add_door(lower_door)
+	self.add_door(left_hand_door)
+	
 	self.Grid = self.get_parent()
 	self.connect("tile_constructed", Grid, "_on_tile_constructed", [self])
 	emit_signal("tile_constructed")
-	self.doors = []
 
-func _process(delta):
-	if UpperDoor:
-		var upper_door = Door.instance()
-		upper_door.door_pos = Vector2(0, -1)
-		self.add_door(upper_door)
-		UpperDoor = int(UpperDoor) - 1
-	if RightDoor:
-		var right_hand_door = Door.instance()
-		right_hand_door.door_pos = Vector2(1, 0)
-		self.add_door(right_hand_door)
-		RightDoor = int(RightDoor) - 1
-	if LeftDoor:
-		var left_hand_door = Door.instance()
-		left_hand_door.door_pos = Vector2(-1, 0)
-		self.add_door(left_hand_door)
-		LeftDoor = int(LeftDoor) - 1
-	if LowerDoor:
-		var lower_door = Door.instance()
-		lower_door.door_pos = Vector2(0, 1)
-		self.add_door(lower_door)
-		LowerDoor = int(LowerDoor) - 1
+#func _process(delta):
+#	if UpperDoor:
+#		var upper_door = Door.instance()
+#		upper_door.door_pos = Vector2(0, -1)
+#		self.add_door(upper_door)
+#		UpperDoor = int(UpperDoor) - 1
+#	if RightDoor:
+#		var right_hand_door = Door.instance()
+#		right_hand_door.door_pos = Vector2(1, 0)
+#		self.add_door(right_hand_door)
+#		RightDoor = int(RightDoor) - 1
+#	if LeftDoor:
+#		var left_hand_door = Door.instance()
+#		left_hand_door.door_pos = Vector2(-1, 0)
+#		self.add_door(left_hand_door)
+#		LeftDoor = int(LeftDoor) - 1
+#	if LowerDoor:
+#		var lower_door = Door.instance()
+#		lower_door.door_pos = Vector2(0, 1)
+#		self.add_door(lower_door)
+#		LowerDoor = int(LowerDoor) - 1
 
 func add_door(door):
 	self.add_child(door)
@@ -71,8 +87,6 @@ func get_facing_doors(tile):
 	# Otherwise the function will return an empty array.
 	
 	var facing_doors = []
-	print(self.doors)
-	print(tile.doors)
 	for my_door in self.doors:
 		for other_door in tile.doors:
 			if other_door.get("TYPE") == "DOOR" and my_door.get("TYPE") == "DOOR":
