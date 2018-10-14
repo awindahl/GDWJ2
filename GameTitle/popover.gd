@@ -12,8 +12,8 @@ func _ready():
 func display( text, img, bg):
 	#Probably needs work, or be careful how we send info
 	$Control/text.text = text
-	$Control/sprite.texture = img
-	$Control/background.texture = bg
+	$Control/sprite.texture = load(img)
+	$Control/background.texture = load(bg)
 	
 	$AnimationPlayer.play("slideIn", -1)
 	

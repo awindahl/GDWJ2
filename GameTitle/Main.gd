@@ -1,10 +1,17 @@
 extends Node2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
 var screensize
+var playing = true
+
 func _ready():
+	playing = GameDirector.playing
+	$Player/CanvasLayer/pause/HSlider.value = GameDirector.volume
+	$background_music.volume_db = GameDirector.volume-25
+	if playing:
+		$background_music.play(0)
+
+	$Player/CanvasLayer/hud/objective.text = GameDirector.currentObjective
+	
 	screensize = get_viewport_rect().size
 	self.position = screensize/2
 	set_process_unhandled_input(true)
@@ -12,7 +19,14 @@ func _ready():
 func _unhandled_input(event):
 	if event is InputEventKey:
 		if event.pressed and event.scancode == KEY_ESCAPE:
-			if !$pause.is_visible():
-				$pause.show()
+			if !$Player/CanvasLayer/pause.is_visible():
+				$Player/CanvasLayer/pause.show()
 			else:
-				$pause.hide()
+				$Player/CanvasLayer/pause.hide()
+	
+	if event is InputEventKey:
+		if event.pressed and event.scancode == KEY_Z:
+			$Player/CanvasLayer/popover.display("Hello", "res://Asset Lib/Art/mute_btn_active.png", "res://Asset Lib/Art/9E1Yfr.png")
+
+func _update_objective():
+	$Player/CanvasLayer/hud/objective.text = GameDirector.currentObjective

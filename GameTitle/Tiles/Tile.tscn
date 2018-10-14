@@ -25,6 +25,10 @@ polygon = PoolVector2Array( 157.365, -127.984, 157.151, -173.917, -41.3599, -174
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
+UpperDoor = true
+RightDoor = true
+LeftDoor = true
+LowerDoor = true
 
 [node name="Floor" type="Sprite" parent="." index="0"]
 
