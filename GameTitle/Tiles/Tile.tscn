@@ -1,5 +1,4 @@
-
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Tiles/Tile.gd" type="Script" id=1]
 [ext_resource path="res://Asset Lib/Art/basetile.png" type="Texture" id=2]
@@ -26,6 +25,10 @@ polygon = PoolVector2Array( 157.365, -127.984, 157.151, -173.917, -41.3599, -174
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
+UpperDoor = true
+RightDoor = true
+LeftDoor = true
+LowerDoor = true
 
 [node name="Floor" type="Sprite" parent="." index="0"]
 
