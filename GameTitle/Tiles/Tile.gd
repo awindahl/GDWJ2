@@ -12,7 +12,7 @@ var TILE_WIDTH = 512
 
 var Grid	# Again we should avoid using parent objects like this in the future - have the grid object do things itself
 
-func _init():
+func _ready():
 	self.doors = []
 	var upper_door = Door.instance()
 	var right_hand_door = Door.instance()
@@ -26,6 +26,10 @@ func _init():
 	self.add_door(right_hand_door)
 	self.add_door(left_hand_door)
 	self.add_door(lower_door)
+	
+	self.Grid = self.get_parent()
+	self.connect("tile_constructed", Grid, "_on_tile_constructed", [self])
+	emit_signal("tile_constructed")
 
 func add_door(door):
 	self.doors.append(door)
@@ -34,11 +38,6 @@ func add_door(door):
 func remove_door(door):
 	self.doors.remove(doors.find(door))
 	self.remove_child(door)
-
-func _ready():
-	self.Grid = self.get_parent()
-	self.connect("tile_constructed", Grid, "_on_tile_constructed", [self])
-	emit_signal("tile_constructed")
 
 func tile_pos_set(new_tile_pos):
 	self.position = (new_tile_pos*512).round()
