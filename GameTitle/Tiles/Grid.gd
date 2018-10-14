@@ -35,8 +35,16 @@ func _on_tile_constructed(tile):
 			for door in facing_doors:
 				door.open()
 
+func find_tile_from_pos(position):
+	for tile in self.tiles:
+		if tile.tile_pos == position:
+			return tile
+	return null
 
 func _on_player_requesting_door_to_open(door):
+	if self.find_tile_from_pos(door.next_tile_pos):
+		print("Can't add a door here - already a room next door!")
+		return
 	var new_tile = self.tile_list[randi() %  self.tile_list.size()].instance()
 	new_tile.tile_pos = door.next_tile_pos
 	self.add_tile(new_tile)
