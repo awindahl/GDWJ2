@@ -4,11 +4,15 @@ const TYPE = "DOOR"
 
 signal door_opened(door)
 var door_pos setget door_pos_set, door_pos_get
-
+var door_pos_rel setget , door_pos_rel_get
 var radius = 208
 
+var Tile	# Shouldn't rely on having Tile and Grid too much otherwise could be problems in the future (2-way comms)
+var Grid
+
 func _ready():
-	var Grid = get_node("/root/Main/Grid")
+	self.Tile = self.get_parent()
+	self.Grid = self.Tile.get_parent()
 	self.connect("door_opened", Grid, "_on_door_opened", [self])
 
 func open():
@@ -25,16 +29,14 @@ func close():
 func door_pos_set(new_door_pos):
 	self.rotation = new_door_pos.angle_to(Vector2(0, 1))
 	self.position = new_door_pos*radius
-	
+
 func door_pos_get():
 	return self.position/radius
-	
-func is_connected(other_door):
-	var this_tile = self.get_parent()
-	var other_tile = other_door.get_parent()
-	if this_tile.adjacent_to(other_door):
-		#TODO
-		pass
-	else:
-		return false
-	
+
+func door_pos_rel_get():
+	# Gets the door position relative to the Tile + global scene (horrible func name consider changing)
+	return self.door_pos.rotated(self.Tile.global_rotation)
+
+func facing(door):
+	# If this door is directly facing another door (DISREGARDING DISTANCE) will return true, otherwise, false.
+	return self.global_rotation == -door.global_rotation

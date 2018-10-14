@@ -19,7 +19,7 @@ polygon = PoolVector2Array( -56.2335, -1.77563, 56.4719, -1.90414 )
 custom_solver_bias = 0.0
 extents = Vector2( 64, 32 )
 
-[node name="Door" type="StaticBody2D"]
+[node name="Door" type="StaticBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
