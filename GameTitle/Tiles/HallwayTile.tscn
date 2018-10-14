@@ -9,35 +9,33 @@
 custom_solver_bias = 0.0
 extents = Vector2( 100, 30 )
 
-[sub_resource type="OccluderPolygon2D" id=2]
+[sub_resource type="RectangleShape2D" id=2]
 
-closed = true
-cull_mode = 0
-polygon = PoolVector2Array( 18.8512, 29.3465, -41.1065, 29.3345, -40.8961, -179.753, 156.817, -179.697, 156.871, -120.267, 18.7606, -120.267 )
+custom_solver_bias = 0.0
+extents = Vector2( 150, 30 )
 
-[sub_resource type="OccluderPolygon2D" id=3]
+[sub_resource type="RectangleShape2D" id=3]
 
-closed = true
-cull_mode = 0
-polygon = PoolVector2Array( 18.8512, 29.3465, -41.1065, 29.3345, -41.2891, -169.964, 165.793, -170.129, 165.457, -110.215, 18.7315, -109.415 )
+custom_solver_bias = 0.0
+extents = Vector2( 150, 30 )
 
 [sub_resource type="OccluderPolygon2D" id=4]
 
-closed = true
+closed = false
 cull_mode = 0
-polygon = PoolVector2Array( 18.8512, 29.3465, -41.1065, 29.3345, -41.3644, -168.833, 154.707, -168.718, 154.676, -108.9, 18.7315, -109.415 )
+polygon = PoolVector2Array( 276.05, -177.658, 157.328, -179.761, -41.0782, -179.639, -41.2036, 23.2194, -40.1346, 131.739 )
 
 [sub_resource type="OccluderPolygon2D" id=5]
 
-closed = true
+closed = false
 cull_mode = 0
-polygon = PoolVector2Array( 18.8512, 29.3465, -41.1065, 29.3345, -40.7391, -177.64, 165.008, -177.286, 165.019, -116.875, 19.2681, -117.376 )
+polygon = PoolVector2Array( 169.884, -174.298, 157.151, -173.917, -41.3599, -174.22, -41.2036, 23.2194, -42.2381, 41.3319 )
 
-[node name="FloorTile" type="Node2D" index="0"]
+[node name="Tile" type="Node2D" index="0"]
 
-position = Vector2( 498.459, 282.378 )
+position = Vector2( 526.313, 376.729 )
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -48,6 +46,7 @@ LowerDoor = true
 
 [node name="Floor" type="Sprite" parent="." index="0"]
 
+light_mask = 3
 z_index = -1
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
@@ -55,8 +54,7 @@ _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 [node name="StaticBody2D" type="StaticBody2D" parent="Floor" index="0"]
 
 editor/display_folded = true
-visible = false
-position = Vector2( 148.558, -225.942 )
+position = Vector2( 155, -225 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -64,6 +62,7 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -71,11 +70,11 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D" index="0"]
 
 shape = SubResource( 1 )
+_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 
 [node name="StaticBody2D8" type="StaticBody2D" parent="Floor" index="1"]
 
 editor/display_folded = true
-visible = false
 position = Vector2( -157.286, -225.942 )
 input_pickable = false
 collision_layer = 1
@@ -95,7 +94,6 @@ shape = SubResource( 1 )
 [node name="StaticBody2D3" type="StaticBody2D" parent="Floor" index="2"]
 
 editor/display_folded = true
-visible = false
 position = Vector2( 149.08, 225.762 )
 input_pickable = false
 collision_layer = 1
@@ -115,7 +113,6 @@ shape = SubResource( 1 )
 [node name="StaticBody2D6" type="StaticBody2D" parent="Floor" index="3"]
 
 editor/display_folded = true
-visible = false
 position = Vector2( -157.972, 225.762 )
 input_pickable = false
 collision_layer = 1
@@ -135,8 +132,7 @@ shape = SubResource( 1 )
 [node name="StaticBody2D2" type="StaticBody2D" parent="Floor" index="4"]
 
 editor/display_folded = true
-visible = false
-position = Vector2( 226.017, -150.149 )
+position = Vector2( 226.017, -91.149 )
 rotation = 1.5708
 input_pickable = false
 collision_layer = 1
@@ -152,12 +148,11 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D2" index="0"]
 
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Floor" index="5"]
 
 editor/display_folded = true
-visible = false
 position = Vector2( 225.808, 156.596 )
 rotation = 1.5708
 input_pickable = false
@@ -179,8 +174,7 @@ shape = SubResource( 1 )
 [node name="StaticBody2D5" type="StaticBody2D" parent="Floor" index="6"]
 
 editor/display_folded = true
-visible = false
-position = Vector2( -226.077, 159.763 )
+position = Vector2( -226.077, 97.763 )
 rotation = 1.5708
 input_pickable = false
 collision_layer = 1
@@ -196,12 +190,11 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D5" index="0"]
 
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="Floor" index="7"]
 
 editor/display_folded = true
-visible = false
 position = Vector2( -226.077, -146.521 )
 rotation = 1.5708
 input_pickable = false
@@ -222,37 +215,42 @@ shape = SubResource( 1 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Floor" index="8"]
 
+light_mask = 3
 position = Vector2( -215, -76.3648 )
-occluder = SubResource( 2 )
-light_mask = 1
-
-[node name="LightOccluder2D3" type="LightOccluder2D" parent="Floor" index="9"]
-
-position = Vector2( 214.754, 85.9224 )
-rotation = 3.14159
-occluder = SubResource( 3 )
-light_mask = 1
-_sections_unfolded = [ "Transform" ]
-
-[node name="LightOccluder2D4" type="LightOccluder2D" parent="Floor" index="10"]
-
-position = Vector2( -87.4318, 214.774 )
-rotation = 4.71239
 occluder = SubResource( 4 )
-light_mask = 1
-_sections_unfolded = [ "Transform" ]
+light_mask = 3
+_sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="LightOccluder2D2" type="LightOccluder2D" parent="Floor" index="11"]
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Floor" index="9"]
 
-position = Vector2( 78.7305, -215.27 )
+light_mask = 3
+position = Vector2( 76.4067, -212.752 )
 rotation = 1.5708
+occluder = SubResource( 4 )
+light_mask = 3
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="Floor" index="10"]
+
+light_mask = 3
+position = Vector2( 212.611, 81.5637 )
+rotation = 3.14159
 occluder = SubResource( 5 )
-light_mask = 1
-_sections_unfolded = [ "Transform" ]
+light_mask = 3
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="Floor" index="11"]
+
+light_mask = 3
+position = Vector2( -80.4178, 213.093 )
+rotation = 4.71239
+occluder = SubResource( 5 )
+light_mask = 3
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Roof" type="Sprite" parent="." index="1"]
 
-z_index = 1
+z_index = 2
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
