@@ -60,6 +60,7 @@ func get_facing_doors(tile):
 	for my_door in self.doors:
 		for other_door in tile.doors:
 			if my_door.facing(other_door):
-				facing_doors.append(my_door, other_door)
+				facing_doors.append(my_door)
+				facing_doors.append(other_door)
 	return facing_doors
 		

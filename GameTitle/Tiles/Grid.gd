@@ -25,14 +25,15 @@ func _on_door_opened(door):
 	self.add_tile(new_tile)
 	
 func _on_tile_constructed(tile):
+	pass
 	# If a tile is constructed then find all adjacent Tiles and open doors if they are connected
-	var adjacent_tiles = []
-	for other_tile in self.tiles:
-		if tile != other_tile && tile.adjacent_to(other_tile):
-			adjacent_tiles.append(other_tile)
-	
-	for adjacent_tile in adjacent_tiles:
-		var facing_doors = tile.get_facing_doors(adjacent_tile)
-		if facing_doors:
-			for door in facing_doors:
-				door.open()
+#	var adjacent_tiles = []
+#	for other_tile in self.tiles:
+#		if tile != other_tile && tile.adjacent_to(other_tile):
+#			adjacent_tiles.append(other_tile)
+#
+#	for adjacent_tile in adjacent_tiles:
+#		var facing_doors = tile.get_facing_doors(adjacent_tile)
+#		if facing_doors:
+#			for door in facing_doors:
+#				door.open()
