@@ -11,10 +11,17 @@ func _ready():
 	OS.center_window()
 	OS.set_window_title("Ekin's and Alexander's tilehouse")
 	$AnimationPlayer.play("fadeInSplash1", -1)
+	
+	$Control/VolumeSlider.value = GameDirector.volume
+	$Control/AudioStreamPlayer2D.volume_db = GameDirector.volume-25
+	playing = GameDirector.playing
+	if playing:
+		$Control/music_sprite.set_texture(mute2)
+	else:
+		$Control/music_sprite.set_texture(mute1)
+		$Control/AudioStreamPlayer2D.stop()
 
-	"""$Control/VolumeSlider.value = 25
-	$Control/AudioStreamPlayer2D.volume_db = 0
-	If we want to save variables in the future"""
+
 	set_process(true)
 	
 func _process(delta):
@@ -59,6 +66,7 @@ func _on_music_btn_pressed():
 		$Control/music_sprite.set_texture(mute2)
 		$Control/AudioStreamPlayer2D.volume_db = $Control/VolumeSlider.value-25
 		$Control/AudioStreamPlayer2D.play(0)
+	GameDirector.playing = playing
 
 func _on_VolumeSlider_value_changed(value):
 	if playing:
@@ -71,6 +79,7 @@ func _on_VolumeSlider_value_changed(value):
 				muted = !muted
 				$Control/AudioStreamPlayer2D.play(position)
 			$Control/AudioStreamPlayer2D.volume_db = $Control/VolumeSlider.value-25
+	GameDirector.volume = $Control/VolumeSlider.value
 
 func _on_AudioStreamPlayer2D_finished():
 	$Control/AudioStreamPlayer2D.play(0)
