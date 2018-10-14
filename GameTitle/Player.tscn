@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Asset Lib/Art/player/player1.png" type="Texture" id=2]
@@ -9,8 +9,7 @@
 [ext_resource path="res://Asset Lib/Art/player/player6.png" type="Texture" id=7]
 [ext_resource path="res://Asset Lib/Art/player/player7.png" type="Texture" id=8]
 [ext_resource path="res://Asset Lib/Art/player/player8.png" type="Texture" id=9]
-[ext_resource path="res://Asset Lib/Art/light1.png" type="Texture" id=10]
-[ext_resource path="res://Asset Lib/Art/light2.png" type="Texture" id=11]
+[ext_resource path="res://light3.png" type="Texture" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -25,7 +24,7 @@ _sections_unfolded = [ "Resource" ]
 [sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 30.0
+radius = 33.0
 
 [node name="Player" type="KinematicBody2D"]
 
@@ -44,7 +43,7 @@ __meta__ = {
 light_mask = 3
 frames = SubResource( 1 )
 animation = "default"
-frame = 7
+frame = 4
 playing = true
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility" ]
 
@@ -59,7 +58,7 @@ _sections_unfolded = [ "Transform" ]
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 1, 1 )
+zoom = Vector2( 0.8, 0.8 )
 limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000
@@ -82,11 +81,12 @@ _sections_unfolded = [ "Drag Margin", "Limit", "Offset", "Smoothing" ]
 
 [node name="Light2D" type="Light2D" parent="." index="3"]
 
+light_mask = 2
 enabled = true
 editor_only = false
 texture = ExtResource( 10 )
-offset = Vector2( 25, -160 )
-texture_scale = 1.4
+offset = Vector2( -10, -120 )
+texture_scale = 1.0
 color = Color( 1, 1, 1, 1 )
 energy = 1.0
 mode = 3
@@ -95,39 +95,14 @@ range_z_min = -1024
 range_z_max = 1024
 range_layer_min = 0
 range_layer_max = 0
-range_item_cull_mask = 1
+range_item_cull_mask = 2
 shadow_enabled = true
 shadow_color = Color( 0, 0, 0, 1 )
 shadow_buffer_size = 2048
 shadow_gradient_length = 0.0
 shadow_filter = 0
 shadow_filter_smooth = 0.0
-shadow_item_cull_mask = 1
-_sections_unfolded = [ "Range", "Shadow", "Transform", "Visibility" ]
-
-[node name="Light2D2" type="Light2D" parent="." index="4"]
-
-enabled = true
-editor_only = false
-texture = ExtResource( 11 )
-offset = Vector2( -7, -17 )
-texture_scale = 0.7
-color = Color( 1, 1, 1, 1 )
-energy = 1.0
-mode = 0
-range_height = 0.0
-range_z_min = -1024
-range_z_max = 1024
-range_layer_min = 0
-range_layer_max = 0
-range_item_cull_mask = 1
-shadow_enabled = true
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_buffer_size = 2048
-shadow_gradient_length = 0.0
-shadow_filter = 0
-shadow_filter_smooth = 0.0
-shadow_item_cull_mask = 1
+shadow_item_cull_mask = 2
 _sections_unfolded = [ "Range", "Shadow", "Transform", "Visibility" ]
 
 

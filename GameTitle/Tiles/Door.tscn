@@ -8,15 +8,14 @@
 custom_solver_bias = 0.0
 extents = Vector2( 53.9332, 12.472 )
 
-
 [sub_resource type="OccluderPolygon2D" id=2]
 
 closed = false
 cull_mode = 0
-polygon = PoolVector2Array( -54.2781, -0.420494, 53.6577, -0.278099 )
 
-[node name="Door" type="StaticBody2D" index="0"]
+polygon = PoolVector2Array( -56.2335, -1.77563, 56.4719, -1.90414 )
 
+[node name="Door" type="StaticBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -30,7 +29,9 @@ _sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform"
 
 [node name="DoorSprite" type="Sprite" parent="." index="0"]
 
+light_mask = 3
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Animation", "Visibility" ]
 
 [node name="DoorCollisionShape" type="CollisionShape2D" parent="." index="1"]
 
@@ -39,7 +40,9 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." index="2"]
 
+light_mask = 3
+position = Vector2( 0, 2 )
 occluder = SubResource( 2 )
-light_mask = 1
+light_mask = 3
 
 

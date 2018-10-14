@@ -19,7 +19,8 @@ func close():
 	self.show()
 	self.get_node('DoorCollisionShape').disabled = false
 
-func door_pos_set(new_door_pos):	
+func door_pos_set(new_door_pos):
+	self.rotation = new_door_pos.angle_to(Vector2(0, 1))
 	self.position = new_door_pos*radius
 	
 func door_pos_get():
@@ -33,3 +34,4 @@ func is_connected(other_door):
 		pass
 	else:
 		return false
+	
