@@ -1,0 +1,128 @@
+[
+    {
+        "name": "kitchen",
+        "sprite": "kitchen.png",
+        "door": ["down","left"],
+        "floor": ["ground"]
+    },
+    {
+        "name": "ballroom",
+        "sprite": "ballroom.png",
+        "door": ["down","up","right"],
+        "floor": ["ground"]
+    },
+    {
+        "name": "dining hall",
+        "sprite": "dining_hall.png",
+        "door": ["down","up","right","left"],
+        "floor": ["ground"]
+    },
+    {
+        "name": "stairway",
+        "sprite": "basement_stairs.png",
+        "door": ["down"],
+        "floor": ["basement"]
+    },
+    {
+        "name": "laundromat",
+        "sprite": "laundromat.png",
+        "door": ["down","up","left"],
+        "floor": ["basement"]
+    },
+    {
+        "name": "old passage",
+        "sprite": "old_passage.png",
+        "door": ["down","up"],
+        "floor": ["basement"]
+    },
+    {
+        "name": "wine cellar",
+        "sprite": "wine_cellar.png",
+        "door": ["down","up","right","left"],
+        "floor": ["basement"]
+    },
+    {
+        "name": "bedroom",
+        "sprite": "bedroom.png",
+        "door": ["left","up"],
+        "floor": ["upper"]
+    },
+    {
+        "name": "chapel",
+        "sprite": "chapel.png",
+        "door": ["down","up","right"],
+        "floor": ["upper"]
+    },
+    {
+        "name": "storage",
+        "sprite": "storage.png",
+        "door": ["down","up","right","left"],
+        "floor": ["upper"]
+    },
+    {
+        "name": "art gallery",
+        "sprite": "art_gallery.png",
+        "door": ["down","up","right","left"],
+        "floor": ["upper","ground"]
+    },
+    {
+        "name": "guest bedroom",
+        "sprite": "guest_bedroom.png",
+        "door": ["down","up","left"],
+        "floor": ["upper","ground"]
+    },
+    {
+        "name": "treasury",
+        "sprite": "treasury.png",
+        "door": ["down"],
+        "floor": ["upper","ground"]
+    },
+    {
+        "name": "closet",
+        "sprite": "closet.png",
+        "door": ["left","right"],
+        "floor": ["upper","basement"]
+    },
+    {
+        "name": "washroom",
+        "sprite": "washroom.png",
+        "door": ["down"],
+        "floor": ["upper","basement"]
+    },
+    {
+        "name": "old room",
+        "sprite": "old_room.png",
+        "door": ["left","up","right","down"],
+        "floor": ["upper","basement"]
+    },
+    {
+        "name": "main hall",
+        "sprite": "main_hall",
+        "door": ["left","up","right"],
+        "floor": ["ground","basement"]
+    },
+    {
+        "name": "round hall",
+        "sprite": "round_hall.png",
+        "door": ["left","up"],
+        "floor": ["ground","basement"]
+    },
+    {
+        "name": "crossing",
+        "sprite": "crossing.png",
+        "door": ["down","up","right","left"],
+        "floor": ["ground","basement","upper"]
+    },
+    {
+        "name": "hallway",
+        "sprite": "hall.png",
+        "door": ["down","up"],
+        "floor": ["ground","basement","upper"]
+    },
+    {
+        "name": "threewaycross",
+        "sprite": "threeway.png",
+        "door": ["down","up","right"],
+        "floor": ["ground","basement","upper"]
+    }
+]
