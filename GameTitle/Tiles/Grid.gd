@@ -2,7 +2,9 @@ extends Node2D
 
 
 var upper_landing
-var BaseTile = preload("res://Tiles/Tile.tscn")
+var BasicTile = preload("res://Tiles/BasicTile.tscn")
+var HallwayTile = preload("res://Tiles/HallwayTile.tscn")
+var tile_list = [HallwayTile, BasicTile]
 var tiles = []
 
 func add_tile(tile):
@@ -15,7 +17,7 @@ func remove_tile(tile):
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
-	upper_landing = BaseTile.instance()
+	upper_landing = BasicTile.instance()
 	# Initialization here, unfortunately
 	upper_landing.tile_pos = Vector2(0, 0)
 	self.add_tile(upper_landing)
@@ -33,8 +35,16 @@ func _on_tile_constructed(tile):
 			for door in facing_doors:
 				door.open()
 
+func find_tile_from_pos(position):
+	for tile in self.tiles:
+		if tile.tile_pos == position:
+			return tile
+	return null
 
 func _on_player_requesting_door_to_open(door):
-	var new_tile = BaseTile.instance()
+	if self.find_tile_from_pos(door.next_tile_pos):
+		print("Can't add a door here - already a room next door!")
+		return
+	var new_tile = self.tile_list[randi() %  self.tile_list.size()].instance()
 	new_tile.tile_pos = door.next_tile_pos
 	self.add_tile(new_tile)

@@ -16,20 +16,24 @@ func _ready():
 	self.Grid = self.Tile.get_parent()
 
 func open():
-#	self.hide()
-#	self.get_node('DoorCollisionShape').disabled = true
-#	# Notify door opened
 	if !self.is_open:
+		self.disable()
 		self.is_open = true
-		self.hide()
-		$DoorCollisionShape.disabled = true
-		$hitbox.queue_free()
+		$hitbox.queue_free() # This deletes the hitbox so beware future self
 
 func close():
 	if self.is_open:
 		self.show()
-		self.get_node('DoorCollisionShape').disabled = false
 		self.is_open = false
+		self.enable()
+		
+func enable():
+	self.show()
+	$DoorCollisionShape.disabled = false
+
+func disable():
+	self.hide()
+	$DoorCollisionShape.disabled = true
 
 func door_pos_set(new_door_pos):
 	self.rotation = new_door_pos.angle_to(Vector2(0, 1))
