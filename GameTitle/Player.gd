@@ -23,12 +23,21 @@ func _process(delta):
 		$AnimatedSprite.playing = false
 		$AnimatedSprite.frame = 0
 	
-	# Check for collisions
-	if body:
-		var cs = body.collider_shape
-		# If collision is with a door
-		if cs.name == "DoorCollisionShape":
-			var door = cs.owner
-			door.open()
-	else:
-		pass
+	for area in $hitbox.get_overlapping_areas():
+		var overlap = area.get_parent()
+	
+		if overlap.get("TYPE") == "DOOR":
+			if Input.is_action_just_released("ui_accept"):
+				overlap.open()
+
+
+
+#	# Check for collisions
+#	if body:
+#		var cs = body.collider_shape
+#		# If collision is with a door
+#		if cs.name == "DoorCollisionShape":
+#			var door = cs.owner
+#			door.open()
+#	else:
+#		pass

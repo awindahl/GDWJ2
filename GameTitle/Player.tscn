@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Asset Lib/Art/player/player1.png" type="Texture" id=2]
@@ -9,7 +9,8 @@
 [ext_resource path="res://Asset Lib/Art/player/player6.png" type="Texture" id=7]
 [ext_resource path="res://Asset Lib/Art/player/player7.png" type="Texture" id=8]
 [ext_resource path="res://Asset Lib/Art/player/player8.png" type="Texture" id=9]
-[ext_resource path="res://light3.png" type="Texture" id=10]
+[ext_resource path="res://Asset Lib/Art/light3.png" type="Texture" id=10]
+
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -26,7 +27,12 @@ _sections_unfolded = [ "Resource" ]
 custom_solver_bias = 0.0
 radius = 33.0
 
-[node name="Player" type="KinematicBody2D"]
+[sub_resource type="CircleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 40.0
+
+[node name="Player" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -43,7 +49,7 @@ __meta__ = {
 light_mask = 3
 frames = SubResource( 1 )
 animation = "default"
-frame = 2
+frame = 5
 playing = true
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility" ]
 
@@ -104,5 +110,20 @@ shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 2
 _sections_unfolded = [ "Range", "Shadow", "Transform", "Visibility" ]
+
+[node name="hitbox" type="Area2D" parent="." index="4"]
+
+position = Vector2( 0, -8 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" index="0"]
+
+shape = SubResource( 3 )
 
 
