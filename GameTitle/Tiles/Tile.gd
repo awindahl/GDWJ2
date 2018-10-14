@@ -28,8 +28,8 @@ func _ready():
 	self.add_door(lower_door)
 	
 	self.Grid = self.get_parent()
-	# self.connect("tile_constructed", Grid, "_on_tile_constructed", [self])
-	# emit_signal("tile_constructed")
+	self.connect("tile_constructed", Grid, "_on_tile_constructed", [self])
+	emit_signal("tile_constructed")
 
 func add_door(door):
 	self.add_child(door)
