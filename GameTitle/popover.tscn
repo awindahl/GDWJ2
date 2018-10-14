@@ -4,7 +4,7 @@
 [ext_resource path="res://Asset Lib/Animations/slideIn.tres" type="Animation" id=2]
 [ext_resource path="res://Asset Lib/Animations/slideOut.tres" type="Animation" id=3]
 
-[node name="Node" type="Node"]
+[node name="Node" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -101,13 +101,12 @@ margin_right = 293.0
 margin_bottom = 490.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 toggle_mode = false
-enabled_focus_mode = 2
+enabled_focus_mode = 0
 shortcut = null
 group = null
 text = "Close"

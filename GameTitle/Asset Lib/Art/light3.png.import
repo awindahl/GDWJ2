@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/light3.png-54fe73742599af7374a2f6000b01323c.stex"
+path="res://.import/light3.png-4d46f7e400bd313e6bfa0a69c15f1cbb.stex"
 
 [deps]
 
-source_file="res://light3.png"
-dest_files=[ "res://.import/light3.png-54fe73742599af7374a2f6000b01323c.stex" ]
+source_file="res://Asset Lib/Art/light3.png"
+dest_files=[ "res://.import/light3.png-4d46f7e400bd313e6bfa0a69c15f1cbb.stex" ]
 
 [params]
 
