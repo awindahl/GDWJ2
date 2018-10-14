@@ -1,3 +1,4 @@
+
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Tiles/Tile.gd" type="Script" id=1]
@@ -11,36 +12,24 @@ extents = Vector2( 100, 30 )
 
 [sub_resource type="OccluderPolygon2D" id=2]
 
-closed = true
+closed = false
 cull_mode = 0
-polygon = PoolVector2Array( -39.2886, 23.4808, -40.6796, 23.7108, -40.8961, -179.753, 160.663, -179.087, 160.581, -176.817, -39.0328, -178.534 )
-_sections_unfolded = [ "Resource" ]
+polygon = PoolVector2Array( 157.244, -132.094, 157.328, -179.761, -41.0782, -179.639, -41.2036, 23.2194, 6.02663, 22.8959 )
 
 [sub_resource type="OccluderPolygon2D" id=3]
 
-closed = true
+closed = false
 cull_mode = 0
-polygon = PoolVector2Array( -40.5011, 31.7405, -41.1137, 31.7405, -41.138, -170.031, 160.821, -169.936, 160.821, -168.32, -40.4312, -169.407 )
+polygon = PoolVector2Array( 157.365, -127.984, 157.151, -173.917, -41.3599, -174.22, -41.2036, 23.2194, 5.43958, 24.6693 )
 
-[sub_resource type="OccluderPolygon2D" id=4]
-
-closed = true
-cull_mode = 0
-polygon = PoolVector2Array( -39.4178, 33.7348, -40.5699, 33.7232, -41.3644, -168.833, 160.137, -168.597, 160.25, -168.185, -40.4214, -167.602 )
-
-[sub_resource type="OccluderPolygon2D" id=5]
-
-closed = true
-cull_mode = 0
-polygon = PoolVector2Array( -39.9928, 23.8557, -40.7249, 23.996, -40.7391, -177.64, 160.725, -177.371, 160.814, -176.904, -40.1792, -177.125 )
-
-[node name="Tile" type="Node2D" index="0"]
+[node name="Tile" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Floor" type="Sprite" parent="." index="0"]
 
+light_mask = 3
 z_index = -1
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
@@ -215,32 +204,32 @@ occluder = SubResource( 2 )
 light_mask = 3
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="LightOccluder2D3" type="LightOccluder2D" parent="Floor" index="9"]
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Floor" index="9"]
 
 light_mask = 3
-position = Vector2( 214.754, 85.9224 )
+position = Vector2( 76.4067, -212.752 )
+rotation = 1.5708
+occluder = SubResource( 2 )
+light_mask = 3
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="Floor" index="10"]
+
+light_mask = 3
+position = Vector2( 212.611, 81.5637 )
 rotation = 3.14159
 occluder = SubResource( 3 )
 light_mask = 3
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="LightOccluder2D4" type="LightOccluder2D" parent="Floor" index="10"]
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="Floor" index="11"]
 
 light_mask = 3
-position = Vector2( -87.4318, 214.774 )
+position = Vector2( -80.4178, 213.093 )
 rotation = 4.71239
-occluder = SubResource( 4 )
+occluder = SubResource( 3 )
 light_mask = 3
-_sections_unfolded = [ "Transform" ]
-
-[node name="LightOccluder2D2" type="LightOccluder2D" parent="Floor" index="11"]
-
-light_mask = 3
-position = Vector2( 78.7305, -215.27 )
-rotation = 1.5708
-occluder = SubResource( 5 )
-light_mask = 3
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Roof" type="Sprite" parent="." index="1"]
 
