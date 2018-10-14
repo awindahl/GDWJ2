@@ -9,10 +9,15 @@ var Door = preload("res://Tiles/Door.tscn")
 var doors = []
 var TILE_WIDTH = 512
 
+export(bool) var UpperDoor = false
+export(bool) var RightDoor = false
+export(bool) var LeftDoor = false
+export(bool) var LowerDoor = false
 
 var Grid	# Again we should avoid using parent objects like this in the future - have the grid object do things itself
 
-func _init():
+func _process(delta):
+	
 	var upper_door = Door.instance()
 	var right_hand_door = Door.instance()
 	var left_hand_door = Door.instance()
@@ -21,10 +26,19 @@ func _init():
 	right_hand_door.door_pos = Vector2(1, 0)
 	left_hand_door.door_pos = Vector2(-1, 0)
 	lower_door.door_pos = Vector2(0, 1)
-	self.add_door(upper_door)
-	self.add_door(right_hand_door)
-	self.add_door(left_hand_door)
-	self.add_door(lower_door)
+	
+	if UpperDoor:
+		self.add_door(upper_door)
+		UpperDoor = int(UpperDoor) - 1
+	if RightDoor:
+		self.add_door(right_hand_door)
+		RightDoor = int(RightDoor) - 1
+	if LeftDoor:
+		self.add_door(left_hand_door)
+		LeftDoor = int(LeftDoor) - 1
+	if LowerDoor:
+		self.add_door(lower_door)
+		LowerDoor = int(LowerDoor) - 1
 
 func add_door(door):
 	doors.append(door)

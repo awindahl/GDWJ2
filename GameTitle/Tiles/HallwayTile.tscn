@@ -33,10 +33,18 @@ closed = true
 cull_mode = 0
 polygon = PoolVector2Array( 18.8512, 29.3465, -41.1065, 29.3345, -40.7391, -177.64, 165.008, -177.286, 165.019, -116.875, 19.2681, -117.376 )
 
-[node name="FloorTile" type="Node2D"]
+[node name="FloorTile" type="Node2D" index="0"]
 
+position = Vector2( 498.459, 282.378 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+UpperDoor = true
+RightDoor = false
+LeftDoor = false
+LowerDoor = true
 
 [node name="Floor" type="Sprite" parent="." index="0"]
 
