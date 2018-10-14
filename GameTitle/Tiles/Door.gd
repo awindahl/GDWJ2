@@ -6,6 +6,7 @@ signal door_opened(door)
 var door_pos setget door_pos_set, door_pos_get
 var door_pos_rel setget , door_pos_rel_get
 var radius = 208
+var is_open = false
 
 var Tile	# Shouldn't rely on having Tile and Grid too much otherwise could be problems in the future (2-way comms)
 var Grid
@@ -19,12 +20,16 @@ func open():
 #	self.hide()
 #	self.get_node('DoorCollisionShape').disabled = true
 #	# Notify door opened
-	self.emit_signal("door_opened")
-	self.queue_free()
+	if !self.is_open:
+		self.emit_signal("door_opened")
+		self.queue_free()
+		self.is_open = true
 
 func close():
-	self.show()
-	self.get_node('DoorCollisionShape').disabled = false
+	if self.is_open:
+		self.show()
+		self.get_node('DoorCollisionShape').disabled = false
+		self.is_open = false
 
 func door_pos_set(new_door_pos):
 	self.rotation = new_door_pos.angle_to(Vector2(0, 1))
