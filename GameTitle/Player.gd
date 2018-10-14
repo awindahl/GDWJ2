@@ -1,5 +1,5 @@
 extends KinematicBody2D
-
+signal player_requesting_door_to_open
 var SPEED = 2
 
 func _process(delta):
@@ -28,7 +28,7 @@ func _process(delta):
 	
 		if overlap.get("TYPE") == "DOOR":
 			if Input.is_action_just_released("ui_accept"):
-				overlap.open()
+				emit_signal("player_requesting_door_to_open", overlap)
 
 
 
