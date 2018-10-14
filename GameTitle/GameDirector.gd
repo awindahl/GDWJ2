@@ -1,7 +1,7 @@
 extends Node
 
 var volume = 25
-var playing = true
+var playing = false
 var currentObjective = "Survive. Also press 'Z' to fire off a test popout."
 
 func _ready():
