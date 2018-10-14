@@ -11,9 +11,6 @@ var is_open = false
 var Tile	# Shouldn't rely on having Tile and Grid too much otherwise could be problems in the future (2-way comms)
 var Grid
 
-var Tile	# Shouldn't rely on having Tile and Grid too much otherwise could be problems in the future (2-way comms)
-var Grid
-
 func _ready():
 	self.Tile = self.get_parent()
 	self.Grid = self.Tile.get_parent()
