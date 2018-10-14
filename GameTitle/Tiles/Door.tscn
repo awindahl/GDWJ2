@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Tiles/Door.gd" type="Script" id=1]
 [ext_resource path="res://Asset Lib/Art/door.png" type="Texture" id=2]
@@ -13,6 +13,11 @@ extents = Vector2( 53.9332, 12.472 )
 closed = false
 cull_mode = 0
 polygon = PoolVector2Array( -54.2781, -0.420494, 53.6577, -0.278099 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 64, 32 )
 
 [node name="Door" type="StaticBody2D" index="0"]
 
@@ -39,5 +44,19 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 occluder = SubResource( 2 )
 light_mask = 1
+
+[node name="hitbox" type="Area2D" parent="." index="3"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" index="0"]
+
+shape = SubResource( 3 )
 
 
