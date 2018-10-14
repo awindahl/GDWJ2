@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=2]
+
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Tiles/Tile.gd" type="Script" id=1]
 [ext_resource path="res://Asset Lib/Art/basetile.png" type="Texture" id=2]
-[ext_resource path="res://Tiles/Door.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Asset Lib/Art/walls.png" type="Texture" id=4]
+[ext_resource path="res://Asset Lib/Art/walls.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -36,6 +36,7 @@ _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Floor" index="0"]
 
+editor/display_folded = true
 position = Vector2( 155, -225 )
 input_pickable = false
 collision_layer = 1
@@ -230,28 +231,10 @@ occluder = SubResource( 3 )
 light_mask = 3
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="DoorLeft" parent="." index="1" instance=ExtResource( 3 )]
-
-position = Vector2( -208, 0 )
-rotation = 1.5708
-
-[node name="DoorUp" parent="." index="2" instance=ExtResource( 3 )]
-
-position = Vector2( 0, -208 )
-
-[node name="DoorRight" parent="." index="3" instance=ExtResource( 3 )]
-
-position = Vector2( 208, 8.74228e-008 )
-rotation = 1.5708
-
-[node name="DoorDown" parent="." index="4" instance=ExtResource( 3 )]
-
-position = Vector2( 0, 208 )
-
-[node name="Roof" type="Sprite" parent="." index="5"]
+[node name="Roof" type="Sprite" parent="." index="1"]
 
 z_index = 2
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 
