@@ -1,5 +1,7 @@
 extends Node2D
 
+const TYPE = "DOOR"
+
 signal door_opened(door)
 var door_pos setget door_pos_set, door_pos_get
 
@@ -10,10 +12,11 @@ func _ready():
 	self.connect("door_opened", Grid, "_on_door_opened", [self])
 
 func open():
-	self.hide()
-	self.get_node('DoorCollisionShape').disabled = true
-	# Notify door opened
+#	self.hide()
+#	self.get_node('DoorCollisionShape').disabled = true
+#	# Notify door opened
 	self.emit_signal("door_opened")
+	self.queue_free()
 
 func close():
 	self.show()

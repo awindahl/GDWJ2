@@ -17,7 +17,6 @@ func _ready():
 	# Initialization here, unfortunately
 	upper_landing.tile_pos = Vector2(0, 0)
 	self.add_tile(upper_landing)
-	
 
 func _on_door_opened(door):
 	print("A door has been opened! Let's make instantiate a new Tile object")
