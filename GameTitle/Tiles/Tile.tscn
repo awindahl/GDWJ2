@@ -1,5 +1,4 @@
-
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Tiles/Tile.gd" type="Script" id=1]
 [ext_resource path="res://Asset Lib/Art/basetile.png" type="Texture" id=2]

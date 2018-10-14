@@ -6,11 +6,11 @@ var BaseTile = preload("res://Tiles/Tile.tscn")
 var tiles = []
 
 func add_tile(tile):
-	tiles.append(tile)
+	self.tiles.append(tile)
 	self.add_child(tile)
 
 func remove_tile(tile):
-	tiles.remove(tiles.find(tile))
+	self.tiles.remove(tiles.find(tile))
 	self.remove_child(tile)
 
 func _ready():
