@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Tiles/Grid.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://pause.tscn" type="PackedScene" id=4]
 
 [node name="Main" type="Node2D" index="0"]
 
@@ -12,5 +13,14 @@ _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 [node name="Grid" parent="." index="0" instance=ExtResource( 2 )]
 
 [node name="Player" parent="." index="1" instance=ExtResource( 3 )]
+
+[node name="pause" parent="." index="2" instance=ExtResource( 4 )]
+
+visible = false
+margin_left = -646.0
+margin_top = -361.0
+margin_right = 648.0
+margin_bottom = 368.0
+_sections_unfolded = [ "Visibility" ]
 
 
