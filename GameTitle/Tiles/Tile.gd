@@ -62,8 +62,9 @@ func get_facing_doors(tile):
 	print(tile.doors)
 	for my_door in self.doors:
 		for other_door in tile.doors:
-			if my_door.points_to(tile) && other_door.points_to(self):
-				facing_doors.append(my_door)
-				facing_doors.append(other_door)
-				break
+			if other_door.get("TYPE") == "DOOR" and my_door.get("TYPE") == "DOOR":
+				if my_door.points_to(tile) && other_door.points_to(self):
+					facing_doors.append(my_door)
+					facing_doors.append(other_door)
+					break
 	return facing_doors

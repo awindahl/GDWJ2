@@ -20,8 +20,10 @@ func open():
 #	self.get_node('DoorCollisionShape').disabled = true
 #	# Notify door opened
 	if !self.is_open:
-		self.queue_free()
 		self.is_open = true
+		self.hide()
+		$DoorCollisionShape.disabled = true
+		$hitbox.queue_free()
 
 func close():
 	if self.is_open:
