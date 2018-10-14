@@ -47,4 +47,5 @@ func _on_player_requesting_door_to_open(door):
 		return
 	var new_tile = self.tile_list[randi() %  self.tile_list.size()].instance()
 	new_tile.tile_pos = door.next_tile_pos
+	new_tile.global_rotation = door.door_pos_rel.angle() + Vector2(0, 1).angle()	# Not certain about this but hey-ho
 	self.add_tile(new_tile)
