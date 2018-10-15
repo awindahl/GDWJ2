@@ -22,7 +22,7 @@ closed = false
 cull_mode = 0
 polygon = PoolVector2Array( 157.365, -127.984, 157.151, -173.917, -41.3599, -174.22, -41.2036, 23.2194, 5.43958, 24.6693 )
 
-[node name="Tile" type="Node2D" index="0"]
+[node name="Tile" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Visibility" ]

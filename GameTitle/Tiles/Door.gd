@@ -25,7 +25,6 @@ func close():
 	if self.is_open:
 		self.show()
 		self.is_open = false
-		self.enable()
 		
 func enable():
 	self.show()
