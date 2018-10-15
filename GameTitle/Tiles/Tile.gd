@@ -9,10 +9,7 @@ var Door = preload("res://Tiles/Door.tscn")
 var doors
 var TILE_WIDTH = 512
 
-var upper_door_instance
-var right_hand_door_instance
-var lower_door_instance
-var left_hand_door_instance
+var tile_name
 
 var Grid	# Again we should avoid using parent objects like this in the future - have the grid object do things itself
 
@@ -26,6 +23,18 @@ func _ready():
 	self.Grid = self.get_parent()
 	self.connect("tile_constructed", Grid, "_on_tile_constructed", [self])
 	emit_signal("tile_constructed")
+
+func set_config(dict_config):
+	self.tile_name = dict_config['name']
+	$Floor.texture = dict_config['image']
+	if "upper" in dict_config['door']:
+		pass
+	if "right_hand" in dict_config['door']:
+		pass
+	if "lower" in dict_config['door']:
+		pass
+	if "left_hand" in dict_config['door']:
+		pass
 
 func tile_pos_set(new_tile_pos):
 	self.position = (new_tile_pos*512).round()
