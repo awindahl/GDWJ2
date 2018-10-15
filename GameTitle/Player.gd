@@ -1,6 +1,6 @@
 extends KinematicBody2D
 signal player_requesting_door_to_open
-var SPEED = 2
+var SPEED = 100
 
 func _process(delta):
 	
@@ -12,10 +12,10 @@ func _process(delta):
 	
 	movedir.x = -int(LEFT) + int(RIGHT)
 	movedir.y = -int(UP) + int(DOWN)
-	var body = self.move_and_collide(movedir*SPEED)
+	var body = self.move_and_slide(movedir*SPEED)
 	
 	var mousePos = $Camera2D.get_global_mouse_position()
-	self.rotate(self.get_angle_to(mousePos)+deg2rad(90))
+	$AnimatedSprite.rotate($AnimatedSprite.get_angle_to(mousePos)+deg2rad(90))
 	
 	if movedir != Vector2(0,0):
 		$AnimatedSprite.playing = true
@@ -29,15 +29,3 @@ func _process(delta):
 		if overlap.get("TYPE") == "DOOR":
 			if Input.is_action_just_released("ui_accept"):
 				emit_signal("player_requesting_door_to_open", overlap)
-
-
-
-#	# Check for collisions
-#	if body:
-#		var cs = body.collider_shape
-#		# If collision is with a door
-#		if cs.name == "DoorCollisionShape":
-#			var door = cs.owner
-#			door.open()
-#	else:
-#		pass

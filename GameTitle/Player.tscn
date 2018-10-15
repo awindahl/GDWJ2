@@ -11,7 +11,6 @@
 [ext_resource path="res://Asset Lib/Art/player/player8.png" type="Texture" id=9]
 [ext_resource path="res://Asset Lib/Art/light3.png" type="Texture" id=10]
 
-
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
@@ -49,9 +48,35 @@ __meta__ = {
 light_mask = 3
 frames = SubResource( 1 )
 animation = "default"
-frame = 4
+frame = 3
 playing = true
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility" ]
+
+[node name="Light2D" type="Light2D" parent="AnimatedSprite" index="0"]
+
+light_mask = 2
+enabled = true
+editor_only = false
+texture = ExtResource( 10 )
+offset = Vector2( -10, -120 )
+texture_scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 3
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 2
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 2
+_sections_unfolded = [ "Range", "Shadow", "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
@@ -85,33 +110,7 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Drag Margin", "Limit", "Offset", "Smoothing" ]
 
-[node name="Light2D" type="Light2D" parent="." index="3"]
-
-light_mask = 2
-enabled = true
-editor_only = false
-texture = ExtResource( 10 )
-offset = Vector2( -10, -120 )
-texture_scale = 1.0
-color = Color( 1, 1, 1, 1 )
-energy = 1.0
-mode = 3
-range_height = 0.0
-range_z_min = -1024
-range_z_max = 1024
-range_layer_min = 0
-range_layer_max = 0
-range_item_cull_mask = 2
-shadow_enabled = true
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_buffer_size = 2048
-shadow_gradient_length = 0.0
-shadow_filter = 0
-shadow_filter_smooth = 0.0
-shadow_item_cull_mask = 2
-_sections_unfolded = [ "Range", "Shadow", "Transform", "Visibility" ]
-
-[node name="hitbox" type="Area2D" parent="." index="4"]
+[node name="hitbox" type="Area2D" parent="." index="3"]
 
 position = Vector2( 0, -8 )
 input_pickable = true
