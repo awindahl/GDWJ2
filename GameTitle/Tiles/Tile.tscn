@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Tiles/Tile.gd" type="Script" id=1]
 [ext_resource path="res://Asset Lib/Art/basetile.png" type="Texture" id=2]
 [ext_resource path="res://Asset Lib/Art/walls.png" type="Texture" id=3]
 [ext_resource path="res://Tiles/Door.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Tiles/Blocker.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -41,6 +42,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Floor" type="Sprite" parent="." index="0"]
 
+editor/display_folded = true
 light_mask = 3
 z_index = -1
 texture = ExtResource( 2 )
@@ -49,7 +51,6 @@ _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 [node name="StaticBody2D" type="StaticBody2D" parent="Floor" index="0"]
 
 editor/display_folded = true
-visible = false
 position = Vector2( 155, -225 )
 input_pickable = false
 collision_layer = 1
@@ -71,7 +72,6 @@ _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index"
 [node name="StaticBody2D8" type="StaticBody2D" parent="Floor" index="1"]
 
 editor/display_folded = true
-visible = false
 position = Vector2( -157.286, -225.942 )
 input_pickable = false
 collision_layer = 1
@@ -91,7 +91,6 @@ shape = SubResource( 1 )
 [node name="StaticBody2D3" type="StaticBody2D" parent="Floor" index="2"]
 
 editor/display_folded = true
-visible = false
 position = Vector2( 149.08, 225.762 )
 input_pickable = false
 collision_layer = 1
@@ -111,7 +110,6 @@ shape = SubResource( 1 )
 [node name="StaticBody2D6" type="StaticBody2D" parent="Floor" index="3"]
 
 editor/display_folded = true
-visible = false
 position = Vector2( -157.972, 225.762 )
 input_pickable = false
 collision_layer = 1
@@ -131,7 +129,6 @@ shape = SubResource( 1 )
 [node name="StaticBody2D2" type="StaticBody2D" parent="Floor" index="4"]
 
 editor/display_folded = true
-visible = false
 position = Vector2( 226.017, -150.149 )
 rotation = 1.5708
 input_pickable = false
@@ -153,7 +150,6 @@ shape = SubResource( 1 )
 [node name="StaticBody2D4" type="StaticBody2D" parent="Floor" index="5"]
 
 editor/display_folded = true
-visible = false
 position = Vector2( 225.808, 156.596 )
 rotation = 1.5708
 input_pickable = false
@@ -175,7 +171,6 @@ shape = SubResource( 1 )
 [node name="StaticBody2D5" type="StaticBody2D" parent="Floor" index="6"]
 
 editor/display_folded = true
-visible = false
 position = Vector2( -226.077, 159.763 )
 rotation = 1.5708
 input_pickable = false
@@ -197,7 +192,6 @@ shape = SubResource( 1 )
 [node name="StaticBody2D7" type="StaticBody2D" parent="Floor" index="7"]
 
 editor/display_folded = true
-visible = false
 position = Vector2( -226.077, -146.521 )
 rotation = 1.5708
 input_pickable = false
@@ -276,5 +270,36 @@ position = Vector2( 0, 208 )
 
 position = Vector2( -208, 0 )
 rotation = 1.5708
+
+[node name="Blocker" parent="." index="6" instance=ExtResource( 5 )]
+
+visible = false
+position = Vector2( 5.99996, -210 )
+collision_layer = 0
+collision_mask = 0
+
+[node name="Blocker2" parent="." index="7" instance=ExtResource( 5 )]
+
+visible = false
+position = Vector2( -210, -4 )
+rotation = 0.0
+collision_layer = 0
+collision_mask = 0
+
+[node name="Blocker3" parent="." index="8" instance=ExtResource( 5 )]
+
+visible = false
+position = Vector2( 210, 6 )
+rotation = 3.14159
+collision_layer = 0
+collision_mask = 0
+
+[node name="Blocker4" parent="." index="9" instance=ExtResource( 5 )]
+
+visible = false
+position = Vector2( -6.6481, 209.337 )
+rotation = 4.71239
+collision_layer = 0
+collision_mask = 0
 
 
