@@ -19,13 +19,13 @@ visible = false
 
 visible = false
 
-[node name="Blocker2" parent="." index="7"]
+[node name="BlockerLeft" parent="." index="7"]
 
 visible = true
 collision_layer = 1
 collision_mask = 1
 
-[node name="Blocker3" parent="." index="8"]
+[node name="BlockerRight" parent="." index="8"]
 
 visible = true
 collision_layer = 1

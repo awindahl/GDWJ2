@@ -1,14 +1,14 @@
 [gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
-[ext_resource path="res://Asset Lib/Art/player/player1.png" type="Texture" id=2]
-[ext_resource path="res://Asset Lib/Art/player/player2.png" type="Texture" id=3]
-[ext_resource path="res://Asset Lib/Art/player/player3.png" type="Texture" id=4]
-[ext_resource path="res://Asset Lib/Art/player/player4.png" type="Texture" id=5]
-[ext_resource path="res://Asset Lib/Art/player/player5.png" type="Texture" id=6]
-[ext_resource path="res://Asset Lib/Art/player/player6.png" type="Texture" id=7]
-[ext_resource path="res://Asset Lib/Art/player/player7.png" type="Texture" id=8]
-[ext_resource path="res://Asset Lib/Art/player/player8.png" type="Texture" id=9]
+[ext_resource path="res://Asset Lib/Art/player/player0001.png" type="Texture" id=2]
+[ext_resource path="res://Asset Lib/Art/player/player0002.png" type="Texture" id=3]
+[ext_resource path="res://Asset Lib/Art/player/player0003.png" type="Texture" id=4]
+[ext_resource path="res://Asset Lib/Art/player/player0004.png" type="Texture" id=5]
+[ext_resource path="res://Asset Lib/Art/player/player0005.png" type="Texture" id=6]
+[ext_resource path="res://Asset Lib/Art/player/player0006.png" type="Texture" id=7]
+[ext_resource path="res://Asset Lib/Art/player/player0007.png" type="Texture" id=8]
+[ext_resource path="res://Asset Lib/Art/player/player0008.png" type="Texture" id=9]
 [ext_resource path="res://Asset Lib/Art/light3.png" type="Texture" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -48,7 +48,7 @@ __meta__ = {
 light_mask = 3
 frames = SubResource( 1 )
 animation = "default"
-frame = 3
+frame = 4
 playing = true
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility" ]
 

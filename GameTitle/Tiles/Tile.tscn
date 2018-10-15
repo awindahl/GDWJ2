@@ -15,25 +15,25 @@ extents = Vector2( 100, 30 )
 
 closed = false
 cull_mode = 0
-polygon = PoolVector2Array( 162.206, -144.829, 162.252, -178.162, -39.6257, -178.108, -39.5153, 23.7672, -9.07719, 23.6907 )
+polygon = PoolVector2Array( 162.206, -144.829, 162.252, -178.162, -39.6257, -178.108, -39.5153, 23.7672, -6.24631, 23.7168 )
 
 [sub_resource type="OccluderPolygon2D" id=3]
 
 closed = false
 cull_mode = 0
-polygon = PoolVector2Array( 158.01, -143.579, 158.17, -176.939, -40.9515, -176.903, -41.2036, 23.2194, -7.68445, 23.2233 )
+polygon = PoolVector2Array( 160.675, -144.137, 160.606, -176.845, -40.9515, -176.903, -41.2036, 23.2194, -7.68445, 23.2233 )
 
 [sub_resource type="OccluderPolygon2D" id=4]
 
 closed = false
 cull_mode = 0
-polygon = PoolVector2Array( 158.417, -143.556, 158.482, -177.013, -41.2234, -176.971, -41.0864, 22.9975, -7.92009, 23.2022 )
+polygon = PoolVector2Array( 160.925, -143.727, 161.064, -176.573, -41.2234, -176.971, -40.9396, 24.7133, -7.72314, 24.7134 )
 
 [sub_resource type="OccluderPolygon2D" id=5]
 
 closed = false
 cull_mode = 0
-polygon = PoolVector2Array( 158.179, -144.186, 158.259, -177.48, -40.8334, -177.442, -40.7115, 22.0761, -7.33292, 22.1314 )
+polygon = PoolVector2Array( 161.214, -144.458, 161.384, -177.491, -40.8334, -177.442, -40.9439, 23.5776, -7.54173, 23.8553 )
 
 [node name="Tile" type="Node2D"]
 
@@ -42,7 +42,6 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Floor" type="Sprite" parent="." index="0"]
 
-editor/display_folded = true
 light_mask = 3
 z_index = -1
 texture = ExtResource( 2 )
@@ -271,14 +270,14 @@ position = Vector2( 0, 208 )
 position = Vector2( -208, 0 )
 rotation = 1.5708
 
-[node name="Blocker" parent="." index="6" instance=ExtResource( 5 )]
+[node name="BlockerUp" parent="." index="6" instance=ExtResource( 5 )]
 
 visible = false
 position = Vector2( 5.99996, -210 )
 collision_layer = 0
 collision_mask = 0
 
-[node name="Blocker2" parent="." index="7" instance=ExtResource( 5 )]
+[node name="BlockerLeft" parent="." index="7" instance=ExtResource( 5 )]
 
 visible = false
 position = Vector2( -210, -4 )
@@ -286,7 +285,7 @@ rotation = 0.0
 collision_layer = 0
 collision_mask = 0
 
-[node name="Blocker3" parent="." index="8" instance=ExtResource( 5 )]
+[node name="BlockerRight" parent="." index="8" instance=ExtResource( 5 )]
 
 visible = false
 position = Vector2( 210, 6 )
@@ -294,7 +293,7 @@ rotation = 3.14159
 collision_layer = 0
 collision_mask = 0
 
-[node name="Blocker4" parent="." index="9" instance=ExtResource( 5 )]
+[node name="BlockerDown" parent="." index="9" instance=ExtResource( 5 )]
 
 visible = false
 position = Vector2( -6.6481, 209.337 )
