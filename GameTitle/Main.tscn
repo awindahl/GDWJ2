@@ -1,21 +1,20 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
-[ext_resource path="res://Tiles/Grid.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://hud.tscn" type="PackedScene" id=4]
-[ext_resource path="res://popover.tscn" type="PackedScene" id=5]
-[ext_resource path="res://pause.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Asset Lib/Sounds/Space_Ambiences_03.wav" type="AudioStream" id=7]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://hud.tscn" type="PackedScene" id=3]
+[ext_resource path="res://popover.tscn" type="PackedScene" id=4]
+[ext_resource path="res://pause.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Asset Lib/Sounds/Space_Ambiences_03.wav" type="AudioStream" id=6]
+[ext_resource path="res://Tiles/GroundFloor.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Tiles/FirstFloor.tscn" type="PackedScene" id=8]
 
 [node name="Main" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause", "Transform", "Visibility", "Z Index" ]
 
-[node name="Grid" parent="." index="0" instance=ExtResource( 2 )]
-
-[node name="Player" parent="." index="1" instance=ExtResource( 3 )]
+[node name="Player" parent="." index="0" instance=ExtResource( 2 )]
 
 _sections_unfolded = [ "Collision", "Pickable", "Transform", "collision" ]
 
@@ -27,11 +26,11 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="hud" parent="Player/CanvasLayer" index="0" instance=ExtResource( 4 )]
+[node name="hud" parent="Player/CanvasLayer" index="0" instance=ExtResource( 3 )]
 
-[node name="popover" parent="Player/CanvasLayer" index="1" instance=ExtResource( 5 )]
+[node name="popover" parent="Player/CanvasLayer" index="1" instance=ExtResource( 4 )]
 
-[node name="pause" parent="Player/CanvasLayer" index="2" instance=ExtResource( 6 )]
+[node name="pause" parent="Player/CanvasLayer" index="2" instance=ExtResource( 5 )]
 
 visible = false
 anchor_left = 0.5
@@ -44,15 +43,19 @@ margin_right = 652.5
 margin_bottom = 369.5
 _sections_unfolded = [ "Rect" ]
 
-[node name="background_music" type="AudioStreamPlayer" parent="." index="2"]
+[node name="background_music" type="AudioStreamPlayer" parent="." index="1"]
 
-stream = ExtResource( 7 )
+stream = ExtResource( 6 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
 
-[connection signal="player_requesting_door_to_open" from="Player" to="Grid" method="_on_player_requesting_door_to_open"]
+[node name="GroundFloor" parent="." index="2" instance=ExtResource( 7 )]
+
+[node name="FirstFloor" parent="." index="3" instance=ExtResource( 8 )]
+
+visible = false
 
 

@@ -14,7 +14,7 @@ var right_hand_door_instance
 var lower_door_instance
 var left_hand_door_instance
 
-var Grid	# Again we should avoid using parent objects like this in the future - have the grid object do things itself
+var Floor	# Again we should avoid using parent objects like this in the future - have the Floor object do things itself
 
 func _ready():
 	self.doors = []
@@ -23,8 +23,8 @@ func _ready():
 	self.doors.append(self.get_node("Lower Door"))
 	self.doors.append(self.get_node("Left Hand Door"))
 	
-	self.Grid = self.get_parent()
-	self.connect("tile_constructed", Grid, "_on_tile_constructed", [self])
+	self.Floor = self.get_parent()
+	self.connect("tile_constructed", Floor, "_on_tile_constructed", [self])
 	emit_signal("tile_constructed")
 
 func tile_pos_set(new_tile_pos):

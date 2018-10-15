@@ -1,9 +1,8 @@
 extends Node2D
 
-
-var upper_landing
 var BasicTile = preload("res://Tiles/BasicTile.tscn")
 var HallwayTile = preload("res://Tiles/HallwayTile.tscn")
+var StairsTile = preload("res://Tiles/GroundFloorStairsUp.tscn")
 var tile_list = [HallwayTile, BasicTile]
 var tiles = []
 
@@ -14,13 +13,6 @@ func add_tile(tile):
 func remove_tile(tile):
 	self.tiles.remove(tiles.find(tile))
 	self.remove_child(tile)
-
-func _ready():
-	# Called when the node is added to the scene for the first time.
-	upper_landing = BasicTile.instance()
-	# Initialization here, unfortunately
-	upper_landing.tile_pos = Vector2(0, 0)
-	self.add_tile(upper_landing)
 	
 func _on_tile_constructed(tile):
 	# If a tile is constructed then find all adjacent Tiles and open doors if they are connected
