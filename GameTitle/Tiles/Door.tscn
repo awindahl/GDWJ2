@@ -12,7 +12,7 @@ extents = Vector2( 53.9332, 12.472 )
 
 closed = false
 cull_mode = 0
-polygon = PoolVector2Array( -54.2781, -0.420494, 53.6577, -0.278099 )
+polygon = PoolVector2Array( -54.2781, -0.420494, 54.0398, -0.27133 )
 
 [sub_resource type="RectangleShape2D" id=3]
 
@@ -46,6 +46,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." index="2"]
 
 light_mask = 3
+position = Vector2( 0, 15 )
 occluder = SubResource( 2 )
 light_mask = 3
 

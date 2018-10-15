@@ -11,12 +11,4 @@ _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index"
 
 texture = ExtResource( 2 )
 
-[node name="Upper Door" parent="." index="2"]
-
-visible = true
-
-[node name="Lower Door" parent="." index="4"]
-
-visible = true
-
 

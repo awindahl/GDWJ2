@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Tiles/Tile.gd" type="Script" id=1]
 [ext_resource path="res://Asset Lib/Art/basetile.png" type="Texture" id=2]
@@ -14,13 +14,25 @@ extents = Vector2( 100, 30 )
 
 closed = false
 cull_mode = 0
-polygon = PoolVector2Array( 157.244, -132.094, 157.328, -179.761, -41.0782, -179.639, -41.2036, 23.2194, 6.02663, 22.8959 )
+polygon = PoolVector2Array( 162.206, -144.829, 162.252, -178.162, -39.6257, -178.108, -39.5153, 23.7672, -9.07719, 23.6907 )
 
 [sub_resource type="OccluderPolygon2D" id=3]
 
 closed = false
 cull_mode = 0
-polygon = PoolVector2Array( 157.365, -127.984, 157.151, -173.917, -41.3599, -174.22, -41.2036, 23.2194, 5.43958, 24.6693 )
+polygon = PoolVector2Array( 158.01, -143.579, 158.17, -176.939, -40.9515, -176.903, -41.2036, 23.2194, -7.68445, 23.2233 )
+
+[sub_resource type="OccluderPolygon2D" id=4]
+
+closed = false
+cull_mode = 0
+polygon = PoolVector2Array( 158.417, -143.556, 158.482, -177.013, -41.2234, -176.971, -41.0864, 22.9975, -7.92009, 23.2022 )
+
+[sub_resource type="OccluderPolygon2D" id=5]
+
+closed = false
+cull_mode = 0
+polygon = PoolVector2Array( 158.179, -144.186, 158.259, -177.48, -40.8334, -177.442, -40.7115, 22.0761, -7.33292, 22.1314 )
 
 [node name="Tile" type="Node2D"]
 
@@ -37,6 +49,7 @@ _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 [node name="StaticBody2D" type="StaticBody2D" parent="Floor" index="0"]
 
 editor/display_folded = true
+visible = false
 position = Vector2( 155, -225 )
 input_pickable = false
 collision_layer = 1
@@ -58,6 +71,7 @@ _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index"
 [node name="StaticBody2D8" type="StaticBody2D" parent="Floor" index="1"]
 
 editor/display_folded = true
+visible = false
 position = Vector2( -157.286, -225.942 )
 input_pickable = false
 collision_layer = 1
@@ -77,6 +91,7 @@ shape = SubResource( 1 )
 [node name="StaticBody2D3" type="StaticBody2D" parent="Floor" index="2"]
 
 editor/display_folded = true
+visible = false
 position = Vector2( 149.08, 225.762 )
 input_pickable = false
 collision_layer = 1
@@ -96,6 +111,7 @@ shape = SubResource( 1 )
 [node name="StaticBody2D6" type="StaticBody2D" parent="Floor" index="3"]
 
 editor/display_folded = true
+visible = false
 position = Vector2( -157.972, 225.762 )
 input_pickable = false
 collision_layer = 1
@@ -115,6 +131,7 @@ shape = SubResource( 1 )
 [node name="StaticBody2D2" type="StaticBody2D" parent="Floor" index="4"]
 
 editor/display_folded = true
+visible = false
 position = Vector2( 226.017, -150.149 )
 rotation = 1.5708
 input_pickable = false
@@ -136,6 +153,7 @@ shape = SubResource( 1 )
 [node name="StaticBody2D4" type="StaticBody2D" parent="Floor" index="5"]
 
 editor/display_folded = true
+visible = false
 position = Vector2( 225.808, 156.596 )
 rotation = 1.5708
 input_pickable = false
@@ -157,6 +175,7 @@ shape = SubResource( 1 )
 [node name="StaticBody2D5" type="StaticBody2D" parent="Floor" index="6"]
 
 editor/display_folded = true
+visible = false
 position = Vector2( -226.077, 159.763 )
 rotation = 1.5708
 input_pickable = false
@@ -178,6 +197,7 @@ shape = SubResource( 1 )
 [node name="StaticBody2D7" type="StaticBody2D" parent="Floor" index="7"]
 
 editor/display_folded = true
+visible = false
 position = Vector2( -226.077, -146.521 )
 rotation = 1.5708
 input_pickable = false
@@ -207,57 +227,54 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="Floor" index="9"]
 
 light_mask = 3
-position = Vector2( 76.4067, -212.752 )
+position = Vector2( 77.6407, -213.44 )
 rotation = 1.5708
-occluder = SubResource( 2 )
+occluder = SubResource( 3 )
 light_mask = 3
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="LightOccluder2D3" type="LightOccluder2D" parent="Floor" index="10"]
 
 light_mask = 3
-position = Vector2( 212.611, 81.5637 )
+position = Vector2( 213.368, 77.7032 )
 rotation = 3.14159
-occluder = SubResource( 3 )
+occluder = SubResource( 4 )
 light_mask = 3
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="LightOccluder2D4" type="LightOccluder2D" parent="Floor" index="11"]
 
 light_mask = 3
-position = Vector2( -80.4178, 213.093 )
+position = Vector2( -77.0367, 213.694 )
 rotation = 4.71239
-occluder = SubResource( 3 )
+occluder = SubResource( 5 )
 light_mask = 3
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Roof" type="Sprite" parent="." index="1"]
 
+modulate = Color( 0.265625, 0.265625, 0.265625, 1 )
 z_index = 2
 texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="Upper Door" parent="." index="2" instance=ExtResource( 4 )]
 
-visible = false
 position = Vector2( 0, -208 )
-rotation = -3.14159
+rotation = 3.14159
 
 [node name="Right Hand Door" parent="." index="3" instance=ExtResource( 4 )]
 
-visible = false
 position = Vector2( 208, 0 )
-rotation = 1.5708
+rotation = 4.71239
 
 [node name="Lower Door" parent="." index="4" instance=ExtResource( 4 )]
 
-visible = false
 position = Vector2( 0, 208 )
 
 [node name="Left Hand Door" parent="." index="5" instance=ExtResource( 4 )]
 
-visible = false
 position = Vector2( -208, 0 )
-rotation = -1.5708
+rotation = 1.5708
 
 
