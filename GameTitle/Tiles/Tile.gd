@@ -2,17 +2,13 @@ extends Node2D
 
 signal tile_constructed
 
+const TYPE = "TILE"
 var tile_pos setget tile_pos_set, tile_pos_get
 var adjacent_tile_positions setget , adjacent_tile_positions_get
 var Door = preload("res://Tiles/Door.tscn")
 
 var doors
 var TILE_WIDTH = 512
-
-var upper_door_instance
-var right_hand_door_instance
-var lower_door_instance
-var left_hand_door_instance
 
 var Floor	# Again we should avoid using parent objects like this in the future - have the Floor object do things itself
 
@@ -48,7 +44,7 @@ func get_facing_doors(tile):
 	var facing_doors = []
 	for my_door in self.doors:
 		for other_door in tile.doors:
-			if other_door.get("TYPE") == "DOOR" && other_door.is_visible_in_tree() && my_door.get("TYPE") == "DOOR" && my_door.is_visible_in_tree():
+			if other_door.TYPE == "DOOR" && other_door.is_visible_in_tree() && my_door.TYPE == "DOOR" && my_door.is_visible_in_tree():
 				if my_door.points_to(tile) && other_door.points_to(self):
 					facing_doors.append(my_door)
 					facing_doors.append(other_door)

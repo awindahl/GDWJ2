@@ -7,15 +7,6 @@ var dict = []
 
 func _ready():
 	Engine.set_target_fps(60)
-	
-	var file = File.new();
-	file.open("res://Lists/tiles.json", File.READ)
-	var text = file.get_as_text()
-	file.close()
-	
-	dict = JSON.parse(text).result
-
-	print(dict.size(), " tiles loaded.")
 	# LOAD ALL THE LISTS INTO ARRAYS IN GODOT
 
 

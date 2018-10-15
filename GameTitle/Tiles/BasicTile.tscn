@@ -4,20 +4,4 @@
 
 [node name="Tile" instance=ExtResource( 1 )]
 
-[node name="Lower Door" parent="." index="2"]
-
-visible = true
-
-[node name="Upper Door" parent="." index="3"]
-
-visible = true
-
-[node name="Left Hand Door" parent="." index="4"]
-
-visible = true
-
-[node name="Right Hand Door" parent="." index="5"]
-
-visible = true
-
 

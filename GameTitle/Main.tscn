@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://pause.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Asset Lib/Sounds/Space_Ambiences_03.wav" type="AudioStream" id=6]
 [ext_resource path="res://Tiles/GroundFloor.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Tiles/FirstFloor.tscn" type="PackedScene" id=8]
 
 [node name="Main" type="Node2D" index="0"]
 
@@ -54,8 +53,6 @@ bus = "Master"
 
 [node name="GroundFloor" parent="." index="2" instance=ExtResource( 7 )]
 
-[node name="FirstFloor" parent="." index="3" instance=ExtResource( 8 )]
-
-visible = false
+[connection signal="player_requesting_door_to_open" from="Player" to="GroundFloor" method="_on_player_requesting_door_to_open"]
 
 

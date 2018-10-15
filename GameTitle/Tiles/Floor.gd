@@ -4,7 +4,18 @@ var BasicTile = preload("res://Tiles/BasicTile.tscn")
 var HallwayTile = preload("res://Tiles/HallwayTile.tscn")
 var StairsTile = preload("res://Tiles/GroundFloorStairsUp.tscn")
 var tile_list = [HallwayTile, BasicTile]
-var tiles = []
+var tiles
+
+func _init():
+	self.tiles = []
+
+func _ready():
+	# Register all pre-instanced Tiles to the
+	for child in self.get_children():
+		if child.TYPE == "TILE":
+			self.tiles.append(child)
+			self._on_tile_constructed(child)	# Need this here because _ready() happens after tiles are constructed
+			
 
 func add_tile(tile):
 	self.tiles.append(tile)
@@ -35,7 +46,7 @@ func find_tile_from_pos(position):
 
 func _on_player_requesting_door_to_open(door):
 	if self.find_tile_from_pos(door.next_tile_pos):
-		print("Can't add a door here - already a room next door!")
+		print("Can't add a room here - already a room next door!")
 		return
 		
 	if !door.is_visible_in_tree():

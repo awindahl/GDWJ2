@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Tiles/Floor.gd" type="Script" id=1]
 
-[node name="Floor" type="Node2D"]
+[node name="Floor" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
