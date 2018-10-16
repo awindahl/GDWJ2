@@ -6,8 +6,9 @@ var HallwayTile = preload("res://Tiles/HallwayTile.tscn")
 var CrossingTile = preload("res://Tiles/CrossingTile.tscn")
 var BallroomTile = preload("res://Tiles/BallroomTile.tscn")
 var KitchenTile = preload("res://Tiles/KitchenTile.tscn")
+var StorageTile = preload("res://Tiles/StorageTile.tscn")
 
-var tile_list = [HallwayTile, BasicTile, CrossingTile, BallroomTile, KitchenTile]
+var tile_list = [HallwayTile, BasicTile, CrossingTile, BallroomTile, KitchenTile, StorageTile]
 var tiles = []
 
 func add_tile(tile):
@@ -52,7 +53,7 @@ func _on_player_requesting_door_to_open(door):
 	if !door.is_visible_in_tree():
 		print("Shhh I'm a door but I don't really exist! Can't open me ;)")
 		return
-		
+	
 	var new_tile = self.tile_list[randi() %  self.tile_list.size()].instance()
 	new_tile.tile_pos = door.next_tile_pos
 	new_tile.global_rotation = door.door_pos_rel.angle() + Vector2(0, 1).angle()	# Not certain about this but hey-ho
