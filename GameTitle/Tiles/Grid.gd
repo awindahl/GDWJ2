@@ -1,10 +1,11 @@
 extends Node2D
 
-
 var upper_landing
 var BasicTile = preload("res://Tiles/BasicTile.tscn")
 var HallwayTile = preload("res://Tiles/HallwayTile.tscn")
-var tile_list = [HallwayTile, BasicTile]
+var CrossingTile = preload("res://Tiles/CrossingTile.tscn")
+
+var tile_list = [HallwayTile, BasicTile, CrossingTile]
 var tiles = []
 
 func add_tile(tile):
