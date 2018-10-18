@@ -15,31 +15,27 @@ extents = Vector2( 100, 30 )
 
 closed = false
 cull_mode = 0
-
-polygon = PoolVector2Array( 162.206, -144.829, 162.252, -178.162, -39.6257, -178.108, -39.5153, 23.7672, -9.07719, 23.6907 )
+polygon = PoolVector2Array( 163.151, -177.95, -39.6257, -178.108, -39.2577, 24.1694 )
 
 [sub_resource type="OccluderPolygon2D" id=3]
 
 closed = false
 cull_mode = 0
-
 polygon = PoolVector2Array( 162.88, -176.967, -40.9515, -176.903, -41.3234, 24.9065 )
 
 [sub_resource type="OccluderPolygon2D" id=4]
 
 closed = false
 cull_mode = 0
-
 polygon = PoolVector2Array( 163.311, -177.038, -41.2234, -176.971, -40.9424, 26.3117 )
 
 [sub_resource type="OccluderPolygon2D" id=5]
 
 closed = false
 cull_mode = 0
-
 polygon = PoolVector2Array( 162.534, -177.645, -40.8334, -177.442, -41.0479, 25.1704, -40.7539, 23.7505 )
 
-[node name="Tile" type="Node2D"]
+[node name="Tile" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -259,7 +255,6 @@ _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="Roof" type="Sprite" parent="." index="1"]
 
-visible = false
 light_mask = 3
 z_index = 2
 texture = ExtResource( 3 )
