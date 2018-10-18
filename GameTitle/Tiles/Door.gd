@@ -8,12 +8,12 @@ var next_tile_pos setget , next_tile_pos_get
 var radius = 208
 var is_open = false
 
-var Tile	# Shouldn't rely on having Tile and Grid too much otherwise could be problems in the future (2-way comms)
-var Grid
+var Tile	# Shouldn't rely on having Tile and Floor too much otherwise could be problems in the future (2-way comms)
+var Floor
 
 func _ready():
 	self.Tile = self.get_parent()
-	self.Grid = self.Tile.get_parent()
+	self.Floor = self.Tile.get_parent()
 
 func open():
 	if !self.is_open:
