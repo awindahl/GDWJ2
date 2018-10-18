@@ -21,19 +21,19 @@ polygon = PoolVector2Array( 162.252, -178.162, -39.6257, -178.108, -39.5153, 23.
 
 closed = false
 cull_mode = 0
-polygon = PoolVector2Array( 162.88, -176.967, -40.9515, -176.903, -41.2036, 23.2194 )
+polygon = PoolVector2Array( 162.88, -176.967, -40.9515, -176.903, -41.3234, 24.9065 )
 
 [sub_resource type="OccluderPolygon2D" id=4]
 
 closed = false
 cull_mode = 0
-polygon = PoolVector2Array( 160.71, -176.22, 161.064, -176.573, -41.2234, -176.971, -40.9396, 24.7133 )
+polygon = PoolVector2Array( 163.311, -177.038, -41.2234, -176.971, -40.9424, 26.3117 )
 
 [sub_resource type="OccluderPolygon2D" id=5]
 
 closed = false
 cull_mode = 0
-polygon = PoolVector2Array( 161.384, -177.491, -40.8334, -177.442, -40.9439, 23.5776, -40.7539, 23.7505 )
+polygon = PoolVector2Array( 162.534, -177.645, -40.8334, -177.442, -41.0479, 25.1704, -40.7539, 23.7505 )
 
 [node name="Tile" type="Node2D" index="0"]
 
@@ -254,6 +254,7 @@ _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="Roof" type="Sprite" parent="." index="1"]
 
+visible = false
 light_mask = 3
 z_index = 2
 texture = ExtResource( 3 )
