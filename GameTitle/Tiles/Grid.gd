@@ -7,8 +7,9 @@ var CrossingTile = preload("res://Tiles/CrossingTile.tscn")
 var BallroomTile = preload("res://Tiles/BallroomTile.tscn")
 var KitchenTile = preload("res://Tiles/KitchenTile.tscn")
 var StorageTile = preload("res://Tiles/StorageTile.tscn")
+var BedroomTile = preload("res://Tiles/BedroomTile.tscn")
 
-var tile_list = [HallwayTile, BasicTile, CrossingTile, BallroomTile, KitchenTile, StorageTile]
+var tile_list = [HallwayTile, BasicTile, CrossingTile, BallroomTile, KitchenTile, StorageTile, BedroomTile]
 var tiles = []
 
 func add_tile(tile):

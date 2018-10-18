@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Tiles/Tile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Asset Lib/Art/bedroomtile.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 68, 100 )
+
+[sub_resource type="CircleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 46.0
+
+[node name="Tile" index="0" instance=ExtResource( 1 )]
+
+[node name="Floor" parent="." index="0"]
+
+texture = ExtResource( 2 )
+
+[node name="Right Hand Door" parent="." index="3"]
+
+visible = false
+
+[node name="Lower Door" parent="." index="4"]
+
+visible = false
+
+[node name="BlockerRight" parent="." index="8"]
+
+visible = true
+collision_layer = 1
+collision_mask = 1
+
+[node name="BlockerDown" parent="." index="9"]
+
+visible = true
+collision_layer = 1
+collision_mask = 1
+
+[node name="bed" type="StaticBody2D" parent="." index="10"]
+
+editor/display_folded = true
+position = Vector2( 115.469, 99.6221 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bed" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="table" type="StaticBody2D" parent="." index="11"]
+
+position = Vector2( -138.984, 132.667 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="table" index="0"]
+
+shape = SubResource( 2 )
+
+

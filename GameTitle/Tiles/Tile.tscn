@@ -35,7 +35,7 @@ closed = false
 cull_mode = 0
 polygon = PoolVector2Array( 161.214, -144.458, 161.384, -177.491, -40.8334, -177.442, -40.9439, 23.5776, -7.54173, 23.8553 )
 
-[node name="Tile" type="Node2D"]
+[node name="Tile" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -242,11 +242,11 @@ position = Vector2( -77.0367, 213.694 )
 rotation = 4.71239
 occluder = SubResource( 5 )
 light_mask = 3
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="Roof" type="Sprite" parent="." index="1"]
 
-modulate = Color( 0.265625, 0.265625, 0.265625, 1 )
+light_mask = 3
 z_index = 2
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
