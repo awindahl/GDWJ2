@@ -18,7 +18,7 @@ func _ready():
 	self.doors.append(self.get_node("Right Hand Door"))
 	self.doors.append(self.get_node("Lower Door"))
 	self.doors.append(self.get_node("Left Hand Door"))
-	
+
 	self.Floor = self.get_parent()
 	self.connect("tile_constructed", Floor, "_on_tile_constructed", [self])
 	emit_signal("tile_constructed")
@@ -28,7 +28,7 @@ func tile_pos_set(new_tile_pos):
 
 func tile_pos_get():
 	return (self.position/512).round()
-	
+
 func adjacent_to(other_tile):
 	# 'adjacent' only horizontally and vertically, NOT DIAGONALLY
 	return self.tile_pos.distance_to(other_tile.tile_pos) <= 1
@@ -37,10 +37,10 @@ func adjacent_tile_positions_get():
 	return [self.tile_pos + Vector2(0, 1), self.tile_pos + Vector2(1, 0), self.tile_pos + Vector2(0, -1), self.tile_pos + Vector2(-1, 0)]
 
 func get_facing_doors(tile):
-	# Give this function another tile. If there are a pair of doors which are facing each other on these tiles then 
-	# the function will return a 2-length array with them inside (DISREGARDING DISTANCE). 
+	# Give this function another tile. If there are a pair of doors which are facing each other on these tiles then
+	# the function will return a 2-length array with them inside (DISREGARDING DISTANCE).
 	# Otherwise the function will return an empty array.
-	
+
 	var facing_doors = []
 	for my_door in self.doors:
 		for other_door in tile.doors:

@@ -12,14 +12,14 @@ extents = Vector2( 53.9332, 12.472 )
 
 closed = false
 cull_mode = 0
-polygon = PoolVector2Array( -54.2781, -0.420494, 54.0398, -0.27133 )
+polygon = PoolVector2Array( -54.8798, -0.205879, 54.0398, -0.27133 )
 
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 64, 32 )
 
-[node name="Door" type="StaticBody2D"]
+[node name="Door" type="StaticBody2D" index="0"]
 
 light_mask = 3
 input_pickable = false
@@ -46,7 +46,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." index="2"]
 
 light_mask = 3
-position = Vector2( 0, 15 )
+position = Vector2( 0, 47 )
 occluder = SubResource( 2 )
 light_mask = 3
 
