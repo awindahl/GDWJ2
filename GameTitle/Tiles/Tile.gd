@@ -48,6 +48,7 @@ func get_facing_doors(tile):
 	var facing_doors = []
 	for my_door in self.doors:
 		for other_door in tile.doors:
+			print(other_door.get_parent().name)
 			if other_door.get("TYPE") == "DOOR" && other_door.is_visible_in_tree() && my_door.get("TYPE") == "DOOR" && my_door.is_visible_in_tree():
 				if my_door.points_to(tile) && other_door.points_to(self):
 					facing_doors.append(my_door)
