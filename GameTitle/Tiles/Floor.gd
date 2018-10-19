@@ -13,9 +13,10 @@ var DiningroomTile = preload("res://Tiles/DiningroomTile.tscn")
 var LaundromatTile = preload("res://Tiles/LaundromatTile.tscn")
 var OldpassageTile = preload("res://Tiles/OldpassageTile.tscn")
 var WinecellarTile = preload("res://Tiles/WinecellarTile.tscn")
+var ChapeTile = preload("res://Tiles/ChapelTile.tscn")
 
 var tile_list = [HallwayTile, BasicTile, CrossingTile, BallroomTile, KitchenTile, StorageTile, BedroomTile,
-		StairwayTile, DiningroomTile, LaundromatTile, OldpassageTile, WinecellarTile]
+		StairwayTile, DiningroomTile, LaundromatTile, OldpassageTile, WinecellarTile, ChapeTile]
 
 var tiles
 
