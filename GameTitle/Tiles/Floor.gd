@@ -17,10 +17,11 @@ var ChapeTile = preload("res://Tiles/ChapelTile.tscn")
 var ArtgalleryTile = preload("res://Tiles/ArtgalleryTile.tscn")
 var GuestbedroomTile = preload("res://Tiles/GuestbedroomTile.tscn")
 var TreasuryTile = preload("res://Tiles/TreasuryTile.tscn")
+var ClosetTile = preload("res://Tiles/ClosetTile.tscn")
 
 var tile_list = [HallwayTile, BasicTile, CrossingTile, BallroomTile, KitchenTile, StorageTile, BedroomTile,
 		StairwayTile, DiningroomTile, LaundromatTile, OldpassageTile, WinecellarTile, ChapeTile, ArtgalleryTile,
-		GuestbedroomTile, TreasuryTile]
+		GuestbedroomTile, TreasuryTile, ClosetTile]
 
 var tiles
 
