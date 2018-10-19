@@ -10,9 +10,10 @@ var StorageTile = preload("res://Tiles/StorageTile.tscn")
 var BedroomTile = preload("res://Tiles/BedroomTile.tscn")
 var StairwayTile = preload("res://Tiles/StairwayTile.tscn")
 var DiningroomTile = preload("res://Tiles/DiningroomTile.tscn")
+var LaundromatTile = preload("res://Tiles/LaundromatTile.tscn")
 
 var tile_list = [HallwayTile, BasicTile, CrossingTile, BallroomTile, KitchenTile, StorageTile, BedroomTile,
-		StairwayTile, DiningroomTile]
+		StairwayTile, DiningroomTile, LaundromatTile]
 
 var tiles
 
@@ -45,7 +46,8 @@ func _on_tile_constructed(tile):
 		var facing_doors = tile.get_facing_doors(adjacent_tile)
 		if facing_doors:
 			for door in facing_doors:
-				door.open()
+				if door.is_visible_in_tree():
+					door.open()
 
 func find_tile_from_pos(position):
 	for tile in self.tiles:

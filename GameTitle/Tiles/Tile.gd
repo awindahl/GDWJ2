@@ -14,10 +14,14 @@ var Floor	# Again we should avoid using parent objects like this in the future -
 
 func _ready():
 	self.doors = []
-	self.doors.append(self.get_node("Upper Door"))
-	self.doors.append(self.get_node("Right Hand Door"))
-	self.doors.append(self.get_node("Lower Door"))
-	self.doors.append(self.get_node("Left Hand Door"))
+	for door in self.get_children():
+		if door.is_visible_in_tree() && door.get("TYPE") == "DOOR":
+			self.doors.append(door)
+			
+#	self.doors.append(self.get_node("Upper Door"))
+#	self.doors.append(self.get_node("Right Hand Door"))
+#	self.doors.append(self.get_node("Lower Door"))
+#	self.doors.append(self.get_node("Left Hand Door"))
 
 	self.Floor = self.get_parent()
 	self.connect("tile_constructed", Floor, "_on_tile_constructed", [self])
