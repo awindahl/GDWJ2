@@ -3,7 +3,7 @@ extends Node
 var volume = 25
 var playing = false
 var currentObjective = "Survive. Also press 'Z' to fire off a test popout."
-var dict = []
+var dict = {}
 var randomNr = 0
 
 
@@ -18,6 +18,7 @@ func _ready():
 	file.close()
 	dict = JSON.parse(text).result
 	print(dict.size(), " items loaded.")
+
 #	remember to go to Export, 
 #	then the resources tab and set the export mode to 
 #	Export all resources in the project to 

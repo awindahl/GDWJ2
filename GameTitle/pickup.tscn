@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://pickup.gd" type="Script" id=1]
+[ext_resource path="res://Asset Lib/Art/itempickup.png" type="Texture" id=2]
+[ext_resource path="res://Asset Lib/Art/itempickup_highlight.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 27.5775, 19.2718 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 34.1277, 21.6823 )
+
+[node name="Node2D" type="Node2D"]
+
+script = ExtResource( 1 )
+itemNr = "Cheese"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+position = Vector2( 0, -1.67572 )
+scale = Vector2( 1, 0.647456 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+
+position = Vector2( 0, 0.329892 )
+scale = Vector2( 1, 1.25533 )
+shape = SubResource( 1 )
+
+[node name="item" type="Sprite" parent="." index="1"]
+
+scale = Vector2( 0.499186, 0.499186 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="itemHighlight" type="Sprite" parent="." index="2"]
+
+visible = false
+scale = Vector2( 0.499186, 0.499186 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Area2D" type="Area2D" parent="." index="3"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+
+shape = SubResource( 2 )
+
+
