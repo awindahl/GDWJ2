@@ -8,8 +8,10 @@ var BallroomTile = preload("res://Tiles/BallroomTile.tscn")
 var KitchenTile = preload("res://Tiles/KitchenTile.tscn")
 var StorageTile = preload("res://Tiles/StorageTile.tscn")
 var BedroomTile = preload("res://Tiles/BedroomTile.tscn")
+var StairwayTile = preload("res://Tiles/StairwayTile.tscn")
 
-var tile_list = [HallwayTile, BasicTile, CrossingTile, BallroomTile, KitchenTile, StorageTile, BedroomTile]
+var tile_list = [HallwayTile, BasicTile, CrossingTile, BallroomTile, KitchenTile, StorageTile, BedroomTile,
+		StairwayTile]
 
 var tiles
 
