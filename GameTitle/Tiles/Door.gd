@@ -8,7 +8,7 @@ var next_tile_pos setget , next_tile_pos_get
 var radius = 208
 var is_open
 var is_wall
-
+var door_open_sound = preload("res://Asset Lib/Sounds/door_opening.wav")
 var Tile	# Shouldn't rely on having Tile and Floor too much otherwise could be problems in the future (2-way comms)
 
 func _ready():
@@ -18,6 +18,7 @@ func _ready():
 
 func open():
 	if self.can_open():
+		play(door_open_sound)
 		self.disable()
 		self.is_open = true
 

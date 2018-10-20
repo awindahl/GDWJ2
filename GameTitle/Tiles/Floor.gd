@@ -124,7 +124,6 @@ func _on_Player_requesting_door_to_open(door):
 	new_tile.global_rotation = good_rotations[randi() %  good_rotations.size()]
 	self._on_Tile_moved(new_tile)	# Do this manually for the time being
 	
-	
 func connected_doors(tile):
 	# This function returns all of the doors which are adjacent to a tile. "Connected" in this sense means if the door is not a wall instead
 	var connected_doors = []
