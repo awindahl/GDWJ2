@@ -7,6 +7,8 @@
 
 [node name="Landing" parent="." index="0" instance=ExtResource( 2 )]
 
-position = Vector2( 0, -1536 )
+is_basement = null
+is_ground_floor = null
+is_first_floor = null
 
 

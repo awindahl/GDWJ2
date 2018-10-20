@@ -27,10 +27,13 @@ polygon = PoolVector2Array( -257.279, -253.634, -51.6507, -255.212 )
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="Tile" index="0" instance=ExtResource( 1 )]
+[node name="Tile" instance=ExtResource( 1 )]
 
 rotation = 1.5708
 _sections_unfolded = [ "Collision", "Pickable", "Transform", "Visibility" ]
+is_basement = null
+is_ground_floor = null
+is_first_floor = null
 
 [node name="Floor" parent="." index="0"]
 

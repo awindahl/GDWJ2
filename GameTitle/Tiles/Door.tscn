@@ -29,7 +29,7 @@ extents = Vector2( 14, 64 )
 
 closed = false
 cull_mode = 0
-polygon = PoolVector2Array( -13.7656, -49.0832, -12.7292, 61.9243 )
+polygon = PoolVector2Array( -12.7572, -63.5366, -12.7292, 61.9243 )
 
 [node name="Door" type="StaticBody2D"]
 

@@ -1,5 +1,6 @@
 extends KinematicBody2D
 signal player_requesting_door_to_open
+signal changing_floors
 var SPEED = 150
 
 func _process(delta):
@@ -24,10 +25,15 @@ func _process(delta):
 		$AnimatedSprite.frame = 0
 	
 	for area in $hitbox.get_overlapping_areas():
-		if area.name == "DoorHitbox":
-			var door = area.get_parent()
-			if door.can_open() && Input.is_action_just_released("ui_accept"):
-				emit_signal("player_requesting_door_to_open", door)
+		match area.name:
+			"DoorHitbox":
+				var door = area.get_parent()
+				if door.can_open() && Input.is_action_just_released("ui_accept"):
+					emit_signal("player_requesting_door_to_open", door)
+			"GroundFloorStairs":
+				var tile = area.get_parent()
+				if Input.is_action_just_released("ui_accept"):
+					emit_signal("changing_floors", tile, "first_floor")
 
 		var overlap = area.get_parent()
 		if overlap.get("TYPE") == "ITEM":
