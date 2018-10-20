@@ -1,31 +1,19 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Tiles/Tile.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Asset Lib/Art/hallwaytile.png" type="Texture" id=2]
+[ext_resource path="res://Asset Lib/Art/threewaycrosstile.png" type="Texture" id=2]
 
 [node name="Tile" index="0" instance=ExtResource( 1 )]
-
-_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 
 [node name="Floor" parent="." index="0"]
 
 texture = ExtResource( 2 )
-
-[node name="Right Hand Door" parent="." index="3"]
-
-visible = false
 
 [node name="Left Hand Door" parent="." index="5"]
 
 visible = false
 
 [node name="BlockerLeft" parent="." index="7"]
-
-visible = true
-collision_layer = 1
-collision_mask = 1
-
-[node name="BlockerRight" parent="." index="8"]
 
 visible = true
 collision_layer = 1
