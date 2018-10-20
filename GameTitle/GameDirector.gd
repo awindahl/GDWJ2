@@ -146,8 +146,8 @@ func activate_haunt():
 	emit_signal("change_objective")
 
 func activate_rule(iName):
-	print("activating " + dict[iName]["effectNr"])
-	match int(dict[iName]["effectNr"]):
+#	print("activating " + dict[iName]["effectNr"])
+	match iName:
 		1: 
 			strBonus = strBonus + 2
 		2: 
