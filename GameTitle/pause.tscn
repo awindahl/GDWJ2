@@ -35,7 +35,7 @@ use_filter = true
 font_data = ExtResource( 4 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="Node" type="Control" index="0"]
+[node name="Node" type="Control"]
 
 pause_mode = 2
 anchor_left = 0.0
@@ -204,7 +204,7 @@ shortcut = null
 group = null
 flat = false
 align = 1
-_sections_unfolded = [ "Focus", "Mouse", "Rect", "Size Flags", "Theme", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+_sections_unfolded = [ "Focus", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
 [node name="HSlider" type="HSlider" parent="." index="5"]
 

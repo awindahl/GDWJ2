@@ -28,6 +28,7 @@ func _unhandled_input(event):
 	if event is InputEventKey:
 		if event.pressed and event.scancode == KEY_Z:
 			$Player/CanvasLayer/popover.display("Hello, this is the test popover", "res://Asset Lib/Art/mute_btn_active.png", "res://Asset Lib/Art/popoverbg.png")
+			
 
 func _update_objective():
 	$Player/CanvasLayer/hud/objective.text = GameDirector.currentObjective

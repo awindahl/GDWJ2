@@ -6,9 +6,11 @@
 [ext_resource path="res://Asset Lib/Animations/slideIn.tres" type="Animation" id=4]
 [ext_resource path="res://Asset Lib/Animations/slideOut.tres" type="Animation" id=5]
 
-[node name="Node" type="Node"]
+[node name="Node" type="Node" index="0"]
 
+pause_mode = 2
 script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
 
 [node name="Control" type="Control" parent="." index="0"]
 
@@ -56,7 +58,7 @@ _sections_unfolded = [ "Offset", "Region", "Transform" ]
 [node name="sprite" type="Sprite" parent="Control" index="2"]
 
 position = Vector2( 15, 55 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Pause", "Transform" ]
 
 [node name="text" type="RichTextLabel" parent="Control" index="3"]
 

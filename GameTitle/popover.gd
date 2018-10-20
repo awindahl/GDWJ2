@@ -16,6 +16,8 @@ func display( text, img, bg):
 	$Control/background.texture = load(bg)
 	
 	$AnimationPlayer.play("slideIn", -1)
+	get_parent().get_tree().paused = true
 	
 func _on_hide_pressed():
 	$AnimationPlayer.play("slideOut", -1)
+	get_parent().get_tree().paused = false
