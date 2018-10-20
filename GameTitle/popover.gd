@@ -14,7 +14,7 @@ func display( text, img="", bg="", event=0):
 		$Control/sprite.texture = load(img)
 	if !bg == "":
 		$Control/background.texture = load(bg)
-	$Control/text.text = text
+	$Control/text.bbcode_text = text
 	$Control/sprite.texture = load(img)
 	$Control/background.texture = load(bg)
 	if event>0:
@@ -27,7 +27,7 @@ func display( text, img="", bg="", event=0):
 	get_parent().get_tree().paused = true
 	
 func update_display( text, img="", bg=""):
-	$Control/text.text = text
+	$Control/text.bbcode_text = text
 	if !img == "":
 		$Control/sprite.texture = load(img)
 	if !bg == "":
