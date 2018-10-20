@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Tiles/Tile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Asset Lib/Art/entrancebot.png" type="Texture" id=2]
@@ -21,6 +21,11 @@ polygon = PoolVector2Array( 254.802, 54.6944, 254.373, -51.9813 )
 closed = false
 cull_mode = 0
 polygon = PoolVector2Array( -257.279, -253.634, -51.6507, -255.212 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
 
 [node name="Tile" index="0" instance=ExtResource( 1 )]
 
@@ -100,5 +105,24 @@ position = Vector2( -1.87519, 207.936 )
 visible = false
 collision_layer = 0
 collision_mask = 0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="6"]
+
+position = Vector2( 177.398, 1.20344 )
+scale = Vector2( 1, 6.91403 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+
+shape = SubResource( 4 )
 
 
