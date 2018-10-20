@@ -15,7 +15,7 @@ _sections_unfolded = [ "Pause", "Transform", "Visibility", "Z Index" ]
 
 [node name="GroundFloor" parent="." index="0" instance=ExtResource( 2 )]
 
-position = Vector2( 0, -610 )
+position = Vector2( 3.995, -81.6855 )
 
 [node name="background_music" type="AudioStreamPlayer" parent="." index="1"]
 
@@ -29,6 +29,7 @@ bus = "Master"
 [node name="Player" parent="." index="2" instance=ExtResource( 4 )]
 
 editor/display_folded = true
+position = Vector2( 3.09082, 0 )
 _sections_unfolded = [ "Collision", "Pickable", "Transform", "collision" ]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Player" index="4"]

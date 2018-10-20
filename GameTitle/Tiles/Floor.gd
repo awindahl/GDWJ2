@@ -34,11 +34,10 @@ func _init():
 	self.tiles = []
 
 func _ready():
-	# Register all pre-instanced Tiles to the
-	var starting_tiles = [$EntranceHall]
-	for starting_tile in starting_tiles:
-		self.register_tile(starting_tile)
-		self._on_Tile_moved(starting_tile)
+	for child in self.get_children():
+		if child.get("TYPE") == "TILE":
+			self.tiles.append(child)
+		#	self._on_tile_constructed(child) # Need this here because _ready() happens after tiles are constructed
 		
 func add_tile(tile):
 	self.add_child(tile)

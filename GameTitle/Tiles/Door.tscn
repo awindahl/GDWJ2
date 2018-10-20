@@ -88,9 +88,11 @@ _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index"
 
 [node name="BlockerLightOccluder" type="LightOccluder2D" parent="." index="5"]
 
+visible = false
+light_mask = 3
 rotation = 1.5708
 occluder = SubResource( 5 )
-light_mask = 1
+light_mask = 3
 _sections_unfolded = [ "Transform" ]
 
 
