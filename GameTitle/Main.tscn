@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Tiles/GroundFloor.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://popover.tscn" type="PackedScene" id=6]
 [ext_resource path="res://pause.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Tiles/FirstFloor.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Tiles/Basement.tscn" type="PackedScene" id=9]
 
 [node name="Main" type="Node2D" index="0"]
 
@@ -29,6 +30,7 @@ bus = "Master"
 
 [node name="Player" parent="." index="2" instance=ExtResource( 4 )]
 
+editor/display_folded = true
 position = Vector2( 3.09082, 0 )
 _sections_unfolded = [ "Collision", "Pickable", "Transform", "collision" ]
 
@@ -61,9 +63,15 @@ _sections_unfolded = [ "Pause", "Rect" ]
 
 position = Vector2( 51200, 0 )
 
+[node name="Basement" parent="." index="4" instance=ExtResource( 9 )]
+
+position = Vector2( -51200, 0 )
+
 [connection signal="changing_floors" from="Player" to="." method="_on_Player_changing_floors"]
 
 [connection signal="player_requesting_door_to_open" from="Player" to="GroundFloor" method="_on_Player_requesting_door_to_open"]
+
+[connection signal="player_requesting_door_to_open" from="Player" to="Basement" method="_on_Player_requesting_door_to_open"]
 
 [connection signal="player_requesting_door_to_open" from="Player" to="FirstFloor" method="_on_Player_requesting_door_to_open"]
 

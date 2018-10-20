@@ -33,11 +33,19 @@ func _process(delta):
 			"GroundFloorStairs":
 				var tile = area.get_parent()
 				if Input.is_action_just_released("ui_accept"):
-					emit_signal("changing_floors", tile, "FirstFloor")
+					emit_signal("changing_floors", tile, area.name)
 			"FirstFloorStairs":
 				var tile = area.get_parent()
 				if Input.is_action_just_released("ui_accept"):
-					emit_signal("changing_floors", tile, "GroundFloor")
+					emit_signal("changing_floors", tile, area.name)
+			"GroundFloorHatchDown":
+				var tile = area.get_parent()
+				if Input.is_action_just_released("ui_accept"):
+					emit_signal("changing_floors", tile, area.name)
+			"BasementStairs":
+				var tile = area.get_parent()
+				if Input.is_action_just_released("ui_accept"):
+					emit_signal("changing_floors", tile, area.name)
 
 		var overlap = area.get_parent()
 		if overlap.get("TYPE") == "ITEM":
