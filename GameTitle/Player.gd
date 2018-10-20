@@ -53,3 +53,4 @@ func _process(delta):
 				GameDirector.activate_rule(overlap.itemNr)
 				get_node("CanvasLayer/hud/Control")._add_item(overlap.itemNr)
 				overlap.queue_free()
+				$PickingUpItem.play()
