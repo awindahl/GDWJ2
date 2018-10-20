@@ -19,6 +19,11 @@ texture = ExtResource( 2 )
 visible = false
 wall = true
 
+[node name="Lower Door" parent="." index="4"]
+
+visible = false
+wall = true
+
 [node name="closet" type="StaticBody2D" parent="." index="6"]
 
 position = Vector2( -127.644, -125.839 )

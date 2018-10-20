@@ -73,8 +73,10 @@ func _on_Tile_moved(tile):
 		if adjacent_tile:
 			var opposite_door = adjacent_tile.find_door(door.opposite_door_pos_rel)
 			if opposite_door:
-				if opposite_door.is_wall:
+				if opposite_door.is_wall && !door.is_wall:
 					door.board()
+				elif !opposite_door.is_wall && door.is_wall:
+					opposite_door.board()
 				else:
 					door.open()
 					opposite_door.open()
