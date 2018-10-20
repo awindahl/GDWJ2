@@ -47,7 +47,7 @@ var RoundhallTile = preload("res://Tiles/RoundhallTile.tscn")
 var ThreewaycrossTile = preload("res://Tiles/ThreewaycrossTile.tscn")
 
 var tile_list = [BasicTile, HallwayTile, CrossingTile, BallroomTile, KitchenTile, StorageTile, BedroomTile,
-		StairwayTile, DiningroomTile, LaundromatTile, OldpassageTile, WinecellarTile, ChapeTile, ArtgalleryTile,
+		DiningroomTile, LaundromatTile, OldpassageTile, WinecellarTile, ChapeTile, ArtgalleryTile,
 		GuestbedroomTile, TreasuryTile, ClosetTile, WashroomTile, OldroomTile, MainroomTile, RoundhallTile, ThreewaycrossTile]
 var instanced_tiles = []
 
@@ -80,6 +80,7 @@ func _ready():
 	Engine.set_target_fps(60)
 	add_user_signal("hud_update")
 	add_user_signal("pop_display")
+	add_user_signal("pop_haunt_display")
 	add_user_signal("pop_update")
 	add_user_signal("change_objective")
 	randomize() #RANDOM THE SEED EKIN, RANDOM THE SEEED
@@ -150,22 +151,14 @@ func activate_haunt():
 	var roll = randi() % 3 + 1
 	match roll:
 		1:
-			currentObjective = haDict["The Dark Ascent"]["objective"]
-			#activate the dark ascent
 			activate_ascent()
 		2:
-			currentObjective = haDict["An ancient evil awakens"]["objective"]
-			#activate an ancient evil awakens
 			activate_ancient_evil()
 		3:
-			currentObjective = haDict["The Plague"]["objective"]
-			#activate the plague
 			activate_the_plague()
-
 	emit_signal("change_objective")
 
 func activate_rule(iName):
-#	print("activating " + dict[iName]["effectNr"])
 	match iName:
 		1: 
 			strBonus = strBonus + 2
@@ -178,7 +171,7 @@ func activate_rule(iName):
 				sanBonus = sanBonus + 1
 				strBonus = strBonus + 1
 			elif num > 3:
-				#trigger random event
+				activate_event((randi() % 6 + 1))
 				pass
 			else:
 				strength = 1
@@ -346,10 +339,28 @@ func unstable_ground(nr):
 			roll_haunt()
 
 func activate_ascent():
-	pass
+	tempText = haDict["The Dark Ascent"]["desc"]
+	tempEvent = 0
+	emit_signal("pop_haunt_display")
+	currentObjective = haDict["The Dark Ascent"]["objective"]
+	#teleport player to basement
+	#re-add all tiles to stack, basement stairs last, take tiles in order
+	#player rolls to take 1 sanity damage every opened door until reaching surface
 
 func activate_ancient_evil():
-	pass
+	tempText = haDict["An ancient evil awakens"]["desc"]
+	tempEvent = 0
+	emit_signal("pop_haunt_display")
+	currentObjective = haDict["An ancient evil awakens"]["objective"]
+	#get player inventory and chose random item to become "special"
+	#spawn enemies in existing rooms (4)
+	#add ritual tile to stack of rooms to explore (available on all floors)
 	
 func activate_the_plague():
-	pass
+	tempText = haDict["The Plague"]["desc"]
+	tempEvent = 0
+	emit_signal("pop_haunt_display")
+	currentObjective = haDict["The Plague"]["objective"]
+	#add sarcophagus tile to stack of rooms to explore (available on all floors)
+	#spawn enemies in existing rooms (3)
+	#player rolls to take 1 strength damage every opened door until closing sarcophagus

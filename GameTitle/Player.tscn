@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Asset Lib/Art/player/player0001.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Asset Lib/Art/player/player0007.png" type="Texture" id=8]
 [ext_resource path="res://Asset Lib/Art/player/player0008.png" type="Texture" id=9]
 [ext_resource path="res://Asset Lib/Art/light3.png" type="Texture" id=10]
+[ext_resource path="res://Asset Lib/Sounds/picking_up_item.wav" type="AudioStream" id=11]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -48,7 +49,7 @@ __meta__ = {
 light_mask = 3
 frames = SubResource( 1 )
 animation = "default"
-frame = 1
+frame = 2
 playing = true
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility" ]
 
@@ -124,5 +125,16 @@ audio_bus_name = "Master"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" index="0"]
 
 shape = SubResource( 3 )
+
+[node name="PickingUpItem" type="AudioStreamPlayer2D" parent="." index="4"]
+
+stream = ExtResource( 11 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

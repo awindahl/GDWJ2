@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Tiles/GroundFloor.tscn" type="PackedScene" id=2]
@@ -7,15 +7,18 @@
 [ext_resource path="res://hud.tscn" type="PackedScene" id=5]
 [ext_resource path="res://popover.tscn" type="PackedScene" id=6]
 [ext_resource path="res://pause.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Tiles/FirstFloor.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Tiles/Basement.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Asset Lib/Sounds/walking_on_stairs.wav" type="AudioStream" id=10]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause", "Transform", "Visibility", "Z Index" ]
 
 [node name="GroundFloor" parent="." index="0" instance=ExtResource( 2 )]
 
-position = Vector2( 3.995, -81.6855 )
+position = Vector2( 0, 0 )
 
 [node name="background_music" type="AudioStreamPlayer" parent="." index="1"]
 
@@ -33,6 +36,7 @@ _sections_unfolded = [ "Collision", "Pickable", "Transform", "collision" ]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Player" index="4"]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -55,6 +59,32 @@ margin_top = -369.5
 margin_right = 652.5
 margin_bottom = 369.5
 _sections_unfolded = [ "Pause", "Rect" ]
+
+[node name="FirstFloor" parent="." index="3" instance=ExtResource( 8 )]
+
+position = Vector2( 51200, 0 )
+
+[node name="Basement" parent="." index="4" instance=ExtResource( 9 )]
+
+position = Vector2( -51200, 0 )
+
+[node name="WalkingOnStairs" type="AudioStreamPlayer2D" parent="." index="5"]
+
+position = Vector2( 3.09082, 0 )
+stream = ExtResource( 10 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 65536.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[connection signal="changing_floors" from="Player" to="." method="_on_Player_changing_floors"]
+
+[connection signal="player_requesting_door_to_open" from="Player" to="FirstFloor" method="_on_Player_requesting_door_to_open"]
+
+[connection signal="player_requesting_door_to_open" from="Player" to="Basement" method="_on_Player_requesting_door_to_open"]
 
 [connection signal="player_requesting_door_to_open" from="Player" to="GroundFloor" method="_on_Player_requesting_door_to_open"]
 

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/picking_up_item.wav-3355d6c4c8bfbe6687a929f38585643d.sample"
+
+[deps]
+
+source_file="res://Asset Lib/Sounds/picking_up_item.wav"
+dest_files=[ "res://.import/picking_up_item.wav-3355d6c4c8bfbe6687a929f38585643d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
