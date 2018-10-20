@@ -14,6 +14,10 @@ extents = Vector2( 32, 32 )
 
 texture = ExtResource( 2 )
 
+[node name="Roof" parent="." index="1"]
+
+visible = false
+
 [node name="Upper Door" parent="." index="2"]
 
 visible = false

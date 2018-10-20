@@ -1,0 +1,87 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Tiles/Tile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Asset Lib/Art/mainhalltile.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
+
+[node name="Tile" index="0" instance=ExtResource( 1 )]
+
+[node name="Floor" parent="." index="0"]
+
+texture = ExtResource( 2 )
+
+[node name="Lower Door" parent="." index="4"]
+
+visible = false
+
+[node name="BlockerDown" parent="." index="9"]
+
+visible = true
+collision_layer = 1
+collision_mask = 1
+
+[node name="table" type="StaticBody2D" parent="." index="10"]
+
+position = Vector2( -1.82775, 111.343 )
+rotation = -1.5708
+scale = Vector2( 2.20169, 4.21248 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="table" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="chairs" type="StaticBody2D" parent="." index="11"]
+
+position = Vector2( 124.419, -121.196 )
+rotation = -1.5708
+scale = Vector2( 2.01079, 1.94716 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chairs" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="chairs2" type="StaticBody2D" parent="." index="12"]
+
+position = Vector2( -125.631, -125.269 )
+rotation = -1.5708
+scale = Vector2( 2.01079, 1.94716 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chairs2" index="0"]
+
+shape = SubResource( 1 )
+
+
