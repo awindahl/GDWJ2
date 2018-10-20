@@ -1,0 +1,114 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Tiles/Tile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Asset Lib/Art/entrancehall.png" type="Texture" id=2]
+[ext_resource path="res://Asset Lib/Art/entrancewalls.png" type="Texture" id=3]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+
+closed = false
+cull_mode = 0
+polygon = PoolVector2Array( 163.151, -177.95, -39.6257, -178.108, -39.2577, 24.1694 )
+
+[sub_resource type="OccluderPolygon2D" id=2]
+
+closed = false
+cull_mode = 0
+polygon = PoolVector2Array( -53.6762, 255.212, -256.025, 255.797 )
+
+[sub_resource type="OccluderPolygon2D" id=3]
+
+closed = false
+cull_mode = 0
+polygon = PoolVector2Array( -53.4756, -255.457, -254.967, -254.192 )
+
+[sub_resource type="OccluderPolygon2D" id=4]
+
+closed = false
+cull_mode = 0
+polygon = PoolVector2Array( 50.9601, -254.827, 255.016, -255.644 )
+
+[sub_resource type="OccluderPolygon2D" id=5]
+
+closed = false
+cull_mode = 0
+polygon = PoolVector2Array( 51.6927, 255.634, 254.078, 256.121 )
+
+[node name="Tile" index="0" instance=ExtResource( 1 )]
+
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Pickable", "Transform", "Visibility" ]
+
+[node name="Floor" parent="." index="0"]
+
+rotation = 4.71239
+texture = ExtResource( 2 )
+vframes = 3
+frame = 1
+_sections_unfolded = [ "Animation", "Material", "Region", "Transform", "Visibility", "Z Index" ]
+
+[node name="LightOccluder2D" parent="Floor" index="8"]
+
+visible = false
+occluder = SubResource( 1 )
+
+[node name="LightOccluder2D2" parent="Floor" index="9"]
+
+visible = false
+
+[node name="LightOccluder2D3" parent="Floor" index="10"]
+
+visible = false
+
+[node name="LightOccluder2D4" parent="Floor" index="11"]
+
+visible = false
+
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="Floor" index="12"]
+
+light_mask = 3
+rotation = 1.5708
+occluder = SubResource( 2 )
+light_mask = 3
+
+[node name="LightOccluder2D6" type="LightOccluder2D" parent="Floor" index="13"]
+
+light_mask = 3
+rotation = 1.5708
+occluder = SubResource( 3 )
+light_mask = 3
+
+[node name="LightOccluder2D7" type="LightOccluder2D" parent="Floor" index="14"]
+
+light_mask = 3
+rotation = 1.5708
+occluder = SubResource( 4 )
+light_mask = 3
+
+[node name="LightOccluder2D8" type="LightOccluder2D" parent="Floor" index="15"]
+
+light_mask = 3
+rotation = 1.5708
+occluder = SubResource( 5 )
+light_mask = 3
+
+[node name="Roof" parent="." index="1"]
+
+rotation = 4.71239
+texture = ExtResource( 3 )
+vframes = 3
+frame = 1
+_sections_unfolded = [ "Animation", "Material", "Transform", "Visibility", "Z Index" ]
+
+[node name="Right Hand Door" parent="." index="3"]
+
+visible = false
+wall = true
+
+[node name="Left Hand Door" parent="." index="5"]
+
+visible = false
+collision_layer = 0
+collision_mask = 0
+
+
