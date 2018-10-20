@@ -97,7 +97,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="OpenSound" type="AudioStreamPlayer" parent="." index="6"]
 
 stream = ExtResource( 3 )
-volume_db = 0.0
+volume_db = -3.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0

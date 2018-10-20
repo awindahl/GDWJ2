@@ -72,7 +72,7 @@ position = Vector2( -51200, 0 )
 
 position = Vector2( 3.09082, 0 )
 stream = ExtResource( 10 )
-volume_db = -50.0
+volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 max_distance = 65536.0

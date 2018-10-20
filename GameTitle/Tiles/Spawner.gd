@@ -9,9 +9,15 @@ func _ready():
 		GameDirector.activate_event(event,0)
 	
 	var rand = randi() % 100
-	if rand > 50:
-		var item = randi() % 9 + 1
+	if 1:
+		var item = randi() % 8 + 1
 		var new_pickup = pickup.instance()
 		if !get_parent().get_parent().get_parent().get_node("Player/CanvasLayer/hud").get_node("Control").get_node("Container/item" + str(item-1)).is_visible_in_tree():
-			new_pickup.itemNr = item
-			add_child(new_pickup)
+			
+			if get_parent().get_parent().get_parent().get_node("Player/CanvasLayer/hud").get_node("Control").inventory.size() == 1:
+				item = 9
+		else:
+			item = randi() % 8 + 1
+			if !get_parent().get_parent().get_parent().get_node("Player/CanvasLayer/hud").get_node("Control").get_node("Container/item" + str(item-1)).is_visible_in_tree():
+				new_pickup.itemNr = item
+				add_child(new_pickup)
