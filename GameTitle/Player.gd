@@ -46,6 +46,12 @@ func _process(delta):
 				var tile = area.get_parent()
 				if Input.is_action_just_released("ui_accept"):
 					emit_signal("changing_floors", tile, area.name)
+			"FrontDoor":
+				if Input.is_action_just_released("ui_accept"):
+					if GameDirector.canOpen:
+						transition.fade_to("res://win.tscn")
+					else:
+						print("door stuck")
 
 		var overlap = area.get_parent()
 		if overlap.get("TYPE") == "ITEM":

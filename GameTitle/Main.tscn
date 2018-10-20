@@ -11,7 +11,7 @@
 [ext_resource path="res://Tiles/Basement.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Asset Lib/Sounds/walking_on_stairs.wav" type="AudioStream" id=10]
 
-[node name="Main" type="Node2D" index="0"]
+[node name="Main" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause", "Transform", "Visibility", "Z Index" ]
@@ -82,9 +82,9 @@ area_mask = 1
 
 [connection signal="changing_floors" from="Player" to="." method="_on_Player_changing_floors"]
 
-[connection signal="player_requesting_door_to_open" from="Player" to="Basement" method="_on_Player_requesting_door_to_open"]
-
 [connection signal="player_requesting_door_to_open" from="Player" to="GroundFloor" method="_on_Player_requesting_door_to_open"]
+
+[connection signal="player_requesting_door_to_open" from="Player" to="Basement" method="_on_Player_requesting_door_to_open"]
 
 [connection signal="player_requesting_door_to_open" from="Player" to="FirstFloor" method="_on_Player_requesting_door_to_open"]
 
