@@ -1,9 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Tiles/Tile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Asset Lib/Art/chapeltile.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="OccluderPolygon2D" id=3]
+
+closed = false
+cull_mode = 0
+polygon = PoolVector2Array( -255.321, -57.4518, -255.321, 53.547 )
+
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 64, 64 )
@@ -12,7 +18,14 @@ extents = Vector2( 64, 64 )
 
 [node name="Floor" parent="." index="0"]
 
+editor/display_folded = false
 texture = ExtResource( 2 )
+
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="Floor" index="12"]
+
+light_mask = 3
+occluder = SubResource( 3 )
+light_mask = 3
 
 [node name="Upper Door" parent="." index="2"]
 
@@ -40,7 +53,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pew" index="0"]
 
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="pew2" type="StaticBody2D" parent="." index="7"]
 
@@ -59,7 +72,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pew2" index="0"]
 
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="pew3" type="StaticBody2D" parent="." index="8"]
 
@@ -79,6 +92,6 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pew3" index="0"]
 
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 

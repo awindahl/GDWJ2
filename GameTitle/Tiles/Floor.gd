@@ -23,7 +23,7 @@ var OldroomTile = preload("res://Tiles/OldroomTile.tscn")
 var MainroomTile = preload("res://Tiles/MainhallTile.tscn")
 var RoundhallTile = preload("res://Tiles/RoundhallTile.tscn")
 var ThreewaycrossTile = preload("res://Tiles/ThreewaycrossTile.tscn")
-
+var spawned_tiles
 var tile_list = [HallwayTile, BasicTile, CrossingTile, BallroomTile, KitchenTile, StorageTile, BedroomTile,
 		StairwayTile, DiningroomTile, LaundromatTile, OldpassageTile, WinecellarTile, ChapeTile, ArtgalleryTile,
 		GuestbedroomTile, TreasuryTile, ClosetTile, WashroomTile, OldroomTile, MainroomTile, RoundhallTile, ThreewaycrossTile]
@@ -34,6 +34,7 @@ func _init():
 	self.tiles = []
 
 func _ready():
+	self.spawned_tiles = []
 	for child in self.get_children():
 		if child.get("TYPE") == "TILE":
 			self.tiles.append(child)
