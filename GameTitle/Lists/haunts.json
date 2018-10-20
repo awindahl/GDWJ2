@@ -1,0 +1,20 @@
+{
+    "The Dark Ascent" : {
+        "desc": "What a crash! it seems that you still are in one piece, for now. Too much time spent in this dark cold, and damp place would surely make the most sane person go insane. The exit must be somewhere close... right?",
+        "effect": "1",
+        "objective": "Reach the front door!",
+        "sprite": "temp.png"
+    },
+    "An ancient evil awakens" : {
+        "desc": "You pick up and read the strange tome only to find out about the terrible event happening tonight. The revival of an ancient being has been foretold long ago and now it seems that the time has come. It seems a ritual is to take place, a ritual demanding human sacrifices... Are those steps you hear?",
+        "effect": "2",
+        "objective": "Disrupt the ritual!",
+        "sprite": "temp.png"
+    },
+    "The Plague" : {
+        "desc": "Suddenly you hear a faint rumble coming from above. It sounds almost like two heavy stones scraping against eachother. Whatever it is it cannot be good as a green mist suddenly fills the house. You start to feel sick. Something needs to be done, and fast!",
+        "effect": "3",
+        "objective": "Find the source of the gas!",
+        "sprite": "temp.png"
+    }
+}

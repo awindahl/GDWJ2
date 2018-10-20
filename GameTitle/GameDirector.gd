@@ -7,7 +7,9 @@ var sanity = 6
 var strength = 5
 var strBonus = 0
 var sanBonus = 0
-var canOpen = false
+var canOpen = false #remember this, this is important
+var haunt_counter = 1
+var haunting = false
 
 var dict = {}
 var evDict = {}
@@ -25,6 +27,7 @@ func _ready():
 	add_user_signal("hud_update")
 	add_user_signal("pop_display")
 	add_user_signal("pop_update")
+	add_user_signal("change_objective")
 	randomize() #RANDOM THE SEED EKIN, RANDOM THE SEEED
 	
 	# LOAD ALL THE LISTS INTO ARRAYS IN GODOT
@@ -45,7 +48,9 @@ func _ready():
 #	then the resources tab and set the export mode to 
 #	Export all resources in the project to 
 #	make godot include the JSON file in the build
-
+	
+func update_hud():
+	emit_signal("hud_update")
 
 func _process(delta):
 	
@@ -53,8 +58,29 @@ func _process(delta):
 #	update game timer if game in progress?
 	pass
 
+func roll_haunt():
+	var roll = randi() % 9
+	if roll > haunt_counter:
+		haunt_counter = haunt_counter + 1
+	else:
+		print("haunt happened!")
+		activate_haunt()
 
-#	Game win conditions and effect here
+func activate_haunt():
+	haunting = true
+	var roll = randi() % 3 + 1
+	match roll:
+		1:
+			currentObjective = evDict["The Dark Ascent"]["objective"]
+			#activate the dark ascent
+		2:
+			currentObjective = evDict["An ancient evil awakens"]["objective"]
+			#activate an ancient evil awakens
+		3:
+			currentObjective = evDict["The Plague"]["objective"]
+			#activate the plague
+	emit_signal("change_objective")
+
 func activate_rule(iName):
 	print("activating " + dict[iName]["effectNr"])
 	match int(dict[iName]["effectNr"]):
@@ -99,10 +125,7 @@ func activate_rule(iName):
 			canOpen = true
 	print("sanity: " + str(sanity) +", strength: " + str(strength) + ", sanity bonus: " + str(sanBonus) + ", strength bonus: " + str(strBonus))
 	update_hud()
-	
-func update_hud():
-	emit_signal("hud_update")
-	
+
 func activate_event(eName, eStage=0):
 	print("activating " + dict[eName]["effectNr"])
 	match int(evDict[eName]["effect"]):
@@ -192,7 +215,7 @@ func bloody_walls(nr):
 				tempText = evDict["Bloody Walls"]["desc"] + " \n\n You can't believe this is happening to you, but you prepare for the worst. Gained 1 strength, but lost 1 sanity"
 			emit_signal("pop_update")
 			update_hud()
-			#make haunt roll
+			roll_haunt()
 	
 func strange_potion(nr):
 	match nr:
@@ -216,7 +239,7 @@ func strange_potion(nr):
 				tempText = evDict["Strange Potion"]["desc"] + " \n\n The potion must have gone bad! You feel how your strength slowly leaves your body. Lost 1 strength."
 			emit_signal("pop_update")
 			update_hud()
-			#make haunt roll
+			roll_haunt()
 	
 func unstable_ground(nr):
 	match nr:
@@ -235,4 +258,4 @@ func unstable_ground(nr):
 				tempText = evDict["Unstable ground"]["desc"] + " \n\n Carefully moving through the room, you avoid the old rotten planks. Gained 1 sanity."
 			emit_signal("pop_update")
 			update_hud()
-			#make haunt roll
+			roll_haunt()
