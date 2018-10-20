@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Tiles/Door.gd" type="Script" id=1]
 [ext_resource path="res://Asset Lib/Art/door.png" type="Texture" id=2]
+[ext_resource path="res://Asset Lib/Sounds/door_opening.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -30,7 +31,7 @@ closed = false
 cull_mode = 0
 polygon = PoolVector2Array( -13.7656, -49.0832, -12.7292, 61.9243 )
 
-[node name="Door" type="StaticBody2D" index="0"]
+[node name="Door" type="StaticBody2D"]
 
 light_mask = 3
 input_pickable = false
@@ -43,7 +44,6 @@ bounce = 0.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index" ]
 wall = null
-boarded = null
 
 [node name="DoorSprite" type="Sprite" parent="." index="0"]
 
@@ -94,5 +94,14 @@ rotation = 1.5708
 occluder = SubResource( 5 )
 light_mask = 3
 _sections_unfolded = [ "Transform" ]
+
+[node name="OpenSound" type="AudioStreamPlayer" parent="." index="6"]
+
+stream = ExtResource( 3 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 
