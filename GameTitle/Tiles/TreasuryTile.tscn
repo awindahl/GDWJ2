@@ -14,7 +14,7 @@ closed = false
 cull_mode = 0
 polygon = PoolVector2Array( -254.71, 54.09, -253.383, -255.727, 254.138, -255.445, 255.336, 64.2801 )
 
-[node name="Tile" index="0" instance=ExtResource( 1 )]
+[node name="TreasuryTile" instance=ExtResource( 1 )]
 
 [node name="Floor" parent="." index="0"]
 

@@ -14,11 +14,12 @@ polygon = PoolVector2Array( -255.321, -57.4518, -255.321, 53.547 )
 custom_solver_bias = 0.0
 extents = Vector2( 64, 64 )
 
-[node name="Tile" index="0" instance=ExtResource( 1 )]
+[node name="ChapelTile" instance=ExtResource( 1 )]
+
+_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 
 [node name="Floor" parent="." index="0"]
 
-editor/display_folded = false
 texture = ExtResource( 2 )
 
 [node name="LightOccluder2D5" type="LightOccluder2D" parent="Floor" index="12"]
