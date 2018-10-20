@@ -20,8 +20,7 @@ light_mask = 3
 z_index = -1
 z_as_relative = false
 script = ExtResource( 1 )
-_sections_unfolded = [ "Material", "Visibility", "Z Index" ]
-itemNr = "Cheese"
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
 

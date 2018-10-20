@@ -39,6 +39,9 @@ polygon = PoolVector2Array( 162.534, -177.645, -40.8334, -177.442, -41.0479, 25.
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Visibility" ]
+is_basement = null
+is_ground_floor = null
+is_first_floor = null
 
 [node name="Floor" type="Sprite" parent="." index="0"]
 
@@ -279,8 +282,10 @@ position = Vector2( 0, 208 )
 position = Vector2( -208, 0 )
 rotation = 1.5708
 
-[node name="Spawner" type="Node" parent="." index="6"]
+[node name="Spawner" type="Node2D" parent="." index="6"]
 
+position = Vector2( 0, 116.001 )
 script = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
 
 

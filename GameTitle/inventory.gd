@@ -11,4 +11,4 @@ func _on_Panel_mouse_exited(nr):
 	$Label.text = ""
 
 func _add_item(itemName):
-	get_node("Container/item" + str(inventory.find(itemName))).show()
+	get_node("Container/item" + str(itemName-1)).show()
