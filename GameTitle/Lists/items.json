@@ -1,0 +1,47 @@
+{
+    "Led Pipe" : {
+        "desc": "A sturdy pipe. You never know when you might need it.",
+        "effect": "1",
+        "sprite": "temp.png"
+    },
+    "Dark dice" : {
+        "desc": "Do I feel lucky? Well, do I?",
+        "effect": "2",
+        "sprite": "temp.png"
+    },
+    "Cheese" : {
+        "desc": "No one has as many friends as the man with many cheeses.",
+        "effect": "3",
+        "sprite": "temp.png"
+    },
+    "Pack of Smokes" : {
+        "desc": "An old, musty pack of cigarettes.",
+        "effect": "4",
+        "sprite": "temp.png"
+    },
+    "Holy Book" : {
+        "desc": "A holy book with a religious symbol on the cover. Written by King Games",
+        "effect": "5",
+        "sprite": "temp.png"
+    },
+    "Bloody Note" : {
+        "desc": "A crumpled, bloody note with a strange script on it.",
+        "effect": "6",
+        "sprite": "temp.png"
+    },
+    "Severed finger" : {
+        "desc": "A cold, hard finger. From the looks of it, it used to belong to a woman.",
+        "effect": "7",
+        "sprite": "temp.png"
+    },
+    "Strange Book" : {
+        "desc": "A leather-bound old book with a strange symbol on the front.",
+        "effect": "8",
+        "sprite": "temp.png"
+    },
+    "Keys" : {
+        "desc": "The house keys!",
+        "effect": "9",
+        "sprite": "key.png"
+    }
+}
