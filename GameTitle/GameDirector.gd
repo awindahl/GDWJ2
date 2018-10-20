@@ -133,12 +133,16 @@ func activate_haunt():
 		1:
 			currentObjective = haDict["The Dark Ascent"]["objective"]
 			#activate the dark ascent
+			activate_ascent()
 		2:
 			currentObjective = haDict["An ancient evil awakens"]["objective"]
 			#activate an ancient evil awakens
+			activate_ancient_evil()
 		3:
 			currentObjective = haDict["The Plague"]["objective"]
 			#activate the plague
+			activate_the_plague()
+
 	emit_signal("change_objective")
 
 func activate_rule(iName):
@@ -320,3 +324,12 @@ func unstable_ground(nr):
 			emit_signal("pop_update")
 			update_hud()
 			roll_haunt()
+
+func activate_ascent():
+	pass
+
+func activate_ancient_evil():
+	pass
+	
+func activate_the_plague():
+	pass
