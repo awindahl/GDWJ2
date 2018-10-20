@@ -3,8 +3,8 @@ extends Node
 var volume = 25
 var playing = false
 var currentObjective = "Survive. Also press 'Z' to fire off a test popout."
-var sanity = 6
-var strength = 5
+var sanity = 3
+var strength = 3
 var strBonus = 0
 var sanBonus = 0
 var canOpen = false #remember this, this is important
@@ -52,6 +52,25 @@ var tile_list = [BasicTile, HallwayTile, CrossingTile, BallroomTile, KitchenTile
 var instanced_tiles = []
 
 export(Array) var tiles_placed
+
+func reset():
+	sanity = 3
+	strength = 3
+	tile_list = [BasicTile, HallwayTile, CrossingTile, BallroomTile, KitchenTile, StorageTile, BedroomTile,
+		StairwayTile, DiningroomTile, LaundromatTile, OldpassageTile, WinecellarTile, ChapeTile, ArtgalleryTile,
+		GuestbedroomTile, TreasuryTile, ClosetTile, WashroomTile, OldroomTile, MainroomTile, RoundhallTile, ThreewaycrossTile]
+	instanced_tiles = []
+	for tile in tile_list:
+		self.instanced_tiles.append(tile.instance())
+	haunt_counter = 1
+	haunting = false
+	canOpen = false
+	items = []
+	events = []
+	tempEvent = ""
+	tempText = ""
+	TempImage = ""
+	TempBg = ""
 
 func _ready():
 	for tile in tile_list:
@@ -251,12 +270,12 @@ func chill_wind(nr):
 		1:
 			var num = randi() % ((sanity+sanBonus)*3)
 			if num > 5:
-				sanity = sanity + 1
 				tempText = evDict["A chill wind blows"]["desc"] + " \n\n Everything around you seems fine, your head hurts a bit but other than that you're fine."
 			elif num > 2:
 				strength = strength - 1
 				tempText = evDict["A chill wind blows"]["desc"] + " \n\n You fell straight ahead and hurt your nose badly. The blood has dried but you're still reeling from the pain. Lost 1 strength."
 			elif num < 2:
+				sanity = sanity - 1
 				tempText = evDict["A chill wind blows"]["desc"] + " \n\n During your fall ghostly images filled your mind. Every time you close your eyes you see the face of a screaming woman right infront of you. Lost 1 sanity."
 			emit_signal("pop_update")
 			update_hud()
