@@ -1,7 +1,6 @@
 extends KinematicBody2D
 signal player_requesting_door_to_open
 var SPEED = 150
-var inventory = []
 
 func _process(delta):
 	
@@ -34,5 +33,6 @@ func _process(delta):
 
 		if overlap.get("TYPE") == "ITEM":
 			if Input.is_action_just_released("ui_accept"):
+				GameDirector.activate_rule(overlap.itemNr)
 				get_node("CanvasLayer/hud/Control")._add_item(overlap.itemNr)
 				overlap.queue_free()
