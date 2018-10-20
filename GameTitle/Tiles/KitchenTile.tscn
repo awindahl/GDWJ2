@@ -10,6 +10,10 @@ extents = Vector2( 128, 64 )
 
 [node name="Tile" index="0" instance=ExtResource( 1 )]
 
+is_basement = null
+is_ground_floor = true
+is_first_floor = null
+
 [node name="Floor" parent="." index="0"]
 
 texture = ExtResource( 2 )
