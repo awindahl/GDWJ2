@@ -37,4 +37,17 @@ func _update_objective():
 	$Player/CanvasLayer/hud/objective.text = GameDirector.currentObjective
 
 func _on_Player_changing_floors(tile, floor_name):
-	$Player.global_position = self.get_node(floor_name).global_position
+	# Just hardcode the locations for now...
+	var vector
+	var stairs_name
+	match floor_name:
+		"Basement":
+			vector = Vector2(0, 0)
+			stairs_name = ""
+		"GroundFloor":
+			vector = Vector2(0, -2)
+			stairs_name = "GroundFloorStairs"
+		"FirstFloor":
+			vector = Vector2(0, 0)
+			stairs_name = "FirstFloorStairs"
+	$Player.global_position = self.get_node(floor_name).find_tile(vector).get_node(stairs_name).get_node("CollisionShape2D").global_position
