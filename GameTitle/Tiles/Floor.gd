@@ -22,10 +22,11 @@ var WashroomTile = preload("res://Tiles/WashroomTile.tscn")
 var OldroomTile = preload("res://Tiles/OldroomTile.tscn")
 var MainroomTile = preload("res://Tiles/MainhallTile.tscn")
 var RoundhallTile = preload("res://Tiles/RoundhallTile.tscn")
+var ThreewaycrossTile = preload("res://Tiles/ThreewaycrossTile.tscn")
 
 var tile_list = [HallwayTile, BasicTile, CrossingTile, BallroomTile, KitchenTile, StorageTile, BedroomTile,
 		StairwayTile, DiningroomTile, LaundromatTile, OldpassageTile, WinecellarTile, ChapeTile, ArtgalleryTile,
-		GuestbedroomTile, TreasuryTile, ClosetTile, WashroomTile, OldroomTile, MainroomTile, RoundhallTile]
+		GuestbedroomTile, TreasuryTile, ClosetTile, WashroomTile, OldroomTile, MainroomTile, RoundhallTile, ThreewaycrossTile]
 
 var tiles
 
