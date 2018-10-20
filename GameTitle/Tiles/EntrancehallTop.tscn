@@ -35,6 +35,18 @@ texture = ExtResource( 2 )
 vframes = 3
 _sections_unfolded = [ "Animation", "Material", "Region", "Transform", "Visibility", "Z Index" ]
 
+[node name="StaticBody2D3" parent="Floor" index="2"]
+
+collision_layer = 0
+collision_mask = 0
+_sections_unfolded = [ "Collision" ]
+
+[node name="StaticBody2D6" parent="Floor" index="3"]
+
+collision_layer = 0
+collision_mask = 0
+_sections_unfolded = [ "Collision" ]
+
 [node name="LightOccluder2D3" parent="Floor" index="10"]
 
 visible = false
@@ -45,22 +57,25 @@ visible = false
 
 [node name="LightOccluder2D5" type="LightOccluder2D" parent="Floor" index="12"]
 
+light_mask = 3
 rotation = 4.71239
 occluder = SubResource( 1 )
-light_mask = 1
+light_mask = 3
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="LightOccluder2D6" type="LightOccluder2D" parent="Floor" index="13"]
 
+light_mask = 3
 rotation = 1.5708
 occluder = SubResource( 2 )
-light_mask = 1
+light_mask = 3
 
 [node name="LightOccluder2D7" type="LightOccluder2D" parent="Floor" index="14"]
 
+light_mask = 3
 rotation = 1.5708
 occluder = SubResource( 3 )
-light_mask = 1
+light_mask = 3
 
 [node name="Roof" parent="." index="1"]
 
@@ -79,5 +94,20 @@ wall = true
 visible = false
 collision_layer = 0
 collision_mask = 0
+
+[node name="stairs" type="StaticBody2D" parent="." index="6"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="stairs" type="CollisionPolygon2D" parent="stairs" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0.154439, -57.9776, 197.894, -73.4147, 197.894, 72.1336, 0.154546, 53.0214, 1.62474, 60.3723, 206.716, 80.2197, 206.715, -83.706, 0.154432, -65.3285 )
 
 

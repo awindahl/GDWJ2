@@ -26,13 +26,13 @@ polygon = PoolVector2Array( -53.4756, -255.457, -254.967, -254.192 )
 
 closed = false
 cull_mode = 0
-polygon = PoolVector2Array( 50.9601, -254.827, 255.016, -255.644 )
+polygon = PoolVector2Array( 36.326, -254.948, 255.016, -255.644 )
 
 [sub_resource type="OccluderPolygon2D" id=5]
 
 closed = false
 cull_mode = 0
-polygon = PoolVector2Array( 51.6927, 255.634, 254.078, 256.121 )
+polygon = PoolVector2Array( 37.7693, 254.89, 254.078, 256.121 )
 
 [node name="Tile" index="0" instance=ExtResource( 1 )]
 
@@ -41,11 +41,35 @@ _sections_unfolded = [ "Collision", "Pickable", "Transform", "Visibility" ]
 
 [node name="Floor" parent="." index="0"]
 
+editor/display_folded = false
 rotation = 4.71239
 texture = ExtResource( 2 )
 vframes = 3
 frame = 1
 _sections_unfolded = [ "Animation", "Material", "Region", "Transform", "Visibility", "Z Index" ]
+
+[node name="StaticBody2D" parent="Floor" index="0"]
+
+collision_layer = 0
+collision_mask = 0
+
+[node name="StaticBody2D8" parent="Floor" index="1"]
+
+collision_layer = 0
+collision_mask = 0
+_sections_unfolded = [ "Collision" ]
+
+[node name="StaticBody2D3" parent="Floor" index="2"]
+
+collision_layer = 0
+collision_mask = 0
+_sections_unfolded = [ "Collision" ]
+
+[node name="StaticBody2D6" parent="Floor" index="3"]
+
+collision_layer = 0
+collision_mask = 0
+_sections_unfolded = [ "Collision" ]
 
 [node name="LightOccluder2D" parent="Floor" index="8"]
 
@@ -100,10 +124,20 @@ vframes = 3
 frame = 1
 _sections_unfolded = [ "Animation", "Material", "Transform", "Visibility", "Z Index" ]
 
+[node name="Upper Door" parent="." index="2"]
+
+position = Vector2( -14.5561, -208.238 )
+
 [node name="Right Hand Door" parent="." index="3"]
 
 visible = false
+collision_layer = 0
+collision_mask = 0
 wall = true
+
+[node name="Lower Door" parent="." index="4"]
+
+position = Vector2( -14.5995, 208 )
 
 [node name="Left Hand Door" parent="." index="5"]
 
