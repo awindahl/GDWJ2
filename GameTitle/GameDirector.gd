@@ -292,7 +292,7 @@ func bloody_walls(nr):
 				tempText = evDict["Bloody Walls"]["desc"] + " \n\n You can't believe this is happening to you, but you prepare for the worst. [color=green]Gained 1 strength[/color], but [color=red]lost 1 sanity[/color]"
 			emit_signal("pop_update")
 			update_hud()
-			roll_haunt()
+			#roll_haunt()
 	
 func strange_potion(nr):
 	match nr:
@@ -316,8 +316,8 @@ func strange_potion(nr):
 				tempText = evDict["Strange Potion"]["desc"] + " \n\n The potion must have gone bad! You feel how your strength slowly leaves your body. [color=red]Lost 1 strength[/color]."
 			emit_signal("pop_update")
 			update_hud()
-			if !haunting:
-				roll_haunt()
+			#if !haunting:
+				#roll_haunt()
 	
 func unstable_ground(nr):
 	match nr:
@@ -337,8 +337,8 @@ func unstable_ground(nr):
 				tempText = evDict["Unstable ground"]["desc"] + " \n\n Carefully moving through the room, you avoid the old rotten planks. [color=green]Gained 1 sanity[/color]."
 			emit_signal("pop_update")
 			update_hud()
-			if !haunting:
-				roll_haunt()
+			#if !haunting:
+			#	roll_haunt()
 
 func activate_ascent():
 	tempText = haDict["The Dark Ascent"]["desc"]
