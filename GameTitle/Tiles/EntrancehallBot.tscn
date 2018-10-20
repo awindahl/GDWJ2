@@ -10,31 +10,31 @@ closed = false
 cull_mode = 0
 polygon = PoolVector2Array( -68.3519, 255.433, -259.504, 255.13 )
 
-[sub_resource type="OccluderPolygon2D" id=4]
+[sub_resource type="OccluderPolygon2D" id=2]
 
 closed = false
 cull_mode = 0
 polygon = PoolVector2Array( 30.7395, -254.752, 53.8067, -254.752 )
 
-[sub_resource type="OccluderPolygon2D" id=5]
+[sub_resource type="OccluderPolygon2D" id=3]
 
 closed = false
 cull_mode = 0
 polygon = PoolVector2Array( 36.7282, 255.175, 52.8063, 255.175 )
 
-[sub_resource type="OccluderPolygon2D" id=2]
+[sub_resource type="OccluderPolygon2D" id=4]
 
 closed = false
 cull_mode = 0
 polygon = PoolVector2Array( -72.5266, -254.475, -259.273, -255.305 )
 
-[sub_resource type="OccluderPolygon2D" id=3]
+[sub_resource type="OccluderPolygon2D" id=5]
 
 closed = false
 cull_mode = 0
 polygon = PoolVector2Array( 254.802, 54.6944, 254.373, -51.9813 )
 
-[node name="Tile" instance=ExtResource( 1 )]
+[node name="Tile" index="0" instance=ExtResource( 1 )]
 
 rotation = 1.5708
 _sections_unfolded = [ "Collision", "Pickable", "Transform", "Visibility" ]
@@ -50,7 +50,6 @@ _sections_unfolded = [ "Animation", "Material", "Region", "Transform", "Visibili
 
 [node name="StaticBody2D" parent="Floor" index="0"]
 
-editor/display_folded = false
 visible = true
 collision_layer = 0
 collision_mask = 0
@@ -61,7 +60,6 @@ disabled = true
 
 [node name="StaticBody2D8" parent="Floor" index="1"]
 
-editor/display_folded = false
 visible = true
 collision_layer = 0
 collision_mask = 0
@@ -91,32 +89,33 @@ light_mask = 3
 
 light_mask = 3
 rotation = 1.5708
-occluder = SubResource( 4 )
+occluder = SubResource( 2 )
 light_mask = 3
 
 [node name="LightOccluder2D9" type="LightOccluder2D" parent="Floor" index="14"]
 
 light_mask = 3
 rotation = 1.5708
-occluder = SubResource( 5 )
+occluder = SubResource( 3 )
 light_mask = 3
 
 [node name="LightOccluder2D6" type="LightOccluder2D" parent="Floor" index="15"]
 
 light_mask = 3
 rotation = 1.5708
-occluder = SubResource( 2 )
+occluder = SubResource( 4 )
 light_mask = 3
 
 [node name="LightOccluder2D7" type="LightOccluder2D" parent="Floor" index="16"]
 
 light_mask = 3
 rotation = 1.5708
-occluder = SubResource( 3 )
+occluder = SubResource( 5 )
 light_mask = 3
 
 [node name="Roof" parent="." index="1"]
 
+visible = false
 rotation = 4.71239
 texture = ExtResource( 3 )
 vframes = 3

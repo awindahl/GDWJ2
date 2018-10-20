@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://menu.gd" type="Script" id=1]
 [ext_resource path="res://Asset Lib/Art/menubackground.png" type="Texture" id=2]
@@ -17,8 +17,9 @@
 [ext_resource path="res://Asset Lib/Font/TypewriterFont.tres" type="DynamicFont" id=15]
 [ext_resource path="res://Asset Lib/Animations/fadeInSplash1.tres" type="Animation" id=16]
 [ext_resource path="res://Asset Lib/Animations/fadeInSplash2.tres" type="Animation" id=17]
-[ext_resource path="res://Asset Lib/Art/9E1Yfr.png" type="Texture" id=18]
-[ext_resource path="res://Asset Lib/Art/black.png" type="Texture" id=19]
+[ext_resource path="res://Asset Lib/Art/splash2.png" type="Texture" id=18]
+[ext_resource path="res://Asset Lib/Art/9E1Yfr.png" type="Texture" id=19]
+[ext_resource path="res://Asset Lib/Art/black.png" type="Texture" id=20]
 
 [sub_resource type="StyleBoxTexture" id=1]
 
@@ -386,10 +387,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -978.0
-margin_top = -33.0
-margin_right = 1357.0
-margin_bottom = 752.0
+margin_right = 2335.0
+margin_bottom = 785.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -398,7 +397,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 18 )
 stretch_mode = 2
-_sections_unfolded = [ "Visibility" ]
+_sections_unfolded = [ "Rect", "Visibility" ]
 
 [node name="splash1" type="TextureRect" parent="." index="3"]
 
@@ -416,7 +415,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 18 )
+texture = ExtResource( 19 )
 stretch_mode = 2
 _sections_unfolded = [ "Visibility" ]
 
@@ -437,7 +436,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 19 )
+texture = ExtResource( 20 )
 stretch_mode = 2
 _sections_unfolded = [ "Visibility" ]
 
