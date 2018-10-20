@@ -1,7 +1,6 @@
 extends Node2D
 var TYPE = "DOOR"
 export(bool) var wall setget wall_set, wall_get
-#export(bool) var boarded setget boarded_set, boarded_set
 var door_pos_rel setget , door_pos_rel_get
 var door_pos setget door_pos_set, door_pos_get
 var opposite_door_pos_rel setget , opposite_door_pos_rel_get
@@ -9,7 +8,7 @@ var next_tile_pos setget , next_tile_pos_get
 var radius = 208
 var is_open
 var is_wall
-#var boarded_door = preload("res://Asset Lib/Art/boarded_door.png")
+var boarded_door = preload("res://Asset Lib/Art/boarded_door.png")
 var Tile	# Shouldn't rely on having Tile and Floor too much otherwise could be problems in the future (2-way comms)
 
 func _ready():
@@ -37,14 +36,8 @@ func disable():
 	self.hide()
 	$DoorCollisionShape.disabled = true
 
-#func boarded_set(new_bool):
-#	if new_bool:
-#		$DoorSprite.texture = boarded_door
-#	elif !self.boarded:
-#		$DoorSprite.texture = self.starting_texture
-#
-#func boarded_get():
-#	return $DoorSprite.texture == boarded_door
+func board():
+	$DoorSprite.texture = boarded_door
 
 func door_pos_set(new_door_pos):
 	self.rotation = new_door_pos.angle_to(Vector2(0, 1))
