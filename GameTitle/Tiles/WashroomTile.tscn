@@ -17,34 +17,19 @@ texture = ExtResource( 2 )
 [node name="Upper Door" parent="." index="2"]
 
 visible = false
+wall = true
 
 [node name="Right Hand Door" parent="." index="3"]
 
 visible = false
+wall = true
 
 [node name="Left Hand Door" parent="." index="5"]
 
 visible = false
+wall = true
 
-[node name="BlockerUp" parent="." index="6"]
-
-visible = true
-collision_layer = 1
-collision_mask = 1
-
-[node name="BlockerLeft" parent="." index="7"]
-
-visible = true
-collision_layer = 1
-collision_mask = 1
-
-[node name="BlockerRight" parent="." index="8"]
-
-visible = true
-collision_layer = 1
-collision_mask = 1
-
-[node name="bath" type="StaticBody2D" parent="." index="10"]
+[node name="bath" type="StaticBody2D" parent="." index="6"]
 
 position = Vector2( 143.06, -107.874 )
 scale = Vector2( 1.32179, 2.54531 )
@@ -63,7 +48,7 @@ __meta__ = {
 
 shape = SubResource( 1 )
 
-[node name="toilet" type="StaticBody2D" parent="." index="11"]
+[node name="toilet" type="StaticBody2D" parent="." index="7"]
 
 position = Vector2( -146.958, -139.233 )
 scale = Vector2( 0.941763, 1.36174 )

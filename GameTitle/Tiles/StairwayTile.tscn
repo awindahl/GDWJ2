@@ -17,34 +17,19 @@ texture = ExtResource( 2 )
 [node name="Upper Door" parent="." index="2"]
 
 visible = false
+wall = true
 
 [node name="Right Hand Door" parent="." index="3"]
 
 visible = false
+wall = true
 
 [node name="Left Hand Door" parent="." index="5"]
 
 visible = false
+wall = true
 
-[node name="BlockerUp" parent="." index="6"]
-
-visible = true
-collision_layer = 1
-collision_mask = 1
-
-[node name="BlockerLeft" parent="." index="7"]
-
-visible = true
-collision_layer = 1
-collision_mask = 1
-
-[node name="BlockerRight" parent="." index="8"]
-
-visible = true
-collision_layer = 1
-collision_mask = 1
-
-[node name="StairWalls" type="StaticBody2D" parent="." index="10"]
+[node name="StairWalls" type="StaticBody2D" parent="." index="6"]
 
 editor/display_folded = true
 position = Vector2( -148.323, 40.6048 )
@@ -64,7 +49,7 @@ __meta__ = {
 
 shape = SubResource( 1 )
 
-[node name="StairWalls2" type="StaticBody2D" parent="." index="11"]
+[node name="StairWalls2" type="StaticBody2D" parent="." index="7"]
 
 editor/display_folded = true
 position = Vector2( 143.86, 40.6048 )
@@ -84,7 +69,7 @@ __meta__ = {
 
 shape = SubResource( 1 )
 
-[node name="StairWalls3" type="StaticBody2D" parent="." index="12"]
+[node name="StairWalls3" type="StaticBody2D" parent="." index="8"]
 
 editor/display_folded = true
 position = Vector2( 166.014, -13.8802 )
@@ -104,7 +89,7 @@ __meta__ = {
 
 shape = SubResource( 1 )
 
-[node name="StairWalls4" type="StaticBody2D" parent="." index="13"]
+[node name="StairWalls4" type="StaticBody2D" parent="." index="9"]
 
 editor/display_folded = true
 position = Vector2( -168.082, -13.8802 )

@@ -1,21 +1,35 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://hud.tscn" type="PackedScene" id=3]
-[ext_resource path="res://popover.tscn" type="PackedScene" id=4]
-[ext_resource path="res://pause.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Asset Lib/Sounds/Space_Ambiences_03.wav" type="AudioStream" id=6]
-[ext_resource path="res://Tiles/GroundFloor.tscn" type="PackedScene" id=7]
-[ext_resource path="res://pickup.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Tiles/GroundFloor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Asset Lib/Sounds/Space_Ambiences_03.wav" type="AudioStream" id=3]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://hud.tscn" type="PackedScene" id=5]
+[ext_resource path="res://popover.tscn" type="PackedScene" id=6]
+[ext_resource path="res://pause.tscn" type="PackedScene" id=7]
 
 [node name="Main" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause", "Transform", "Visibility", "Z Index" ]
 
-[node name="Player" parent="." index="0" instance=ExtResource( 2 )]
+[node name="GroundFloor" parent="." index="0" instance=ExtResource( 2 )]
 
+position = Vector2( 3.995, -81.6855 )
+
+[node name="background_music" type="AudioStreamPlayer" parent="." index="1"]
+
+stream = ExtResource( 3 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Player" parent="." index="2" instance=ExtResource( 4 )]
+
+editor/display_folded = true
+position = Vector2( 3.09082, 0 )
 _sections_unfolded = [ "Collision", "Pickable", "Transform", "collision" ]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Player" index="4"]
@@ -26,11 +40,11 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="hud" parent="Player/CanvasLayer" index="0" instance=ExtResource( 3 )]
+[node name="hud" parent="Player/CanvasLayer" index="0" instance=ExtResource( 5 )]
 
-[node name="popover" parent="Player/CanvasLayer" index="1" instance=ExtResource( 4 )]
+[node name="popover" parent="Player/CanvasLayer" index="1" instance=ExtResource( 6 )]
 
-[node name="pause" parent="Player/CanvasLayer" index="2" instance=ExtResource( 5 )]
+[node name="pause" parent="Player/CanvasLayer" index="2" instance=ExtResource( 7 )]
 
 visible = false
 anchor_left = 0.5
@@ -43,36 +57,6 @@ margin_right = 652.5
 margin_bottom = 369.5
 _sections_unfolded = [ "Rect" ]
 
-[node name="background_music" type="AudioStreamPlayer" parent="." index="1"]
-
-stream = ExtResource( 6 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Master"
-
-[node name="GroundFloor" parent="." index="2" instance=ExtResource( 7 )]
-
-[node name="item1" parent="GroundFloor" index="3" instance=ExtResource( 8 )]
-
-position = Vector2( 110, -120 )
-
-[node name="item2" parent="GroundFloor" index="4" instance=ExtResource( 8 )]
-
-position = Vector2( -130, -120 )
-itemNr = "Strange Book"
-
-[node name="item3" parent="GroundFloor" index="5" instance=ExtResource( 8 )]
-
-position = Vector2( -130, -450 )
-itemNr = "Bloody Note"
-
-[node name="item4" parent="GroundFloor" index="6" instance=ExtResource( 8 )]
-
-position = Vector2( 110, -450 )
-itemNr = "Dark dice"
-
-[connection signal="player_requesting_door_to_open" from="Player" to="GroundFloor" method="_on_player_requesting_door_to_open"]
+[connection signal="player_requesting_door_to_open" from="Player" to="GroundFloor" method="_on_Player_requesting_door_to_open"]
 
 

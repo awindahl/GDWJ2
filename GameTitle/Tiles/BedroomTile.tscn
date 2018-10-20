@@ -12,36 +12,10 @@ texture = ExtResource( 2 )
 [node name="Upper Door" parent="." index="2"]
 
 visible = false
+wall = true
 
 [node name="Right Hand Door" parent="." index="3"]
 
 rotation = -1.5708
-
-[node name="Left Hand Door" parent="." index="5"]
-
-visible = false
-
-[node name="BlockerUp" parent="." index="6"]
-
-visible = true
-collision_layer = 1
-collision_mask = 1
-_sections_unfolded = [ "Collision", "Pickable", "Transform", "Visibility" ]
-
-[node name="BlockerLeft" parent="." index="7"]
-
-visible = true
-collision_layer = 1
-collision_mask = 1
-_sections_unfolded = [ "Collision", "Pickable", "Transform", "Visibility" ]
-
-[node name="BlockerRight" parent="." index="8"]
-
-_sections_unfolded = [ "Collision", "Pickable", "Transform", "Visibility" ]
-
-[node name="BlockerDown" parent="." index="9"]
-
-collision_layer = 1
-collision_mask = 1
 
 

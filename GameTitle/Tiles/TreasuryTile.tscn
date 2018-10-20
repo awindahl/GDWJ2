@@ -17,34 +17,19 @@ texture = ExtResource( 2 )
 [node name="Upper Door" parent="." index="2"]
 
 visible = false
+wall = true
 
 [node name="Right Hand Door" parent="." index="3"]
 
 visible = false
+wall = true
 
 [node name="Left Hand Door" parent="." index="5"]
 
 visible = false
+wall = true
 
-[node name="BlockerUp" parent="." index="6"]
-
-visible = true
-collision_layer = 1
-collision_mask = 1
-
-[node name="BlockerLeft" parent="." index="7"]
-
-visible = true
-collision_layer = 1
-collision_mask = 1
-
-[node name="BlockerRight" parent="." index="8"]
-
-visible = true
-collision_layer = 1
-collision_mask = 1
-
-[node name="fence" type="StaticBody2D" parent="." index="10"]
+[node name="fence" type="StaticBody2D" parent="." index="6"]
 
 position = Vector2( 0, -6.06772 )
 input_pickable = false

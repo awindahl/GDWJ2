@@ -4,4 +4,7 @@
 
 [node name="Tile" instance=ExtResource( 1 )]
 
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Pickable", "Transform", "Visibility" ]
+
 
