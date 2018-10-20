@@ -35,3 +35,7 @@ func _unhandled_input(event):
 
 func _update_objective():
 	$Player/CanvasLayer/hud/objective.text = GameDirector.currentObjective
+
+func _on_Player_changing_floors(tile, floor_name):
+	print($FirstFloor.position)
+	$Player.global_position = $FirstFloor.global_position
