@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Tiles/Door.gd" type="Script" id=1]
 [ext_resource path="res://Asset Lib/Art/door.png" type="Texture" id=2]
@@ -19,7 +19,18 @@ polygon = PoolVector2Array( -54.8798, -0.205879, 54.0398, -0.27133 )
 custom_solver_bias = 0.0
 extents = Vector2( 64, 32 )
 
-[node name="Door" type="StaticBody2D"]
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 14, 64 )
+
+[sub_resource type="OccluderPolygon2D" id=5]
+
+closed = false
+cull_mode = 0
+polygon = PoolVector2Array( -13.7656, -49.0832, -12.7292, 61.9243 )
+
+[node name="Door" type="StaticBody2D" index="0"]
 
 light_mask = 3
 input_pickable = false
@@ -31,6 +42,7 @@ friction = 1.0
 bounce = 0.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index" ]
+wall = null
 
 [node name="DoorSprite" type="Sprite" parent="." index="0"]
 
@@ -50,7 +62,7 @@ position = Vector2( 0, 47 )
 occluder = SubResource( 2 )
 light_mask = 3
 
-[node name="hitbox" type="Area2D" parent="." index="3"]
+[node name="DoorHitbox" type="Area2D" parent="." index="3"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -59,10 +71,24 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-_sections_unfolded = [ "Collision" ]
+_sections_unfolded = [ "Collision", "Pickable" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorHitbox" index="0"]
 
 shape = SubResource( 3 )
+
+[node name="BlockerCollisionShape" type="CollisionShape2D" parent="." index="4"]
+
+rotation = 1.5708
+shape = SubResource( 4 )
+disabled = true
+_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
+
+[node name="BlockerLightOccluder" type="LightOccluder2D" parent="." index="5"]
+
+rotation = 1.5708
+occluder = SubResource( 5 )
+light_mask = 1
+_sections_unfolded = [ "Transform" ]
 
 
