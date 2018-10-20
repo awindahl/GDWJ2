@@ -18,7 +18,6 @@ func _ready():
 
 func tile_pos_set(new_tile_pos):
 	self.position = (new_tile_pos*512).round()
-	emit_signal("moved", self)
 
 func tile_pos_get():
 	return (self.position/512).round()
