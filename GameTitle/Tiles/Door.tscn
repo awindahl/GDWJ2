@@ -29,9 +29,9 @@ extents = Vector2( 14, 64 )
 
 closed = false
 cull_mode = 0
-polygon = PoolVector2Array( -13.7656, -49.0832, -12.7292, 61.9243 )
+polygon = PoolVector2Array( -13.2667, -60.2229, -12.5492, 64.1717 )
 
-[node name="Door" type="StaticBody2D"]
+[node name="Door" type="StaticBody2D" index="0"]
 
 light_mask = 3
 input_pickable = false
@@ -89,6 +89,7 @@ _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index"
 [node name="BlockerLightOccluder" type="LightOccluder2D" parent="." index="5"]
 
 light_mask = 3
+position = Vector2( -1.12058e-005, 60 )
 rotation = 1.5708
 occluder = SubResource( 5 )
 light_mask = 3
