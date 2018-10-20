@@ -38,6 +38,9 @@ polygon = PoolVector2Array( 37.7693, 254.89, 254.078, 256.121 )
 
 rotation = 1.5708
 _sections_unfolded = [ "Collision", "Pickable", "Transform", "Visibility" ]
+is_basement = null
+is_ground_floor = null
+is_first_floor = null
 
 [node name="Floor" parent="." index="0"]
 
@@ -118,7 +121,6 @@ light_mask = 3
 
 [node name="Roof" parent="." index="1"]
 
-visible = false
 rotation = 4.71239
 texture = ExtResource( 3 )
 vframes = 3

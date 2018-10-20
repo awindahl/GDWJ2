@@ -50,5 +50,4 @@ func temp_displayer():
 	display(GameDirector.tempText, "res://Asset Lib/Art/mute_btn_active.png", "res://Asset Lib/Art/popoverbg.png", GameDirector.tempEvent)
 	
 func temp_update_display():
-	print("AOAOAOAO")
 	update_display(GameDirector.tempText)

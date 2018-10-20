@@ -133,12 +133,16 @@ func activate_haunt():
 		1:
 			currentObjective = haDict["The Dark Ascent"]["objective"]
 			#activate the dark ascent
+			activate_ascent()
 		2:
 			currentObjective = haDict["An ancient evil awakens"]["objective"]
 			#activate an ancient evil awakens
+			activate_ancient_evil()
 		3:
 			currentObjective = haDict["The Plague"]["objective"]
 			#activate the plague
+			activate_the_plague()
+
 	emit_signal("change_objective")
 
 func activate_rule(iName):
@@ -250,6 +254,7 @@ func chill_wind(nr):
 				sanity = sanity + 1
 				tempText = evDict["A chill wind blows"]["desc"] + " \n\n Everything around you seems fine, your head hurts a bit but other than that you're fine."
 			elif num > 2:
+				strength = strength - 1
 				tempText = evDict["A chill wind blows"]["desc"] + " \n\n You fell straight ahead and hurt your nose badly. The blood has dried but you're still reeling from the pain. Lost 1 strength."
 			elif num < 2:
 				tempText = evDict["A chill wind blows"]["desc"] + " \n\n During your fall ghostly images filled your mind. Every time you close your eyes you see the face of a screaming woman right infront of you. Lost 1 sanity."
@@ -310,7 +315,8 @@ func unstable_ground(nr):
 		1:
 			var num = randi() % ((strength+strBonus)*3)
 			if num > 5:
-				tempText = evDict["Unstable ground"]["desc"] + " \n\n The planks give way. Lose 1 strength."
+				strength = strength - 2
+				tempText = evDict["Unstable ground"]["desc"] + " \n\n The planks give way. Lose 2 strength."
 			elif num > 2:
 				tempText = evDict["Unstable ground"]["desc"] + " \n\n To your relief nothing happens."
 			elif num < 2:
@@ -319,3 +325,12 @@ func unstable_ground(nr):
 			emit_signal("pop_update")
 			update_hud()
 			roll_haunt()
+
+func activate_ascent():
+	pass
+
+func activate_ancient_evil():
+	pass
+	
+func activate_the_plague():
+	pass
