@@ -21,6 +21,7 @@ func _unhandled_input(event):
 		if event.pressed and event.scancode == KEY_ESCAPE:
 			if !$Player/CanvasLayer/pause.is_visible():
 				$Player/CanvasLayer/pause.show()
+				get_tree().paused = true
 			else:
 				$Player/CanvasLayer/pause.hide()
 	

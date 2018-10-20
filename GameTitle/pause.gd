@@ -9,6 +9,7 @@ func _on_quit_pressed():
 	transition.fade_to("res://menu.tscn", 1)
 
 func _on_resume_pressed():
+	get_parent().get_tree().paused = false
 	self.hide()
 
 func _on_fullscreen_pressed():
