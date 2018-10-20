@@ -3,12 +3,20 @@ extends Node
 var volume = 25
 var playing = false
 var currentObjective = "Survive. Also press 'Z' to fire off a test popout."
+var sanity = 6
+var strength = 5
+var strBonus = 0
+var sanBonus = 0
+var canOpen = false
+
 var dict = {}
 var randomNr = 0
-
+var items = []
+var events = []
 
 func _ready():
 	Engine.set_target_fps(60)
+	add_user_signal("hud_update")
 	randomize() #RANDOM THE SEED EKIN, RANDOM THE SEEED
 	
 	# LOAD ALL THE LISTS INTO ARRAYS IN GODOT
@@ -25,10 +33,61 @@ func _ready():
 #	make godot include the JSON file in the build
 
 
-#func _process(delta):
+func _process(delta):
+	
 #	HERE BE GAME RELATED THINGS RUNNING
-#	update game timer if game in progress
-
+#	update game timer if game in progress?
+	pass
 
 
 #	Game win conditions and effect here
+func activate_rule(iName):
+	print("activating " + dict[iName]["effectNr"])
+	match int(dict[iName]["effectNr"]):
+		1: 
+			strBonus = strBonus + 2
+		2: 
+			var num = randi() % 18 + 1
+			if num > 12:
+				strength = strength + 1
+				sanity = sanity + 1
+			elif num > 6:
+				sanBonus = sanBonus + 1
+				strBonus = strBonus + 1
+			elif num > 3:
+				#trigger random event
+				pass
+			else:
+				strength = 1
+				sanity = 1
+		3: 
+			strength = strength + 1
+		4: 
+			sanity = sanity + 1
+			strength = strength - 1
+		5: 
+			sanBonus = sanBonus + 1
+		6:
+			sanBonus = sanBonus - 1
+			strBonus = strBonus + 1
+		7:
+			sanBonus = sanBonus + 2
+		8:
+			var num = randi() % 6 + 1 + sanBonus
+			if num > 5:
+				sanBonus = sanBonus + 2
+			elif num > 3:
+				pass
+			else:
+				sanBonus = 0
+		9:
+			sanity = sanity + 1
+			canOpen = true
+	print("sanity: " + str(sanity) +", strength: " + str(strength) + ", sanity bonus: " + str(sanBonus) + ", strength bonus: " + str(strBonus))
+	update_hud()
+	
+func update_hud():
+	emit_signal("hud_update")
+	
+func activate_event(eName):
+	pass

@@ -1,47 +1,56 @@
 {
     "Led Pipe" : {
         "desc": "A sturdy pipe. You never know when you might need it.",
-        "effect": "1",
+        "effectNr": "1",
+        "effect": "In combat, you get a +2 bonus to all attack rolls.",
         "sprite": "temp.png"
     },
     "Dark dice" : {
         "desc": "Do I feel lucky? Well, do I?",
-        "effect": "2",
+        "effectNr": "2",
+        "effect": "You can use this item once. Roll 3 dice and add up the results. 6, both your attributes gets a permanent +1. 4-5, you can teleport to any known square. 2-3, a random event happens. 0-1, reduce all attributes to the lowest point above the skull.",
         "sprite": "temp.png"
     },
     "Cheese" : {
         "desc": "No one has as many friends as the man with many cheeses.",
-        "effect": "3",
+        "effectNr": "3",
+        "effect": "You can use this item once. You can eat the cheeses for a permanent +1 bonus to your strength.",
         "sprite": "temp.png"
     },
     "Pack of Smokes" : {
         "desc": "An old, musty pack of cigarettes.",
-        "effect": "4",
+        "effectNr": "4",
+        "effect": "You can use this item once. Smoke a cigarette to gain 1 sanity at the cost of 1 strength.",
         "sprite": "temp.png"
     },
     "Holy Book" : {
         "desc": "A holy book with a religious symbol on the cover. Written by King Games",
-        "effect": "5",
+        "effectNr": "5",
+        "effect": "You get a +1 to all sanity checks as long as you have this book on you.",
         "sprite": "temp.png"
     },
     "Bloody Note" : {
         "desc": "A crumpled, bloody note with a strange script on it.",
-        "effect": "6",
+        "effectNr": "6",
+        "effect": "As long as you have the note with you, you get -1 to all sanity checks.",
         "sprite": "temp.png"
     },
     "Severed finger" : {
         "desc": "A cold, hard finger. From the looks of it, it used to belong to a woman.",
-        "effect": "7",
+        "effectNr": "7",
+        "effect": "Gives +1 to all sanity checks for as long as you have it with you.",
         "sprite": "temp.png"
     },
     "Strange Book" : {
         "desc": "A leather-bound old book with a strange symbol on the front.",
-        "effect": "8",
+        "effectNr": "8",
+        "effect": "Once, you can attempt a sanity check to read the book. 6+ You learn about an ancient God and his followers, gain 2 sanity. 3-5 You fail to decipher anything. 1-2 The text leaps at you from the pages, filling you with strange dark energy. Gain 1 strength. 0 You become totally obsessed with the book, you cannot stop reading it. You can no longer drop this item.",
         "sprite": "temp.png"
     },
     "Keys" : {
         "desc": "The house keys!",
-        "effect": "9",
+        "effectNr": "9",
+        "effect": "With these you can unlock the front door of the house, should you want to. They inspire great courage. +1 to sanity.",
         "sprite": "key.png"
     }
 }
