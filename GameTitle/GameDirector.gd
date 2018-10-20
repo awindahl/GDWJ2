@@ -47,7 +47,7 @@ var RoundhallTile = preload("res://Tiles/RoundhallTile.tscn")
 var ThreewaycrossTile = preload("res://Tiles/ThreewaycrossTile.tscn")
 
 var tile_list = [BasicTile, HallwayTile, CrossingTile, BallroomTile, KitchenTile, StorageTile, BedroomTile,
-		StairwayTile, DiningroomTile, LaundromatTile, OldpassageTile, WinecellarTile, ChapeTile, ArtgalleryTile,
+		DiningroomTile, LaundromatTile, OldpassageTile, WinecellarTile, ChapeTile, ArtgalleryTile,
 		GuestbedroomTile, TreasuryTile, ClosetTile, WashroomTile, OldroomTile, MainroomTile, RoundhallTile, ThreewaycrossTile]
 var instanced_tiles = []
 
