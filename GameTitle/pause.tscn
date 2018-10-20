@@ -1,7 +1,39 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://pause.gd" type="Script" id=1]
 [ext_resource path="res://Asset Lib/Art/black.png" type="Texture" id=2]
+[ext_resource path="res://Asset Lib/Art/genericbuttonstyle.tres" type="StyleBox" id=3]
+[ext_resource path="res://Asset Lib/Font/rm_typerighter_old.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Asset Lib/Art/Fullscreenbutton.tres" type="StyleBox" id=5]
+[ext_resource path="res://Asset Lib/Font/TypewriterFont.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Asset Lib/Art/Mutebutton.tres" type="StyleBox" id=7]
+[ext_resource path="res://Asset Lib/Art/slider button.png" type="Texture" id=8]
+[ext_resource path="res://Asset Lib/Art/volumeslider.tres" type="StyleBox" id=9]
+[ext_resource path="res://Asset Lib/Art/volumesliderbright.tres" type="StyleBox" id=10]
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 50
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 4 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=3]
+
+size = 57
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 4 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=4]
+
+size = 120
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 4 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 [node name="Node" type="Control" index="0"]
 
@@ -39,16 +71,16 @@ expand = true
 stretch_mode = 0
 _sections_unfolded = [ "Visibility" ]
 
-[node name="quit" type="Button" parent="." index="1"]
+[node name="menu" type="Button" parent="." index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 568.0
+margin_left = 558.0
 margin_top = 384.0
-margin_right = 683.0
-margin_bottom = 444.0
+margin_right = 684.0
+margin_bottom = 450.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -56,13 +88,23 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = ExtResource( 3 )
+custom_styles/disabled = ExtResource( 3 )
+custom_styles/normal = ExtResource( 3 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Quit"
+text = "Menu"
 flat = false
 align = 1
+_sections_unfolded = [ "Theme", "custom_colors", "custom_fonts", "custom_styles" ]
 
 [node name="resume" type="Button" parent="." index="2"]
 
@@ -70,9 +112,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 568.0
+margin_left = 547.0
 margin_top = 300.0
-margin_right = 683.0
+margin_right = 697.0
 margin_bottom = 360.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -81,6 +123,15 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = ExtResource( 3 )
+custom_styles/disabled = ExtResource( 3 )
+custom_styles/normal = ExtResource( 3 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -88,6 +139,7 @@ group = null
 text = "Resume"
 flat = false
 align = 1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts", "custom_styles" ]
 
 [node name="fullscreen" type="Button" parent="." index="3"]
 
@@ -96,9 +148,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 29.0
-margin_top = 635.0
-margin_right = 107.0
-margin_bottom = 695.0
+margin_top = 599.0
+margin_right = 149.0
+margin_bottom = 719.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -106,13 +158,19 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/focus = ExtResource( 5 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Full"
 flat = false
 align = 1
+_sections_unfolded = [ "Hint", "Rect", "Size Flags", "custom_colors", "custom_fonts", "custom_styles" ]
 
 [node name="music" type="Button" parent="." index="4"]
 
@@ -120,10 +178,11 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 130.0
-margin_top = 635.0
-margin_right = 208.0
-margin_bottom = 695.0
+margin_left = 100.0
+margin_top = 607.0
+margin_right = 172.0
+margin_bottom = 667.0
+rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -131,13 +190,19 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/focus = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 7 )
+custom_styles/normal = ExtResource( 7 )
+custom_fonts/font = ExtResource( 6 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Mute"
 flat = false
 align = 1
+_sections_unfolded = [ "Focus", "Mouse", "Rect", "Size Flags", "Theme", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
 [node name="HSlider" type="HSlider" parent="." index="5"]
 
@@ -156,6 +221,15 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 0
+custom_icons/tick = ExtResource( 8 )
+custom_icons/grabber_disabled = ExtResource( 8 )
+custom_icons/grabber_highlight = ExtResource( 8 )
+custom_icons/grabber = ExtResource( 8 )
+custom_styles/slider = ExtResource( 9 )
+custom_styles/grabber_disabled = ExtResource( 9 )
+custom_styles/grabber_highlight = ExtResource( 10 )
+custom_styles/grabber_area = ExtResource( 10 )
+custom_styles/focus = ExtResource( 10 )
 min_value = 0.0
 max_value = 50.0
 step = 1.0
@@ -167,6 +241,7 @@ editable = true
 tick_count = 0
 ticks_on_borders = false
 focus_mode = 2
+_sections_unfolded = [ "custom_icons", "custom_styles" ]
 
 [node name="Label" type="Label" parent="." index="6"]
 
@@ -174,22 +249,24 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 597.0
-margin_top = 260.0
-margin_right = 651.0
-margin_bottom = 280.0
+margin_left = 532.0
+margin_top = 216.0
+margin_right = 722.0
+margin_bottom = 286.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = SubResource( 4 )
 text = "Paused"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts", "custom_styles" ]
 
-[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="menu" to="." method="_on_quit_pressed"]
 
 [connection signal="pressed" from="resume" to="." method="_on_resume_pressed"]
 
