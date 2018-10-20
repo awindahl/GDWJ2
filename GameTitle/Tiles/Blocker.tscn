@@ -29,9 +29,10 @@ shape = SubResource( 1 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." index="1"]
 
+light_mask = 3
 position = Vector2( -32, 0 )
 occluder = SubResource( 2 )
-light_mask = 1
+light_mask = 3
 _sections_unfolded = [ "Transform" ]
 
 

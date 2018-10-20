@@ -8,26 +8,26 @@
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="Tile" index="0" instance=ExtResource( 1 )]
+[node name="Tile" instance=ExtResource( 1 )]
 
 [node name="Floor" parent="." index="0"]
 
 texture = ExtResource( 2 )
 
-[node name="Lower Door" parent="." index="4"]
+[node name="Left Hand Door" parent="." index="5"]
 
 visible = false
 
-[node name="BlockerDown" parent="." index="9"]
+[node name="BlockerLeft" parent="." index="7"]
 
 visible = true
 collision_layer = 1
 collision_mask = 1
+_sections_unfolded = [ "Collision", "Pickable", "Transform", "Visibility" ]
 
 [node name="table" type="StaticBody2D" parent="." index="10"]
 
-position = Vector2( -1.82775, 111.343 )
-rotation = -1.5708
+position = Vector2( -113.414, -2.68674 )
 scale = Vector2( 2.20169, 4.21248 )
 input_pickable = false
 collision_layer = 1
@@ -36,6 +36,7 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -66,7 +67,7 @@ shape = SubResource( 1 )
 
 [node name="chairs2" type="StaticBody2D" parent="." index="12"]
 
-position = Vector2( -125.631, -125.269 )
+position = Vector2( 114.646, 119.895 )
 rotation = -1.5708
 scale = Vector2( 2.01079, 1.94716 )
 input_pickable = false
