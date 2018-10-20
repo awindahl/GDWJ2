@@ -14,9 +14,11 @@ texture = ExtResource( 2 )
 [node name="Right Hand Door" parent="." index="3"]
 
 visible = false
+wall = true
 
 [node name="Left Hand Door" parent="." index="5"]
 
 visible = false
+wall = true
 
 

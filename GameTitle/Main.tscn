@@ -15,6 +15,7 @@ _sections_unfolded = [ "Pause", "Transform", "Visibility", "Z Index" ]
 
 [node name="Player" parent="." index="0" instance=ExtResource( 2 )]
 
+editor/display_folded = true
 _sections_unfolded = [ "Collision", "Pickable", "Transform", "collision" ]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Player" index="4"]

@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Tiles/Tile.gd" type="Script" id=1]
 [ext_resource path="res://Asset Lib/Art/basetile.png" type="Texture" id=2]
 [ext_resource path="res://Asset Lib/Art/walls.png" type="Texture" id=3]
 [ext_resource path="res://Tiles/Door.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Tiles/Blocker.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -270,36 +269,5 @@ position = Vector2( 0, 208 )
 
 position = Vector2( -208, 0 )
 rotation = 1.5708
-
-[node name="Blocker" parent="." index="6" instance=ExtResource( 5 )]
-
-visible = false
-position = Vector2( 5.99996, -210 )
-collision_layer = 0
-collision_mask = 0
-
-[node name="Blocker2" parent="." index="7" instance=ExtResource( 5 )]
-
-visible = false
-position = Vector2( -210, -4 )
-rotation = 0.0
-collision_layer = 0
-collision_mask = 0
-
-[node name="Blocker3" parent="." index="8" instance=ExtResource( 5 )]
-
-visible = false
-position = Vector2( 210, 6 )
-rotation = 3.14159
-collision_layer = 0
-collision_mask = 0
-
-[node name="Blocker4" parent="." index="9" instance=ExtResource( 5 )]
-
-visible = false
-position = Vector2( -6.6481, 209.337 )
-rotation = 4.71239
-collision_layer = 0
-collision_mask = 0
 
 
