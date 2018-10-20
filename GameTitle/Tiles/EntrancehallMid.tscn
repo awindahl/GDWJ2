@@ -118,6 +118,7 @@ light_mask = 3
 
 [node name="Roof" parent="." index="1"]
 
+visible = false
 rotation = 4.71239
 texture = ExtResource( 3 )
 vframes = 3
@@ -126,7 +127,7 @@ _sections_unfolded = [ "Animation", "Material", "Transform", "Visibility", "Z In
 
 [node name="Upper Door" parent="." index="2"]
 
-position = Vector2( -14.5561, -208.238 )
+position = Vector2( -15.2032, -208.562 )
 
 [node name="Right Hand Door" parent="." index="3"]
 
@@ -137,7 +138,7 @@ wall = true
 
 [node name="Lower Door" parent="." index="4"]
 
-position = Vector2( -14.5995, 208 )
+position = Vector2( -13.7409, 208.429 )
 
 [node name="Left Hand Door" parent="." index="5"]
 

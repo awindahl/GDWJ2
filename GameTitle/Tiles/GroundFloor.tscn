@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Tiles/Floor.gd" type="Script" id=1]
-[ext_resource path="res://Tiles/EntrancehallBot.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Tiles/EntrancehallMid.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Tiles/EntrancehallTop.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Asset Lib/Art/lightmask.png" type="Texture" id=5]
+[ext_resource path="res://Asset Lib/Art/lightmask.png" type="Texture" id=2]
+[ext_resource path="res://Tiles/EntrancehallBot.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Tiles/EntrancehallMid.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Tiles/EntrancehallTop.tscn" type="PackedScene" id=5]
 
 [node name="GroundFloor" type="Node2D" index="0"]
 
@@ -13,22 +13,12 @@ position = Vector2( 0, 256.669 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
-[node name="Tile" parent="." index="0" instance=ExtResource( 2 )]
-
-[node name="Tile2" parent="." index="1" instance=ExtResource( 3 )]
-
-position = Vector2( 0, -512 )
-
-[node name="Tile3" parent="." index="2" instance=ExtResource( 4 )]
-
-position = Vector2( 0, -1024 )
-
-[node name="Light2D" type="Light2D" parent="." index="3"]
+[node name="Light2D" type="Light2D" parent="." index="0"]
 
 position = Vector2( -30, -430 )
 enabled = true
 editor_only = false
-texture = ExtResource( 5 )
+texture = ExtResource( 2 )
 offset = Vector2( 0, 0 )
 texture_scale = 4.0
 color = Color( 1, 1, 1, 1 )
@@ -47,5 +37,15 @@ shadow_gradient_length = 0.0
 shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
+
+[node name="Tile" parent="." index="1" instance=ExtResource( 3 )]
+
+[node name="Tile2" parent="." index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 0, -512 )
+
+[node name="Tile3" parent="." index="3" instance=ExtResource( 5 )]
+
+position = Vector2( 0, -1024 )
 
 
