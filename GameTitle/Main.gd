@@ -59,3 +59,4 @@ func _on_Player_changing_floors(tile, stairs):
 			floor_name = "GroundFloor"
 			stairs_name = "GroundFloorHatchDown"
 	$Player.global_position = self.find_node(floor_name).find_tile(vector).get_node(stairs_name).get_node("CollisionShape2D").global_position
+	$WalkingOnStairs.play()
