@@ -8,7 +8,7 @@
 [ext_resource path="res://popover.tscn" type="PackedScene" id=6]
 [ext_resource path="res://pause.tscn" type="PackedScene" id=7]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause", "Transform", "Visibility", "Z Index" ]
@@ -28,7 +28,6 @@ bus = "Master"
 
 [node name="Player" parent="." index="2" instance=ExtResource( 4 )]
 
-editor/display_folded = true
 position = Vector2( 3.09082, 0 )
 _sections_unfolded = [ "Collision", "Pickable", "Transform", "collision" ]
 

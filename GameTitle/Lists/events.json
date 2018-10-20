@@ -1,0 +1,38 @@
+{
+    "The haunted hand" : {
+        "desc": "Your hand starts moving on its own. Slowly it makes it way towards your neck. With a jerk it grabs a hold of you!",
+        "effect": "1",
+        "type": "normal",
+        "sprite": "temp.png"
+    },
+    "A creak, a crack!" : {
+        "desc": "The door behind you creaks with a loud noise as it moves on the hinges. Finally a loud crack is heard when the top hinge comes lose. Nothing strange... this time.",
+        "effect": "2",
+        "type": "normal",
+        "sprite": "temp.png"
+    },
+    "A chill wind blows" : {
+        "desc": "As you enter this room, a gust of ice cold wind hits your face. You feel your cheeks going numb and your vision starts to darken.You awake on the floor a few minutes later.",
+        "effect": "3",
+        "type": "normal",
+        "sprite": "temp.png"
+    },
+    "Bloody Walls" : {
+        "desc": "For a moment, you could swear the walls in this room are dripping with fresh blood. You blink, and it's back to normal.",
+        "effect": "4",
+        "type": "omen",
+        "sprite": "temp.png"
+    },
+    "Strange Potion" : {
+        "desc": "You find a potion placed precariously in the middle of the room. It has a label that says "Drink me".",
+        "effect": "5",
+        "type": "omen",
+        "sprite": "temp.png"
+    },
+    "Unstable ground" : {
+        "desc": "It seems the floor in this room is not as stable as it once used to be. Floorplanks sway and creak with each careful step you take as you attempt to move through the room.",
+        "effect": "6",
+        "type": "omen",
+        "sprite": "temp.png"
+    }
+}
