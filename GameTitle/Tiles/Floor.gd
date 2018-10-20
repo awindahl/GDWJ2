@@ -36,7 +36,7 @@ func _init():
 func _ready():
 	# Register all pre-instanced Tiles to the
 	for child in self.get_children():
-		if child.TYPE == "TILE":
+		if child.get("TYPE") == "TILE":
 			self.tiles.append(child)
 			self._on_tile_constructed(child)	# Need this here because _ready() happens after tiles are constructed
 

@@ -1,6 +1,6 @@
 extends KinematicBody2D
 signal player_requesting_door_to_open
-var SPEED = 150
+var SPEED = 100
 var inventory = []
 
 func _process(delta):
