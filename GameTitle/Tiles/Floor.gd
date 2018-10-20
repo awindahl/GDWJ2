@@ -61,6 +61,10 @@ func _on_Tile_moved(tile):
 			door.close()
 	
 func _on_Player_requesting_door_to_open(door):
+	var the_floor = door.get_parent().get_parent()	# Terrible hack but we'll live with it
+	if self != the_floor:
+		return
+		
 	if self.find_tile(door.next_tile_pos):
 		print("Can't add a room here - already a room next door!")
 		return

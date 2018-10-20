@@ -1,14 +1,40 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Tiles/Tile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Asset Lib/Art/first_floor_landing.png" type="Texture" id=2]
 
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 10.0
+height = 20.0
+
 [node name="Tile" instance=ExtResource( 1 )]
+
+is_basement = null
+is_ground_floor = null
+is_first_floor = null
 
 [node name="Floor" parent="." index="0"]
 
 editor/display_folded = false
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Pause", "Region", "Transform", "Visibility", "Z Index" ]
+
+[node name="FirstFloorStairs" type="Area2D" parent="." index="7"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FirstFloorStairs" index="0"]
+
+position = Vector2( -0.798064, 83.4006 )
+scale = Vector2( 6.00506, 2.96254 )
+shape = SubResource( 1 )
 
 

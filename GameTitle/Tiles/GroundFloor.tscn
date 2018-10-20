@@ -40,10 +40,6 @@ shadow_item_cull_mask = 1
 
 [node name="Tile" parent="." index="1" instance=ExtResource( 3 )]
 
-is_basement = null
-is_ground_floor = null
-is_first_floor = null
-
 [node name="Tile2" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 0, -512 )
