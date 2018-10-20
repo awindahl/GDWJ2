@@ -7,6 +7,7 @@ var evSt = 0
 func _ready():
 	GameDirector.connect("pop_display", self, "temp_displayer")
 	GameDirector.connect("pop_update", self, "temp_update_display")
+	GameDirector.connect("pop_haunt_display", self, "temp_haunt_displayer")
 
 func display( text, img="", bg="", event=0):
 	#Probably needs work, or be careful how we send info
@@ -51,3 +52,7 @@ func temp_displayer():
 	
 func temp_update_display():
 	update_display(GameDirector.tempText)
+	
+func temp_haunt_displayer():
+	#Insert spooky background here instead
+	display(GameDirector.tempText, "res://Asset Lib/Art/mute_btn_active.png", "res://Asset Lib/Art/popoverbg.png", GameDirector.tempEvent)
