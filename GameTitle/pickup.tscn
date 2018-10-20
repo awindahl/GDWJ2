@@ -14,9 +14,11 @@ extents = Vector2( 27.5775, 19.2718 )
 custom_solver_bias = 0.0
 extents = Vector2( 34.1277, 21.6823 )
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" index="0"]
 
+light_mask = 3
 script = ExtResource( 1 )
+_sections_unfolded = [ "Visibility" ]
 itemNr = "Cheese"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
