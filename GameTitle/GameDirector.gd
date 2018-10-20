@@ -3,8 +3,8 @@ extends Node
 var volume = 25
 var playing = false
 var currentObjective = "Survive. Also press 'Z' to fire off a test popout."
-var sanity = 6
-var strength = 5
+var sanity = 3
+var strength = 3
 var strBonus = 0
 var sanBonus = 0
 var canOpen = false #remember this, this is important
@@ -52,6 +52,25 @@ var tile_list = [BasicTile, HallwayTile, CrossingTile, BallroomTile, KitchenTile
 var instanced_tiles = []
 
 export(Array) var tiles_placed
+
+func reset():
+	sanity = 3
+	strength = 3
+	tile_list = [BasicTile, HallwayTile, CrossingTile, BallroomTile, KitchenTile, StorageTile, BedroomTile,
+		StairwayTile, DiningroomTile, LaundromatTile, OldpassageTile, WinecellarTile, ChapeTile, ArtgalleryTile,
+		GuestbedroomTile, TreasuryTile, ClosetTile, WashroomTile, OldroomTile, MainroomTile, RoundhallTile, ThreewaycrossTile]
+	instanced_tiles = []
+	for tile in tile_list:
+		self.instanced_tiles.append(tile.instance())
+	haunt_counter = 1
+	haunting = false
+	canOpen = false
+	items = []
+	events = []
+	tempEvent = ""
+	tempText = ""
+	TempImage = ""
+	TempBg = ""
 
 func _ready():
 	for tile in tile_list:
@@ -210,16 +229,16 @@ func haunted_hand(nr):
 			var num = randi() % ((strength+strBonus)*3)
 			if num > 6:
 				strength = strength + 1
-				tempText = evDict["The haunted hand"]["desc"] + " \n\n You manage to control your own hand through strength alone, gained 1 strength."
+				tempText = evDict["The haunted hand"]["desc"] + " \n\n You manage to control your own hand through strength alone. [color=green]Gained 1 strength[/color]."
 			elif num > 3:
 				tempText = evDict["The haunted hand"]["desc"] + " \n\n You wrestle yourself free and regain control over your hand."
 			elif num > 1:
 				strength = strength - 1
-				tempText = evDict["The haunted hand"]["desc"] + " \n\n Your hand overpowers you and smacks you into the wall, after hitting your head your hand returns back to normal. Lost 1 strength."
-			elif num == 0:
+				tempText = evDict["The haunted hand"]["desc"] + " \n\n Your hand overpowers you and smacks you into the wall, after hitting your head your hand returns back to normal. [color=red]Lost 1 strength[/color]."
+			else:
 				strength = strength - 1
 				sanity = sanity - 1
-				tempText = evDict["The haunted hand"]["desc"] + " \n\n In your desperation you try to hack off your own hand. Took 1 strength and 1 sanity damage."
+				tempText = evDict["The haunted hand"]["desc"] + " \n\n In your desperation you try to hack off your own hand. [color=red]Lost 1 strength[/color] and [color=red]1 sanity[/color]."
 			emit_signal("pop_update")
 			update_hud()
 
@@ -233,12 +252,12 @@ func creak(nr):
 			var num = randi() % ((sanity+sanBonus)*3)
 			if num > 6:
 				sanity = sanity + 1
-				tempText = evDict["A creak, a crack!"]["desc"] + " \n\n You sigh in relief. Gained 1 sanity."
+				tempText = evDict["A creak, a crack!"]["desc"] + " \n\n You sigh in relief. [color=green]Gained 1 sanity[/color]."
 			elif num > 2:
 				tempText = evDict["A creak, a crack!"]["desc"] + " \n\n You're easily spooked, but nothing bad happens."
-			elif num < 2:
+			else:
 				sanity = sanity - 1
-				tempText = evDict["A creak, a crack!"]["desc"] + " \n\n This was the last thing you needed. Lost 1 sanity."
+				tempText = evDict["A creak, a crack!"]["desc"] + " \n\n This was the last thing you needed. [color=red]Lost 1 sanity[/color]."
 			emit_signal("pop_update")
 			update_hud()
 	
@@ -251,12 +270,13 @@ func chill_wind(nr):
 		1:
 			var num = randi() % ((sanity+sanBonus)*3)
 			if num > 5:
-				sanity = sanity + 1
 				tempText = evDict["A chill wind blows"]["desc"] + " \n\n Everything around you seems fine, your head hurts a bit but other than that you're fine."
 			elif num > 2:
-				tempText = evDict["A chill wind blows"]["desc"] + " \n\n You fell straight ahead and hurt your nose badly. The blood has dried but you're still reeling from the pain. Lost 1 strength."
-			elif num < 2:
-				tempText = evDict["A chill wind blows"]["desc"] + " \n\n During your fall ghostly images filled your mind. Every time you close your eyes you see the face of a screaming woman right infront of you. Lost 1 sanity."
+				strength = strength - 1
+				tempText = evDict["A chill wind blows"]["desc"] + " \n\n You fell straight ahead and hurt your nose badly. The blood has dried but you're still reeling from the pain. [color=red]Lost 1 strength[/color]."
+			else:
+				sanity = sanity - 1
+				tempText = evDict["A chill wind blows"]["desc"] + " \n\n During your fall ghostly images filled your mind. Every time you close your eyes you see the face of a screaming woman right infront of you. [color=red]Lost 1 sanity[/color]."
 			emit_signal("pop_update")
 			update_hud()
 	
@@ -272,11 +292,11 @@ func bloody_walls(nr):
 			if num > num2:
 				sanity = sanity + 1
 				strength = strength - 1
-				tempText = evDict["Bloody Walls"]["desc"] + " \n\n You strengthen your resolve! Gained 1 sanity, but lost 1 strength"
-			elif num <= num2:
+				tempText = evDict["Bloody Walls"]["desc"] + " \n\n You strengthen your resolve! [color=green]Gained 1 sanity[/color], but [color=red]lost 1 strength[/color]"
+			else:
 				sanity = sanity - 1
 				strength = strength + 1
-				tempText = evDict["Bloody Walls"]["desc"] + " \n\n You can't believe this is happening to you, but you prepare for the worst. Gained 1 strength, but lost 1 sanity"
+				tempText = evDict["Bloody Walls"]["desc"] + " \n\n You can't believe this is happening to you, but you prepare for the worst. [color=green]Gained 1 strength[/color], but [color=red]lost 1 sanity[/color]"
 			emit_signal("pop_update")
 			update_hud()
 			roll_haunt()
@@ -292,15 +312,15 @@ func strange_potion(nr):
 			if num > 5:
 				strength = strength + 2
 				sanity = sanity + 1
-				tempText = evDict["Strange Potion"]["desc"] + " \n\n The drink tastes like blood. But there is something special about this blood. Gained 2 strength and 1 sanity."
+				tempText = evDict["Strange Potion"]["desc"] + " \n\n The drink tastes like blood. But there is something special about this blood. [color=green]Gained 2 strength[/color] and [color=green]1 sanity[/color]."
 			elif num > 3:
 				strength = strength + 1
-				tempText = evDict["Strange Potion"]["desc"] + " \n\n The drink is spiked with something, you feel yourself growing stronger. Gained 1 strength."
+				tempText = evDict["Strange Potion"]["desc"] + " \n\n The drink is spiked with something, you feel yourself growing stronger. [color=green]Gained 1 strength[/color]."
 			elif num > 1:
 				tempText = evDict["Strange Potion"]["desc"] + " \n\n Nothing happens, it's just water."
-			elif num < 1:
+			else:
 				strength = strength - 1
-				tempText = evDict["Strange Potion"]["desc"] + " \n\n The potion must have gone bad! You feel how your strength slowly leaves your body. Lost 1 strength."
+				tempText = evDict["Strange Potion"]["desc"] + " \n\n The potion must have gone bad! You feel how your strength slowly leaves your body. [color=red]Lost 1 strength[/color]."
 			emit_signal("pop_update")
 			update_hud()
 			roll_haunt()
@@ -314,12 +334,13 @@ func unstable_ground(nr):
 		1:
 			var num = randi() % ((strength+strBonus)*3)
 			if num > 5:
-				tempText = evDict["Unstable ground"]["desc"] + " \n\n The planks give way. Lose 1 strength."
+				strength = strength - 2
+				tempText = evDict["Unstable ground"]["desc"] + " \n\n The planks give way. [color=red]Lost 2 strength[/color]."
 			elif num > 2:
 				tempText = evDict["Unstable ground"]["desc"] + " \n\n To your relief nothing happens."
-			elif num < 2:
+			else:
 				sanity = sanity + 1
-				tempText = evDict["Unstable ground"]["desc"] + " \n\n Carefully moving through the room, you avoid the old rotten planks. Gained 1 sanity."
+				tempText = evDict["Unstable ground"]["desc"] + " \n\n Carefully moving through the room, you avoid the old rotten planks. [color=green]Gained 1 sanity[/color]."
 			emit_signal("pop_update")
 			update_hud()
 			roll_haunt()

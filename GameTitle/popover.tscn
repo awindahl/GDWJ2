@@ -7,7 +7,7 @@
 [ext_resource path="res://Asset Lib/Animations/slideOut.tres" type="Animation" id=5]
 [ext_resource path="res://Asset Lib/Sounds/page_flip.wav" type="AudioStream" id=6]
 
-[node name="Node" type="Node"]
+[node name="Node" type="Node" index="0"]
 
 pause_mode = 2
 script = ExtResource( 1 )
@@ -83,7 +83,7 @@ custom_fonts/mono_font = ExtResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_colors/selection_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
-bbcode_enabled = false
+bbcode_enabled = true
 bbcode_text = ""
 visible_characters = -1
 percent_visible = 1.0
@@ -94,7 +94,7 @@ scroll_active = true
 scroll_following = false
 selection_enabled = false
 override_selected_font_color = false
-_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+_sections_unfolded = [ "BBCode", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
 [node name="hide" type="Button" parent="Control" index="4"]
 
