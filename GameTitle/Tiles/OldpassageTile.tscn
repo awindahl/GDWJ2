@@ -9,24 +9,14 @@
 
 texture = ExtResource( 2 )
 
-[node name="Left Hand Door" parent="." index="3"]
+[node name="Right Hand Door" parent="." index="3"]
 
 visible = false
+wall = true
 
-[node name="Right Hand Door" parent="." index="4"]
+[node name="Left Hand Door" parent="." index="5"]
 
 visible = false
-
-[node name="BlockerLeft" parent="." index="7"]
-
-visible = true
-collision_layer = 1
-collision_mask = 1
-
-[node name="BlockerRight" parent="." index="8"]
-
-visible = true
-collision_layer = 1
-collision_mask = 1
+wall = true
 
 

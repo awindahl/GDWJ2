@@ -30,7 +30,7 @@ closed = false
 cull_mode = 0
 polygon = PoolVector2Array( -13.7656, -49.0832, -12.7292, 61.9243 )
 
-[node name="Door" type="StaticBody2D" index="0"]
+[node name="Door" type="StaticBody2D"]
 
 light_mask = 3
 input_pickable = false
@@ -61,6 +61,7 @@ light_mask = 3
 position = Vector2( 0, 47 )
 occluder = SubResource( 2 )
 light_mask = 3
+_sections_unfolded = [ "Transform" ]
 
 [node name="DoorHitbox" type="Area2D" parent="." index="3"]
 

@@ -18,17 +18,7 @@ texture = ExtResource( 2 )
 
 position = Vector2( -0.286514, -208 )
 
-[node name="Left Hand Door" parent="." index="5"]
-
-visible = false
-
-[node name="BlockerLeft" parent="." index="7"]
-
-visible = true
-collision_layer = 1
-collision_mask = 1
-
-[node name="pew" type="StaticBody2D" parent="." index="10"]
+[node name="pew" type="StaticBody2D" parent="." index="6"]
 
 editor/display_folded = true
 position = Vector2( 128.871, -130.329 )
@@ -47,7 +37,7 @@ __meta__ = {
 
 shape = SubResource( 1 )
 
-[node name="pew2" type="StaticBody2D" parent="." index="11"]
+[node name="pew2" type="StaticBody2D" parent="." index="7"]
 
 editor/display_folded = true
 position = Vector2( 127.79, 127.963 )
@@ -66,7 +56,7 @@ __meta__ = {
 
 shape = SubResource( 1 )
 
-[node name="pew3" type="StaticBody2D" parent="." index="12"]
+[node name="pew3" type="StaticBody2D" parent="." index="8"]
 
 editor/display_folded = true
 position = Vector2( -89.7968, -10.234 )

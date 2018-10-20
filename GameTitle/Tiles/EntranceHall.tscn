@@ -42,7 +42,7 @@ closed = false
 cull_mode = 0
 polygon = PoolVector2Array( -256.089, -69.3589, -256.201, -459.116 )
 
-[node name="EntranceHall" type="Node2D" index="0"]
+[node name="EntranceHall" type="Node2D"]
 
 light_mask = 3
 script = ExtResource( 1 )

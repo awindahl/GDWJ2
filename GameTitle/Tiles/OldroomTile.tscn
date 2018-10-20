@@ -14,7 +14,7 @@ extents = Vector2( 32, 32 )
 
 texture = ExtResource( 2 )
 
-[node name="table" type="StaticBody2D" parent="." index="10"]
+[node name="table" type="StaticBody2D" parent="." index="6"]
 
 position = Vector2( -69.6543, -97.8258 )
 rotation = 0.261799
@@ -35,7 +35,7 @@ __meta__ = {
 
 shape = SubResource( 1 )
 
-[node name="table2" type="StaticBody2D" parent="." index="11"]
+[node name="table2" type="StaticBody2D" parent="." index="7"]
 
 position = Vector2( 135.112, 104.545 )
 rotation = 1.32645

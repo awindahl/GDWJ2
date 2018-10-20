@@ -17,24 +17,9 @@ texture = ExtResource( 2 )
 [node name="Upper Door" parent="." index="2"]
 
 visible = false
+wall = true
 
-[node name="Lower Door" parent="." index="4"]
-
-visible = false
-
-[node name="BlockerUp" parent="." index="6"]
-
-visible = true
-collision_layer = 1
-collision_mask = 1
-
-[node name="BlockerDown" parent="." index="9"]
-
-visible = true
-collision_layer = 1
-collision_mask = 1
-
-[node name="closet" type="StaticBody2D" parent="." index="10"]
+[node name="closet" type="StaticBody2D" parent="." index="6"]
 
 position = Vector2( -127.644, -125.839 )
 scale = Vector2( 1.63639, 1.63639 )
@@ -53,7 +38,7 @@ __meta__ = {
 
 shape = SubResource( 1 )
 
-[node name="closet2" type="StaticBody2D" parent="." index="11"]
+[node name="closet2" type="StaticBody2D" parent="." index="7"]
 
 position = Vector2( 128.663, -124.034 )
 scale = Vector2( 1.63639, 1.63639 )
@@ -72,7 +57,7 @@ __meta__ = {
 
 shape = SubResource( 1 )
 
-[node name="closet3" type="StaticBody2D" parent="." index="12"]
+[node name="closet3" type="StaticBody2D" parent="." index="8"]
 
 position = Vector2( 131.371, 123.248 )
 scale = Vector2( 1.63639, 1.63639 )
@@ -91,7 +76,7 @@ __meta__ = {
 
 shape = SubResource( 1 )
 
-[node name="closet4" type="StaticBody2D" parent="." index="13"]
+[node name="closet4" type="StaticBody2D" parent="." index="9"]
 
 position = Vector2( -132.157, 121.443 )
 scale = Vector2( 1.63639, 1.63639 )

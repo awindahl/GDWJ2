@@ -1,6 +1,5 @@
 extends Node2D
 
-const TYPE = "DOOR"
 export(bool) var wall setget wall_set, wall_get
 var door_pos_rel setget , door_pos_rel_get
 var door_pos setget door_pos_set, door_pos_get

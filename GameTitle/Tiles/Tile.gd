@@ -12,10 +12,9 @@ var TILE_WIDTH = 512
 
 func _ready():
 	self.doors = []
-	self.doors.append(self.get_node("Upper Door"))
-	self.doors.append(self.get_node("Right Hand Door"))
-	self.doors.append(self.get_node("Lower Door"))
-	self.doors.append(self.get_node("Left Hand Door"))
+	for child in self.get_children():
+		if child.get("TYPE") == "DOOR":
+			self.doors.append(child)
 
 func tile_pos_set(new_tile_pos):
 	self.position = (new_tile_pos*512).round()

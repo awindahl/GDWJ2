@@ -35,7 +35,7 @@ func _init():
 
 func _ready():
 	# Register all pre-instanced Tiles to the
-	var starting_tiles = [$StartingTile, $StartingTileAbove, $StairsUpTile]
+	var starting_tiles = [$EntranceHall]
 	for starting_tile in starting_tiles:
 		self.register_tile(starting_tile)
 		self._on_Tile_moved(starting_tile)
@@ -72,16 +72,16 @@ func _on_Tile_moved(tile):
 	for door in tile.doors:
 		var adjacent_tile = self.find_tile(door.next_tile_pos)
 		if adjacent_tile:
-			var oppposite_door = adjacent_tile.find_door(door.opposite_door_pos_rel)
-			if oppposite_door:
+			var opposite_door = adjacent_tile.find_door(door.opposite_door_pos_rel)
+			if opposite_door:
 				door.open()
-				oppposite_door.open()
+				opposite_door.open()
 			else:
 				door.close()
 		else:
 			door.close()
 	
-func _on_player_requesting_door_to_open(door):
+func _on_Player_requesting_door_to_open(door):
 	if self.find_tile(door.next_tile_pos):
 		print("Can't add a room here - already a room next door!")
 		return
@@ -104,8 +104,8 @@ func _on_player_requesting_door_to_open(door):
 	
 	# Simulate doors
 	for i in range(4):
-		var oppposite_door = new_tile.find_door(door.opposite_door_pos_rel)
-		if !oppposite_door.is_wall:
+		var opposite_door = new_tile.find_door(door.opposite_door_pos_rel)
+		if !opposite_door.is_wall:
 			possible_rotations.append([new_tile.global_rotation, self.connected_doors(new_tile).size()])
 		# That's Numberwang! Rotate the board!
 		new_tile.rotate_clockwise()
