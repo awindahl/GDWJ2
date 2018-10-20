@@ -16,6 +16,10 @@ polygon = PoolVector2Array( -254.71, 54.09, -253.383, -255.727, 254.138, -255.44
 
 [node name="TreasuryTile" instance=ExtResource( 1 )]
 
+is_basement = null
+is_ground_floor = true
+is_first_floor = true
+
 [node name="Floor" parent="." index="0"]
 
 texture = ExtResource( 2 )

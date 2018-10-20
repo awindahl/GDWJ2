@@ -16,6 +16,10 @@ polygon = PoolVector2Array( -255.15, -55.8978, -255.15, 55.4151 )
 
 [node name="Tile" index="0" instance=ExtResource( 1 )]
 
+is_basement = true
+is_ground_floor = true
+is_first_floor = null
+
 [node name="Floor" parent="." index="0"]
 
 texture = ExtResource( 2 )

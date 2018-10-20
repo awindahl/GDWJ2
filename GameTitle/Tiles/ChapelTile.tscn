@@ -18,6 +18,10 @@ extents = Vector2( 64, 64 )
 
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 
+is_basement = null
+is_ground_floor = null
+is_first_floor = true
+
 [node name="Floor" parent="." index="0"]
 
 texture = ExtResource( 2 )

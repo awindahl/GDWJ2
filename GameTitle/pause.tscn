@@ -35,7 +35,7 @@ use_filter = true
 font_data = ExtResource( 4 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="Node" type="Control" index="0"]
+[node name="Node" type="Control"]
 
 pause_mode = 2
 anchor_left = 0.0

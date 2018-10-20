@@ -7,10 +7,13 @@ var sanity = 6
 var strength = 5
 var strBonus = 0
 var sanBonus = 0
-var canOpen = false
+var canOpen = false #remember this, this is important
+var haunt_counter = 1
+var haunting = false
 
 var dict = {}
 var evDict = {}
+var haDict = {}
 var randomNr = 0
 var items = []
 var events = []
@@ -20,11 +23,46 @@ var tempText
 var TempImage
 var TempBg
 
+var BasicTile = preload("res://Tiles/BasicTile.tscn")
+var HallwayTile = preload("res://Tiles/HallwayTile.tscn")
+var CrossingTile = preload("res://Tiles/CrossingTile.tscn")
+var BallroomTile = preload("res://Tiles/BallroomTile.tscn")
+var KitchenTile = preload("res://Tiles/KitchenTile.tscn")
+var StorageTile = preload("res://Tiles/StorageTile.tscn")
+var BedroomTile = preload("res://Tiles/BedroomTile.tscn")
+var StairwayTile = preload("res://Tiles/StairwayTile.tscn")
+var DiningroomTile = preload("res://Tiles/DiningroomTile.tscn")
+var LaundromatTile = preload("res://Tiles/LaundromatTile.tscn")
+var OldpassageTile = preload("res://Tiles/OldpassageTile.tscn")
+var WinecellarTile = preload("res://Tiles/WinecellarTile.tscn")
+var ChapeTile = preload("res://Tiles/ChapelTile.tscn")
+var ArtgalleryTile = preload("res://Tiles/ArtgalleryTile.tscn")
+var GuestbedroomTile = preload("res://Tiles/GuestbedroomTile.tscn")
+var TreasuryTile = preload("res://Tiles/TreasuryTile.tscn")
+var ClosetTile = preload("res://Tiles/ClosetTile.tscn")
+var WashroomTile = preload("res://Tiles/WashroomTile.tscn")
+var OldroomTile = preload("res://Tiles/OldroomTile.tscn")
+var MainroomTile = preload("res://Tiles/MainhallTile.tscn")
+var RoundhallTile = preload("res://Tiles/RoundhallTile.tscn")
+var ThreewaycrossTile = preload("res://Tiles/ThreewaycrossTile.tscn")
+
+var tile_list = [BasicTile, HallwayTile, CrossingTile, BallroomTile, KitchenTile, StorageTile, BedroomTile,
+		StairwayTile, DiningroomTile, LaundromatTile, OldpassageTile, WinecellarTile, ChapeTile, ArtgalleryTile,
+		GuestbedroomTile, TreasuryTile, ClosetTile, WashroomTile, OldroomTile, MainroomTile, RoundhallTile, ThreewaycrossTile]
+var instanced_tiles = []
+
+export(Array) var tiles_placed
+
 func _ready():
+	for tile in tile_list:
+		self.instanced_tiles.append(tile.instance())
+	
+	self.tiles_placed = []
 	Engine.set_target_fps(60)
 	add_user_signal("hud_update")
 	add_user_signal("pop_display")
 	add_user_signal("pop_update")
+	add_user_signal("change_objective")
 	randomize() #RANDOM THE SEED EKIN, RANDOM THE SEEED
 	
 	# LOAD ALL THE LISTS INTO ARRAYS IN GODOT
@@ -37,15 +75,42 @@ func _ready():
 	text = file.get_as_text()
 	file.close()
 	evDict = JSON.parse(text).result
-
+	file.open("res://Lists/haunts.json", File.READ)
+	text = file.get_as_text()
+	file.close()
+	haDict = JSON.parse(text).result
+	
+	print(haDict.size(), " haunts loaded.")
 	print(evDict.size(), " events loaded.")
 	print(dict.size(), " items loaded.")
 
+func get_tiles_left(floor_name):
+	var tiles = []
+	for tile in self.instanced_tiles:
+		if self.tiles_placed.find(tile) == -1:
+			match floor_name:
+				"Basement":
+					if tile.is_basement:
+						tiles.append(tile)
+				"GroundFloor":
+					if tile.is_ground_floor:
+						tiles.append(tile)
+				"FirstFloor":
+					if tile.is_first_floor:
+						tiles.append(tile)
+	return tiles
+	
 #	remember to go to Export, 
 #	then the resources tab and set the export mode to 
 #	Export all resources in the project to 
 #	make godot include the JSON file in the build
+	
+func update_hud():
+	emit_signal("hud_update")
 
+func check_game_over():
+	if strength < 1 || sanity < 1:
+		transition.fade_to("res://gameOver.tscn")
 
 func _process(delta):
 	
@@ -53,7 +118,29 @@ func _process(delta):
 #	update game timer if game in progress?
 	pass
 
-#	Game win conditions and effect here
+func roll_haunt():
+	var roll = randi() % 9
+	if roll > haunt_counter:
+		haunt_counter = haunt_counter + 1
+	else:
+		print("haunt happened!")
+		activate_haunt()
+
+func activate_haunt():
+	haunting = true
+	var roll = randi() % 3 + 1
+	match roll:
+		1:
+			currentObjective = haDict["The Dark Ascent"]["objective"]
+			#activate the dark ascent
+		2:
+			currentObjective = haDict["An ancient evil awakens"]["objective"]
+			#activate an ancient evil awakens
+		3:
+			currentObjective = haDict["The Plague"]["objective"]
+			#activate the plague
+	emit_signal("change_objective")
+
 func activate_rule(iName):
 	print("activating " + dict[iName]["effectNr"])
 	match int(dict[iName]["effectNr"]):
@@ -97,13 +184,10 @@ func activate_rule(iName):
 			sanity = sanity + 1
 			canOpen = true
 	print("sanity: " + str(sanity) +", strength: " + str(strength) + ", sanity bonus: " + str(sanBonus) + ", strength bonus: " + str(strBonus))
+	check_game_over()
 	update_hud()
-	
-func update_hud():
-	emit_signal("hud_update")
-	
-func activate_event(eName, eStage):
-	print(eName,eStage)
+
+func activate_event(eName, eStage=0):
 	match eName:
 		1: haunted_hand(eStage)
 		2: creak(eStage)
@@ -191,7 +275,7 @@ func bloody_walls(nr):
 				tempText = evDict["Bloody Walls"]["desc"] + " \n\n You can't believe this is happening to you, but you prepare for the worst. Gained 1 strength, but lost 1 sanity"
 			emit_signal("pop_update")
 			update_hud()
-			#make haunt roll
+			roll_haunt()
 	
 func strange_potion(nr):
 	match nr:
@@ -215,7 +299,7 @@ func strange_potion(nr):
 				tempText = evDict["Strange Potion"]["desc"] + " \n\n The potion must have gone bad! You feel how your strength slowly leaves your body. Lost 1 strength."
 			emit_signal("pop_update")
 			update_hud()
-			#make haunt roll
+			roll_haunt()
 	
 func unstable_ground(nr):
 	match nr:
@@ -234,4 +318,4 @@ func unstable_ground(nr):
 				tempText = evDict["Unstable ground"]["desc"] + " \n\n Carefully moving through the room, you avoid the old rotten planks. Gained 1 sanity."
 			emit_signal("pop_update")
 			update_hud()
-			#make haunt roll
+			roll_haunt()
