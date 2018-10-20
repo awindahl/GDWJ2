@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/walking_on_stairs.wav-f5a9290a57b2671a00bc0ce3fe469835.sample"
+
+[deps]
+
+source_file="res://Asset Lib/Sounds/walking_on_stairs.wav"
+dest_files=[ "res://.import/walking_on_stairs.wav-f5a9290a57b2671a00bc0ce3fe469835.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
