@@ -24,7 +24,7 @@
         "sprite": "temp.png"
     },
     "Strange Potion" : {
-        "desc": "You find a potion placed precariously in the middle of the room. It has a label that says "Drink me".",
+        "desc": "You find a potion placed precariously in the middle of the room. It has a label that says 'Drink me'.",
         "effect": "5",
         "type": "omen",
         "sprite": "temp.png"
