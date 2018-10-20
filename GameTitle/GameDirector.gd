@@ -66,13 +66,13 @@ func get_tiles_left(floor_name):
 	for tile in self.instanced_tiles:
 		if self.tiles_placed.find(tile) == -1:
 			match floor_name:
-				"basement":
+				"Basement":
 					if tile.is_basement:
 						tiles.append(tile)
-				"ground_floor":
+				"GroundFloor":
 					if tile.is_ground_floor:
 						tiles.append(tile)
-				"first_floor":
+				"FirstFloor":
 					if tile.is_first_floor:
 						tiles.append(tile)
 	return tiles

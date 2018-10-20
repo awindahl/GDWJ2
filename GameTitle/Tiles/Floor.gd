@@ -68,19 +68,23 @@ func _on_Player_requesting_door_to_open(door):
 	if !door.is_visible_in_tree():
 		print("Shhh I'm a door but I don't really exist! Can't open me ;)")
 		return
-	var tile_list = GameDirector.get_tiles_left("ground_floor")
+	var tile_list = GameDirector.get_tiles_left(self.name)
+	var last_tile = false
 	match tile_list.size():
 		1:
-			for tile in self.tiles:
-				for door in tile.doors:
-					if !door.is_open:
-						door.board()
+			last_tile = true
 		0:
 			print("No more tiles left for this floor!")
 			return
 	
 	var new_tile = tile_list[randi() %  tile_list.size()]
 	self.add_tile(new_tile)
+	
+	if last_tile:
+		for tile in self.tiles:
+			for door in tile.doors:
+				if !door.is_open:
+					door.board()
 	new_tile.tile_pos = door.next_tile_pos	# Delet dis
 	
 	# Algorithm for choosing rotation here
