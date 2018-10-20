@@ -1,6 +1,7 @@
 extends Control
 
 var inventory = ["Led Pipe","Dark dice","Cheese","Pack of Smokes","Holy Book","Bloody Note","Severed finger","Strange Book","Keys"] #add item from player
+var temp = []
 
 func _on_Panel_mouse_entered(nr):
 	get_node("Container/item" + str(nr)).get_node("sprite2").show()
