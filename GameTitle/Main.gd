@@ -58,5 +58,12 @@ func _on_Player_changing_floors(tile, stairs):
 			vector = Vector2(0, -1)
 			floor_name = "GroundFloor"
 			stairs_name = "GroundFloorHatchDown"
-	$Player.global_position = self.find_node(floor_name).find_tile(vector).get_node(stairs_name).get_node("CollisionShape2D").global_position
+	transition.fade_in()
+	var t = Timer.new() 		# Create a new Timer node
+	t.set_wait_time(1.0) 		# Set the wait time
+	add_child(t)			# Add it to the node tree as the direct child
+	t.start()			# Start it
 	$WalkingOnStairs.play()
+	yield(t, "timeout")		# Finally, make the script stop with the yield
+	$Player.global_position = self.find_node(floor_name).find_tile(vector).get_node(stairs_name).get_node("CollisionShape2D").global_position
+	transition.fade_out()
