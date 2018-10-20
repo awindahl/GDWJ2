@@ -35,6 +35,7 @@ func _on_hide_pressed():
 	else:
 		$AnimationPlayer.play("slideOut", -1)
 		get_parent().get_tree().paused = false
+		GameDirector.check_game_over()
 		
 func temp_displayer():
 	#also fetch the right assets, but later

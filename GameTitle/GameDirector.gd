@@ -13,6 +13,7 @@ var haunting = false
 
 var dict = {}
 var evDict = {}
+var haDict = {}
 var randomNr = 0
 var items = []
 var events = []
@@ -74,7 +75,12 @@ func _ready():
 	text = file.get_as_text()
 	file.close()
 	evDict = JSON.parse(text).result
-
+	file.open("res://Lists/haunts.json", File.READ)
+	text = file.get_as_text()
+	file.close()
+	haDict = JSON.parse(text).result
+	
+	print(haDict.size(), " haunts loaded.")
 	print(evDict.size(), " events loaded.")
 	print(dict.size(), " items loaded.")
 
@@ -102,6 +108,10 @@ func get_tiles_left(floor_name):
 func update_hud():
 	emit_signal("hud_update")
 
+func check_game_over():
+	if strength < 1 || sanity < 1:
+		transition.fade_to("res://gameOver.tscn")
+
 func _process(delta):
 	
 #	HERE BE GAME RELATED THINGS RUNNING
@@ -121,13 +131,13 @@ func activate_haunt():
 	var roll = randi() % 3 + 1
 	match roll:
 		1:
-			currentObjective = evDict["The Dark Ascent"]["objective"]
+			currentObjective = haDict["The Dark Ascent"]["objective"]
 			#activate the dark ascent
 		2:
-			currentObjective = evDict["An ancient evil awakens"]["objective"]
+			currentObjective = haDict["An ancient evil awakens"]["objective"]
 			#activate an ancient evil awakens
 		3:
-			currentObjective = evDict["The Plague"]["objective"]
+			currentObjective = haDict["The Plague"]["objective"]
 			#activate the plague
 	emit_signal("change_objective")
 
@@ -174,6 +184,7 @@ func activate_rule(iName):
 			sanity = sanity + 1
 			canOpen = true
 	print("sanity: " + str(sanity) +", strength: " + str(strength) + ", sanity bonus: " + str(sanBonus) + ", strength bonus: " + str(strBonus))
+	check_game_over()
 	update_hud()
 
 func activate_event(eName, eStage=0):
