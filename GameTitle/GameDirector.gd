@@ -314,7 +314,8 @@ func unstable_ground(nr):
 		1:
 			var num = randi() % ((strength+strBonus)*3)
 			if num > 5:
-				tempText = evDict["Unstable ground"]["desc"] + " \n\n The planks give way. Lose 1 strength."
+				strength = strength - 2
+				tempText = evDict["Unstable ground"]["desc"] + " \n\n The planks give way. Lose 2 strength."
 			elif num > 2:
 				tempText = evDict["Unstable ground"]["desc"] + " \n\n To your relief nothing happens."
 			elif num < 2:
