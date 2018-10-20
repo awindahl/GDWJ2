@@ -8,35 +8,19 @@
 
 closed = false
 cull_mode = 0
-<<<<<<< HEAD
 polygon = PoolVector2Array( -68.3519, 255.433, -259.504, 255.13 )
 
 [sub_resource type="OccluderPolygon2D" id=2]
 
 closed = false
 cull_mode = 0
-polygon = PoolVector2Array( 30.7395, -254.752, 53.8067, -254.752 )
+polygon = PoolVector2Array( 254.802, 54.6944, 254.373, -51.9813 )
 
 [sub_resource type="OccluderPolygon2D" id=3]
 
 closed = false
 cull_mode = 0
-polygon = PoolVector2Array( 36.7282, 255.175, 52.8063, 255.175 )
-=======
-polygon = PoolVector2Array( -53.6927, 255.218, -259.504, 255.13 )
->>>>>>> 22898d6224cc38eb69d1731fb57aa65f49e504bc
-
-[sub_resource type="OccluderPolygon2D" id=4]
-
-closed = false
-cull_mode = 0
-polygon = PoolVector2Array( -53.9666, -255.377, -259.273, -255.305 )
-
-[sub_resource type="OccluderPolygon2D" id=5]
-
-closed = false
-cull_mode = 0
-polygon = PoolVector2Array( 254.802, 54.6944, 254.373, -51.9813 )
+polygon = PoolVector2Array( 30.7395, -254.752, 53.8067, -254.752 )
 
 [node name="Tile" index="0" instance=ExtResource( 1 )]
 
@@ -52,31 +36,18 @@ vframes = 3
 frame = 2
 _sections_unfolded = [ "Animation", "Material", "Region", "Transform", "Visibility", "Z Index" ]
 
-<<<<<<< HEAD
 [node name="StaticBody2D" parent="Floor" index="0"]
 
-visible = true
 collision_layer = 0
 collision_mask = 0
-
-[node name="CollisionShape2D" parent="Floor/StaticBody2D" index="0"]
-
-disabled = true
 
 [node name="StaticBody2D8" parent="Floor" index="1"]
 
-visible = true
+editor/display_folded = false
 collision_layer = 0
 collision_mask = 0
-_sections_unfolded = [ "Collision", "Transform", "Visibility", "Z Index" ]
+_sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" parent="Floor/StaticBody2D8" index="0"]
-
-disabled = true
-_sections_unfolded = [ "Transform", "Visibility" ]
-
-=======
->>>>>>> 22898d6224cc38eb69d1731fb57aa65f49e504bc
 [node name="LightOccluder2D" parent="Floor" index="8"]
 
 visible = false
@@ -89,49 +60,21 @@ visible = false
 
 rotation = 1.5708
 occluder = SubResource( 1 )
-<<<<<<< HEAD
-light_mask = 3
-
-[node name="LightOccluder2D8" type="LightOccluder2D" parent="Floor" index="13"]
-
-light_mask = 3
-rotation = 1.5708
-occluder = SubResource( 2 )
-light_mask = 3
-=======
 light_mask = 1
->>>>>>> 22898d6224cc38eb69d1731fb57aa65f49e504bc
 
 [node name="LightOccluder2D6" type="LightOccluder2D" parent="Floor" index="13"]
 
-<<<<<<< HEAD
 light_mask = 3
-rotation = 1.5708
-occluder = SubResource( 3 )
-light_mask = 3
-
-[node name="LightOccluder2D6" type="LightOccluder2D" parent="Floor" index="15"]
-
-light_mask = 3
-rotation = 1.5708
-occluder = SubResource( 4 )
-light_mask = 3
-=======
 rotation = 1.5708
 occluder = SubResource( 2 )
-light_mask = 1
->>>>>>> 22898d6224cc38eb69d1731fb57aa65f49e504bc
-
-[node name="LightOccluder2D7" type="LightOccluder2D" parent="Floor" index="14"]
-
-rotation = 1.5708
-<<<<<<< HEAD
-occluder = SubResource( 5 )
 light_mask = 3
-=======
+
+[node name="LightOccluder2D8" type="LightOccluder2D" parent="Floor" index="14"]
+
+light_mask = 3
+rotation = 1.5708
 occluder = SubResource( 3 )
-light_mask = 1
->>>>>>> 22898d6224cc38eb69d1731fb57aa65f49e504bc
+light_mask = 3
 
 [node name="Roof" parent="." index="1"]
 
