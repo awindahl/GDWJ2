@@ -5,6 +5,11 @@
 
 [node name="Tile" index="0" instance=ExtResource( 1 )]
 
+_sections_unfolded = [ "Pause", "Transform", "Visibility" ]
+is_basement = null
+is_ground_floor = true
+is_first_floor = true
+
 [node name="Floor" parent="." index="0"]
 
 texture = ExtResource( 2 )

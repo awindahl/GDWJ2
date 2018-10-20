@@ -1,32 +1,5 @@
 extends Node2D
-
-var upper_landing
-var BasicTile = preload("res://Tiles/BasicTile.tscn")
-var HallwayTile = preload("res://Tiles/HallwayTile.tscn")
-var CrossingTile = preload("res://Tiles/CrossingTile.tscn")
-var BallroomTile = preload("res://Tiles/BallroomTile.tscn")
-var KitchenTile = preload("res://Tiles/KitchenTile.tscn")
-var StorageTile = preload("res://Tiles/StorageTile.tscn")
-var BedroomTile = preload("res://Tiles/BedroomTile.tscn")
-var StairwayTile = preload("res://Tiles/StairwayTile.tscn")
-var DiningroomTile = preload("res://Tiles/DiningroomTile.tscn")
-var LaundromatTile = preload("res://Tiles/LaundromatTile.tscn")
-var OldpassageTile = preload("res://Tiles/OldpassageTile.tscn")
-var WinecellarTile = preload("res://Tiles/WinecellarTile.tscn")
-var ChapeTile = preload("res://Tiles/ChapelTile.tscn")
-var ArtgalleryTile = preload("res://Tiles/ArtgalleryTile.tscn")
-var GuestbedroomTile = preload("res://Tiles/GuestbedroomTile.tscn")
-var TreasuryTile = preload("res://Tiles/TreasuryTile.tscn")
-var ClosetTile = preload("res://Tiles/ClosetTile.tscn")
-var WashroomTile = preload("res://Tiles/WashroomTile.tscn")
-var OldroomTile = preload("res://Tiles/OldroomTile.tscn")
-var MainroomTile = preload("res://Tiles/MainhallTile.tscn")
-var RoundhallTile = preload("res://Tiles/RoundhallTile.tscn")
-var ThreewaycrossTile = preload("res://Tiles/ThreewaycrossTile.tscn")
 var spawned_tiles
-var tile_list = [HallwayTile, BasicTile, CrossingTile, BallroomTile, KitchenTile, StorageTile, BedroomTile,
-		StairwayTile, DiningroomTile, LaundromatTile, OldpassageTile, WinecellarTile, ChapeTile, ArtgalleryTile,
-		GuestbedroomTile, TreasuryTile, ClosetTile, WashroomTile, OldroomTile, MainroomTile, RoundhallTile, ThreewaycrossTile]
 
 var tiles
 
@@ -46,6 +19,7 @@ func add_tile(tile):
 
 func register_tile(tile):
 	tile.connect("moved", self, "_on_Tile_moved")
+	GameDirector.tiles_placed.append(tile)
 	self.tiles.append(tile)
 
 func remove_tile(tile):
@@ -94,9 +68,23 @@ func _on_Player_requesting_door_to_open(door):
 	if !door.is_visible_in_tree():
 		print("Shhh I'm a door but I don't really exist! Can't open me ;)")
 		return
-
-	var new_tile = self.tile_list[randi() %  self.tile_list.size()].instance()
+	var tile_list = GameDirector.get_tiles_left(self.name)
+	var last_tile = false
+	match tile_list.size():
+		1:
+			last_tile = true
+		0:
+			print("No more tiles left for this floor!")
+			return
+	
+	var new_tile = tile_list[randi() %  tile_list.size()]
 	self.add_tile(new_tile)
+	
+	if last_tile:
+		for tile in self.tiles:
+			for door in tile.doors:
+				if !door.is_open:
+					door.board()
 	new_tile.tile_pos = door.next_tile_pos	# Delet dis
 	
 	# Algorithm for choosing rotation here
@@ -127,6 +115,7 @@ func _on_Player_requesting_door_to_open(door):
 			
 	# Choose a random selection from the good_rotations
 	new_tile.global_rotation = good_rotations[randi() %  good_rotations.size()]
+	self.spawned_tiles.append(new_tile)
 	self._on_Tile_moved(new_tile)	# Do this manually for the time being
 	
 func connected_doors(tile):

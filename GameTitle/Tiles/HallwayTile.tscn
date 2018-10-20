@@ -12,6 +12,9 @@ polygon = PoolVector2Array( -255.354, -53.1169, -255.139, 52.0551 )
 [node name="Tile" index="0" instance=ExtResource( 1 )]
 
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
+is_basement = true
+is_ground_floor = true
+is_first_floor = true
 
 [node name="Floor" parent="." index="0"]
 
