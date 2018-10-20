@@ -8,7 +8,6 @@ var position
 var swapping = true
 
 func _ready():
-	OS.center_window()
 	OS.set_window_title("Ekin's and Alexander's tilehouse")
 	$AnimationPlayer.play("fadeInSplash1", -1)
 	
