@@ -279,7 +279,6 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="music_sprite" type="Sprite" parent="Control" index="4"]
 
-editor/display_folded = true
 position = Vector2( 83.3519, 686.968 )
 scale = Vector2( 0.582062, 0.569653 )
 texture = ExtResource( 11 )

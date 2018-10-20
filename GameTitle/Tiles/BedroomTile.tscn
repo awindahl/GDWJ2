@@ -1,7 +1,18 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Tiles/Tile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Asset Lib/Art/bedroomtile.png" type="Texture" id=2]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+
+closed = false
+cull_mode = 0
+polygon = PoolVector2Array( -253.851, 59.9228, -253.251, -252.735, 86.2319, -255.129 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
 
 [node name="Tile" index="0" instance=ExtResource( 1 )]
 
@@ -12,6 +23,11 @@ is_first_floor = true
 [node name="Floor" parent="." index="0"]
 
 texture = ExtResource( 2 )
+
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="Floor" index="12"]
+
+occluder = SubResource( 1 )
+light_mask = 1
 
 [node name="Upper Door" parent="." index="2"]
 
@@ -26,5 +42,43 @@ rotation = -1.5708
 
 visible = false
 wall = true
+
+[node name="bed" type="StaticBody2D" parent="." index="6"]
+
+position = Vector2( -97.0644, -117.88 )
+scale = Vector2( 3.06374, 2.25992 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bed" index="0"]
+
+shape = SubResource( 2 )
+
+[node name="bed2" type="StaticBody2D" parent="." index="7"]
+
+position = Vector2( -130.284, 138.63 )
+scale = Vector2( 1.3331, 1.34233 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bed2" index="0"]
+
+shape = SubResource( 2 )
 
 
