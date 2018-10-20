@@ -18,4 +18,9 @@ wall = true
 
 rotation = -1.5708
 
+[node name="Left Hand Door" parent="." index="5"]
+
+visible = false
+wall = true
+
 

@@ -14,6 +14,11 @@ extents = Vector2( 54, 64 )
 
 texture = ExtResource( 2 )
 
+[node name="Right Hand Door" parent="." index="3"]
+
+visible = false
+wall = true
+
 [node name="table" type="StaticBody2D" parent="." index="6"]
 
 position = Vector2( 26.6362, 30.3533 )

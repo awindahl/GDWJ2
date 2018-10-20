@@ -18,6 +18,11 @@ texture = ExtResource( 2 )
 
 position = Vector2( -0.286514, -208 )
 
+[node name="Left Hand Door" parent="." index="5"]
+
+visible = false
+wall = true
+
 [node name="pew" type="StaticBody2D" parent="." index="6"]
 
 editor/display_folded = true
