@@ -10,6 +10,7 @@ var tile_pos setget tile_pos_set, tile_pos_get
 var adjacent_tile_positions setget , adjacent_tile_positions_get
 var Door = preload("res://Tiles/Door.tscn")
 
+
 var doors
 var TILE_WIDTH = 512
 

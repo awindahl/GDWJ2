@@ -192,8 +192,7 @@ func activate_rule(iName):
 	update_hud()
 
 func activate_event(eName, eStage=0):
-	print("activating " + dict[eName]["effectNr"])
-	match int(evDict[eName]["effect"]):
+	match eName:
 		1: haunted_hand(eStage)
 		2: creak(eStage)
 		3: chill_wind(eStage)
@@ -217,7 +216,7 @@ func haunted_hand(nr):
 			elif num > 1:
 				strength = strength - 1
 				tempText = evDict["The haunted hand"]["desc"] + " \n\n Your hand overpowers you and smacks you into the wall, after hitting your head your hand returns back to normal. Lost 1 strength."
-			else:
+			elif num == 0:
 				strength = strength - 1
 				sanity = sanity - 1
 				tempText = evDict["The haunted hand"]["desc"] + " \n\n In your desperation you try to hack off your own hand. Took 1 strength and 1 sanity damage."
@@ -237,7 +236,7 @@ func creak(nr):
 				tempText = evDict["A creak, a crack!"]["desc"] + " \n\n You sigh in relief. Gained 1 sanity."
 			elif num > 2:
 				tempText = evDict["A creak, a crack!"]["desc"] + " \n\n You're easily spooked, but nothing bad happens."
-			else:
+			elif num < 2:
 				sanity = sanity - 1
 				tempText = evDict["A creak, a crack!"]["desc"] + " \n\n This was the last thing you needed. Lost 1 sanity."
 			emit_signal("pop_update")
@@ -256,7 +255,7 @@ func chill_wind(nr):
 				tempText = evDict["A chill wind blows"]["desc"] + " \n\n Everything around you seems fine, your head hurts a bit but other than that you're fine."
 			elif num > 2:
 				tempText = evDict["A chill wind blows"]["desc"] + " \n\n You fell straight ahead and hurt your nose badly. The blood has dried but you're still reeling from the pain. Lost 1 strength."
-			else:
+			elif num < 2:
 				tempText = evDict["A chill wind blows"]["desc"] + " \n\n During your fall ghostly images filled your mind. Every time you close your eyes you see the face of a screaming woman right infront of you. Lost 1 sanity."
 			emit_signal("pop_update")
 			update_hud()
@@ -274,7 +273,7 @@ func bloody_walls(nr):
 				sanity = sanity + 1
 				strength = strength - 1
 				tempText = evDict["Bloody Walls"]["desc"] + " \n\n You strengthen your resolve! Gained 1 sanity, but lost 1 strength"
-			else:
+			elif num <= num2:
 				sanity = sanity - 1
 				strength = strength + 1
 				tempText = evDict["Bloody Walls"]["desc"] + " \n\n You can't believe this is happening to you, but you prepare for the worst. Gained 1 strength, but lost 1 sanity"
@@ -299,7 +298,7 @@ func strange_potion(nr):
 				tempText = evDict["Strange Potion"]["desc"] + " \n\n The drink is spiked with something, you feel yourself growing stronger. Gained 1 strength."
 			elif num > 1:
 				tempText = evDict["Strange Potion"]["desc"] + " \n\n Nothing happens, it's just water."
-			else:
+			elif num < 1:
 				strength = strength - 1
 				tempText = evDict["Strange Potion"]["desc"] + " \n\n The potion must have gone bad! You feel how your strength slowly leaves your body. Lost 1 strength."
 			emit_signal("pop_update")
@@ -318,7 +317,7 @@ func unstable_ground(nr):
 				tempText = evDict["Unstable ground"]["desc"] + " \n\n The planks give way. Lose 1 strength."
 			elif num > 2:
 				tempText = evDict["Unstable ground"]["desc"] + " \n\n To your relief nothing happens."
-			else:
+			elif num < 2:
 				sanity = sanity + 1
 				tempText = evDict["Unstable ground"]["desc"] + " \n\n Carefully moving through the room, you avoid the old rotten planks. Gained 1 sanity."
 			emit_signal("pop_update")
