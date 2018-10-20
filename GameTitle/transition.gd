@@ -35,7 +35,7 @@ func change_scene():
 				break
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	if anim_name == "fadeIn" || !solo_fade:
+	if anim_name == "fadeIn" && !solo_fade:
 		change_scene()
 		$AnimationPlayer.play("fadeOut", -1, time)
 	elif solo_fade:
