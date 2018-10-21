@@ -10,7 +10,6 @@ func _ready():
 func fade_to(scn_path, scn_time = 1.0):
 	for i in get_tree().get_root().get_children():
 		if i.get_name() != "transition":
-			print(i.get_name())
 			i.get_tree().set_pause(true)
 			break
 
@@ -30,7 +29,6 @@ func change_scene():
 		get_tree().change_scene(path)
 		for i in get_tree().get_root().get_children():
 			if i.get_name() != "transition":
-				print(i.get_name())
 				i.get_tree().set_pause(false)
 				break
 
