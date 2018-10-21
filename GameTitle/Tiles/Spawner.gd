@@ -9,14 +9,13 @@ func _ready():
 		var event = randi() % 6 + 1
 		GameDirector.activate_event(event,0)
 	
-	var rand = randi() % 100
-	if 1:
-		var item = randi() % 8 + 1
-		var new_pickup = pickup.instance()
+	var rand = randi() % 100 
+	var item = randi() % 8 + 1
+	var new_pickup = pickup.instance()
+	if rand < 40:
 		if !get_parent().get_parent().get_parent().get_node("Player/CanvasLayer/hud").get_node("Control").get_node("Container/item" + str(item-1)).is_visible_in_tree():
-			
-			if get_parent().get_parent().get_parent().get_node("Player/CanvasLayer/hud").get_node("Control").inventory.size() == 1:
-				item = 9
+			new_pickup.itemNr = item
+			add_child(new_pickup)
 		else:
 			item = randi() % 8 + 1
 			if !get_parent().get_parent().get_parent().get_node("Player/CanvasLayer/hud").get_node("Control").get_node("Container/item" + str(item-1)).is_visible_in_tree():

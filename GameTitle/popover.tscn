@@ -1,11 +1,20 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://popover.gd" type="Script" id=1]
 [ext_resource path="res://Asset Lib/Font/TypewriterFont.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Asset Lib/Art/genericbuttonstyle.tres" type="StyleBox" id=3]
-[ext_resource path="res://Asset Lib/Animations/slideIn.tres" type="Animation" id=4]
-[ext_resource path="res://Asset Lib/Animations/slideOut.tres" type="Animation" id=5]
-[ext_resource path="res://Asset Lib/Sounds/page_flip.wav" type="AudioStream" id=6]
+[ext_resource path="res://Asset Lib/Font/rm_typerighter_old.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Asset Lib/Art/genericbuttonstyle.tres" type="StyleBox" id=4]
+[ext_resource path="res://Asset Lib/Animations/slideIn.tres" type="Animation" id=5]
+[ext_resource path="res://Asset Lib/Animations/slideOut.tres" type="Animation" id=6]
+[ext_resource path="res://Asset Lib/Sounds/page_flip.wav" type="AudioStream" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 48
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Font/fallback", "Settings" ]
 
 [node name="Node" type="Node" index="0"]
 
@@ -80,6 +89,8 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_fonts/mono_font = ExtResource( 2 )
+custom_fonts/bold_italics_font = ExtResource( 2 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_colors/selection_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
@@ -113,11 +124,11 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/hover = ExtResource( 3 )
-custom_styles/pressed = ExtResource( 3 )
-custom_styles/focus = ExtResource( 3 )
-custom_styles/disabled = ExtResource( 3 )
-custom_styles/normal = ExtResource( 3 )
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 4 )
+custom_styles/normal = ExtResource( 4 )
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0.167969, 0, 0, 1 )
@@ -139,14 +150,14 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/slideIn = ExtResource( 4 )
-anims/slideOut = ExtResource( 5 )
+anims/slideIn = ExtResource( 5 )
+anims/slideOut = ExtResource( 6 )
 blend_times = [  ]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
 
-stream = ExtResource( 6 )
-volume_db = 0.0
+stream = ExtResource( 7 )
+volume_db = -3.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
