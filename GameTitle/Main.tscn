@@ -83,8 +83,8 @@ area_mask = 1
 
 [connection signal="player_requesting_door_to_open" from="Player" to="GroundFloor" method="_on_Player_requesting_door_to_open"]
 
-[connection signal="player_requesting_door_to_open" from="Player" to="FirstFloor" method="_on_Player_requesting_door_to_open"]
-
 [connection signal="player_requesting_door_to_open" from="Player" to="Basement" method="_on_Player_requesting_door_to_open"]
+
+[connection signal="player_requesting_door_to_open" from="Player" to="FirstFloor" method="_on_Player_requesting_door_to_open"]
 
 
