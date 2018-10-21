@@ -20,7 +20,6 @@ func _ready():
 		$Control/music_sprite.set_texture(mute1)
 		$Control/AudioStreamPlayer2D.stop()
 
-
 	set_process(true)
 	
 func _process(delta):

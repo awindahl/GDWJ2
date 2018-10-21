@@ -368,11 +368,11 @@ func fight(object):
 		#you win
 		object.queue_free()
 		tempText = "you fought an enemy and [color=green]won![/color]"
-		return
+	#	return
 	else:
 		strength = strength - 1
 		tempText = "you fought an enemy and [color=red]lost![/color]"
-		#you loose
+		#you lose
 	emit_signal("pop_haunt_display")
 	update_hud()
 
