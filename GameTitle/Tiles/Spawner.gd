@@ -17,12 +17,12 @@ func _ready():
 	if all_tiles_spawned || randi() % 100 < 35:
 		var item_to_spawn
 		if all_tiles_spawned || GameDirector.items_spawned.size() == GameDirector.all_items.size() - 1:
-			item_to_spawn = "Keys"
+			item_to_spawn = 8
 		elif GameDirector.items_spawned.size() < GameDirector.all_items.size() - 1:
 			var items_left = GameDirector.get_items_left()
-			if items_left.find("Keys"):
-				items_left.remove(items_left.find("Keys"))
-			item_to_spawn = items_left[randi() % items_left.size()]
+			if items_left.find(8):
+				items_left.remove(items_left.find(8))
+			item_to_spawn = randi() % items_left.size()
 			
 		if item_to_spawn:
 			GameDirector.items_spawned.append(item_to_spawn)
