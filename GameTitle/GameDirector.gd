@@ -10,6 +10,7 @@ var sanBonus = 0
 var canOpen = false #remember this, this is important
 var haunt_counter = 1
 var haunting = false
+var spawnNr = 0
 
 var dict = {}
 var evDict = {}
@@ -71,6 +72,7 @@ func reset():
 	tempText = ""
 	TempImage = ""
 	TempBg = ""
+	spawnNr = 0
 
 func _ready():
 	for tile in tile_list:
@@ -83,6 +85,7 @@ func _ready():
 	add_user_signal("pop_haunt_display")
 	add_user_signal("pop_update")
 	add_user_signal("change_objective")
+	add_user_signal("spawn")
 	randomize() #RANDOM THE SEED EKIN, RANDOM THE SEEED
 	
 	# LOAD ALL THE LISTS INTO ARRAYS IN GODOT
@@ -211,7 +214,8 @@ func activate_event(eName, eStage=0):
 		4: bloody_walls(eStage)
 		5: strange_potion(eStage)
 		6: unstable_ground(eStage)
-		
+	spawnNr = 4
+	emit_signal("spawn")
 func haunted_hand(nr):
 	match nr:
 		0:
@@ -339,6 +343,19 @@ func unstable_ground(nr):
 			update_hud()
 			if !haunting:
 				roll_haunt()
+
+func fight(object):
+	tempEvent = 0
+	if randi()%6+1>3:
+		#you win
+		object.queue_free()
+		tempText = "you fought an enemy and [color=green]won![/color]"
+	else:
+		strength = strength - 1
+		tempText = "you fought an enemy and [color=red]lost![/color]"
+		#you loose
+	emit_signal("pop_haunt_display")
+	update_hud()
 
 func activate_ascent():
 	tempText = haDict["The Dark Ascent"]["desc"]

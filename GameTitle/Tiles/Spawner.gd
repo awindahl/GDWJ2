@@ -1,6 +1,7 @@
 extends Node2D
 
 var pickup = preload("res://pickup.tscn")
+var enemy = preload("res://enemy.tscn")
 var temp
 
 func _ready():
@@ -21,3 +22,7 @@ func _ready():
 			if !get_parent().get_parent().get_parent().get_node("Player/CanvasLayer/hud").get_node("Control").get_node("Container/item" + str(item-1)).is_visible_in_tree():
 				new_pickup.itemNr = item
 				add_child(new_pickup)
+
+func spawn_enemy(type = ""):
+	var new_enemy = enemy.instance()
+	add_child(new_enemy)

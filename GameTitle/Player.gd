@@ -52,6 +52,9 @@ func _process(delta):
 						transition.fade_to("res://win.tscn")
 					else:
 						print("door stuck")
+			"enemy":
+				print("aah! an enemy!")
+				GameDirector.fight(area.get_parent())
 
 		var overlap = area.get_parent()
 		if overlap.get("TYPE") == "ITEM":
