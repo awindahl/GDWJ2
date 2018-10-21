@@ -48,6 +48,7 @@ var RoundhallTile = preload("res://Tiles/RoundhallTile.tscn")
 var ThreewaycrossTile = preload("res://Tiles/ThreewaycrossTile.tscn")
 
 var all_items = ["Lead Pipe","Dark dice","Cheese","Pack of Smokes","Holy Book","Bloody Note","Severed finger","Strange Book","Keys"] #add item from player
+var all_items_nr = [0,1,2,3,4,5,6,7,8]
 var items_spawned
 var tile_list = [BasicTile, HallwayTile, CrossingTile, BallroomTile, KitchenTile, StorageTile, BedroomTile,
 		DiningroomTile, LaundromatTile, OldpassageTile, WinecellarTile, ChapeTile, ArtgalleryTile,
@@ -134,7 +135,7 @@ func get_tiles_left(floor_name):
 
 func get_items_left():
 	var items_left = []
-	for item in self.all_items:
+	for item in self.all_items_nr:
 		if self.items_spawned.find(item) == -1:
 			items_left.append(item)
 	return items_left
@@ -227,6 +228,7 @@ func activate_event(eName, eStage=0):
 		6: unstable_ground(eStage)
 	spawnNr = 4
 	emit_signal("spawn")
+
 func haunted_hand(nr):
 	match nr:
 		0:
