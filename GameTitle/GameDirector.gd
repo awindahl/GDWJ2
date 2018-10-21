@@ -72,6 +72,7 @@ func reset():
 	canOpen = false
 	items = []
 	events = []
+	tiles_placed = []
 	tempEvent = ""
 	tempText = ""
 	TempImage = ""
