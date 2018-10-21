@@ -9,13 +9,15 @@ radius = 7.36195
 
 [node name="Node2D" type="Node2D" index="0"]
 
+light_mask = 3
 scale = Vector2( 0.5, 0.5 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+light_mask = 3
 texture = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="enemy" type="Area2D" parent="." index="1"]
 
