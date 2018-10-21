@@ -47,7 +47,7 @@ var MainroomTile = preload("res://Tiles/MainhallTile.tscn")
 var RoundhallTile = preload("res://Tiles/RoundhallTile.tscn")
 var ThreewaycrossTile = preload("res://Tiles/ThreewaycrossTile.tscn")
 
-var pic = preload("res://Bathroom.png")
+#var pic = preload("res://Bathroom.png")
 
 var all_items = ["Lead Pipe","Dark dice","Cheese","Pack of Smokes","Holy Book","Bloody Note","Severed finger","Strange Book","Keys"] #add item from player
 var all_items_nr = [0,1,2,3,4,5,6,7,8]

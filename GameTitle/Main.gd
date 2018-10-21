@@ -4,8 +4,8 @@ var screensize
 var playing = true
 
 func _ready():
-	GameDirector.connect("change_objective", self, "_update_objective")
-	GameDirector.connect("spawn", self, "spawn_on_random_tiles")
+	self.connect("change_objective", self, "_update_objective")
+	self.connect("spawn", self, "spawn_on_random_tiles")
 	playing = GameDirector.playing
 	$Player/CanvasLayer/pause/HSlider.value = GameDirector.volume
 	$background_music.volume_db = GameDirector.volume-25
