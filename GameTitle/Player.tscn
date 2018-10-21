@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Asset Lib/Art/player/player0001.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Asset Lib/Art/player/player0008.png" type="Texture" id=9]
 [ext_resource path="res://Asset Lib/Art/light3.png" type="Texture" id=10]
 [ext_resource path="res://Asset Lib/Sounds/picking_up_item.wav" type="AudioStream" id=11]
+[ext_resource path="res://Asset Lib/Sounds/1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav" type="AudioStream" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -39,17 +40,18 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Pickable", "collision" ]
+_sections_unfolded = [ "Collision", "Pause", "Pickable", "collision" ]
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
+editor/display_folded = true
 light_mask = 3
 frames = SubResource( 1 )
 animation = "default"
-frame = 2
+frame = 4
 playing = true
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility" ]
 
@@ -113,6 +115,7 @@ _sections_unfolded = [ "Drag Margin", "Limit", "Offset", "Smoothing" ]
 
 [node name="hitbox" type="Area2D" parent="." index="3"]
 
+editor/display_folded = true
 position = Vector2( 0, -8 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -136,5 +139,14 @@ max_distance = 2000.0
 attenuation = 1.0
 bus = "Master"
 area_mask = 1
+
+[node name="Walking" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = ExtResource( 12 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 

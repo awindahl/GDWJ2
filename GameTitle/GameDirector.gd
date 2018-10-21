@@ -1,6 +1,6 @@
 extends Node
 
-var volume = 25
+var volume = 8
 var playing = false
 var currentObjective = "Survive. Also press 'Z' to fire off a test popout."
 var sanity = 3

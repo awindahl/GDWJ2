@@ -25,6 +25,7 @@ func display( text, img="", bg="", event=0):
 		
 	$AnimationPlayer.play("slideIn", -1)
 	$AudioStreamPlayer.play()
+	get_parent().get_parent().get_node("Walking").stop()
 	get_parent().get_tree().paused = true
 	
 func update_display( text, img="", bg=""):
