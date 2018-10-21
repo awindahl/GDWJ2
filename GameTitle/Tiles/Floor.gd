@@ -19,8 +19,9 @@ func add_tile(tile):
 
 func register_tile(tile):
 	tile.connect("moved", self, "_on_Tile_moved")
-	GameDirector.tiles_placed.append(tile)
-	self.tiles.append(tile)
+	if tile.TYPE == "TILE":
+		GameDirector.tiles_placed.append(tile)
+		self.tiles.append(tile)
 
 func remove_tile(tile):
 	self.tiles.remove(tiles.find(tile))

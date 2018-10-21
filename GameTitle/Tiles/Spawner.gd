@@ -13,7 +13,7 @@ func _ready():
 		GameDirector.activate_event(event,0)
 		
 	# If last tile then spawn keys for sure. Else item spawn chance is 20%
-	var all_tiles_spawned = GameDirector.tiles_placed.size() == GameDirector.tile_list.size()
+	var all_tiles_spawned = GameDirector.tiles_placed.size() - 1 == GameDirector.tile_list.size() - 1
 	if all_tiles_spawned || randi() % 100 < 35:
 		var item_to_spawn
 		if all_tiles_spawned || GameDirector.items_spawned.size() == GameDirector.all_items.size() - 1:
@@ -29,3 +29,7 @@ func _ready():
 			var new_pickup = pickup.instance()
 			new_pickup.itemNr = item_to_spawn
 			add_child(new_pickup)
+
+func spawn_enemy(type = ""):
+	var new_enemy = enemy.instance()
+	add_child(new_enemy)
