@@ -11,7 +11,7 @@ func _ready():
 		
 	# If last tile then spawn keys for sure. Else item spawn chance is 20%
 	var all_tiles_spawned = GameDirector.tiles_placed.size() == GameDirector.tile_list.size()
-	if all_tiles_spawned || randi() % 100 < 30:
+	if all_tiles_spawned || randi() % 100 < 35:
 		var item_to_spawn
 		if all_tiles_spawned || GameDirector.items_spawned.size() == GameDirector.all_items.size() - 1:
 			item_to_spawn = "Keys"
@@ -20,7 +20,6 @@ func _ready():
 			if items_left.find("Keys"):
 				items_left.remove(items_left.find("Keys"))
 			item_to_spawn = items_left[randi() % items_left.size()]
-			
 			
 		if item_to_spawn:
 			GameDirector.items_spawned.append(item_to_spawn)
