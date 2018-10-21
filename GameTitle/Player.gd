@@ -48,7 +48,7 @@ func _process(delta):
 					emit_signal("changing_floors", tile, area.name)
 			"FrontDoor":
 				if Input.is_action_just_released("ui_accept"):
-					if GameDirector.canOpen:
+					if $CanvasLayer/hud/Control/Container/item8.is_visible_in_tree():
 						transition.fade_to("res://win.tscn")
 					else:
 						print("door stuck")
