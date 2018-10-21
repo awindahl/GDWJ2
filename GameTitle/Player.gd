@@ -13,6 +13,12 @@ func _process(delta):
 	
 	movedir.x = -int(LEFT) + int(RIGHT)
 	movedir.y = -int(UP) + int(DOWN)
+	
+	if (Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("ui_right") or Input.is_action_just_pressed("ui_up") or Input.is_action_just_pressed("ui_down")) and $Walking.playing == false:
+		$Walking.play()
+	elif movedir == Vector2(0,0):
+		 $Walking.stop()
+	
 	var body = self.move_and_slide(movedir*SPEED)
 	
 	var mousePos = $Camera2D.get_global_mouse_position()
