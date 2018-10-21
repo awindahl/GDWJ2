@@ -363,10 +363,11 @@ func unstable_ground(nr):
 
 func fight(object):
 	tempEvent = 0
-	if randi()%6+1>3:
+	if randi()% 6 + 1 > 3:
 		#you win
 		object.queue_free()
 		tempText = "you fought an enemy and [color=green]won![/color]"
+		return
 	else:
 		strength = strength - 1
 		tempText = "you fought an enemy and [color=red]lost![/color]"

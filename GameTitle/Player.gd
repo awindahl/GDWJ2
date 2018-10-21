@@ -53,7 +53,6 @@ func _process(delta):
 					else:
 						print("door stuck")
 			"enemy":
-				print("aah! an enemy!")
 				GameDirector.fight(area.get_parent())
 
 		var overlap = area.get_parent()

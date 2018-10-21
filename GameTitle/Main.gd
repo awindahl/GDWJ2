@@ -70,15 +70,16 @@ func _on_Player_changing_floors(tile, stairs):
 	transition.fade_out()
 
 func spawn_on_random_tiles():
-	if GameDirector.spawnNr+3 < GameDirector.tiles_placed.size():
-		var number
+	if GameDirector.tiles_placed.size() > 7:
+		var number = randi() % (GameDirector.tiles_placed.size()-1)
+		print(number)
 		var prevnr = -1
-		for i in GameDirector.spawnNr:
-			number = randi() % (GameDirector.tiles_placed.size()-1)
-			if number == prevnr:
-				GameDirector.tiles_placed[number].get_node("Spawner").spawn_enemy()
-				prevnr = number
-				i = i - 1
+#		for i in GameDirector.spawnNr:
+#			number = randi() % (GameDirector.tiles_placed.size()-1)
+#			if number == prevnr:
+		GameDirector.tiles_placed[number].get_node("Spawner").spawn_enemy()
+#				prevnr = number
+#				i = i - 1
 	
 	
 	

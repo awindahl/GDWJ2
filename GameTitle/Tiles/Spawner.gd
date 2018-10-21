@@ -29,3 +29,7 @@ func _ready():
 			var new_pickup = pickup.instance()
 			new_pickup.itemNr = item_to_spawn
 			add_child(new_pickup)
+
+func spawn_enemy(type = ""):
+	var new_enemy = enemy.instance()
+	add_child(new_enemy)
