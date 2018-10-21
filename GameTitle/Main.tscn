@@ -36,7 +36,6 @@ _sections_unfolded = [ "Collision", "Pickable", "Transform", "collision" ]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Player" index="4"]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -82,10 +81,10 @@ area_mask = 1
 
 [connection signal="changing_floors" from="Player" to="." method="_on_Player_changing_floors"]
 
+[connection signal="player_requesting_door_to_open" from="Player" to="GroundFloor" method="_on_Player_requesting_door_to_open"]
+
 [connection signal="player_requesting_door_to_open" from="Player" to="FirstFloor" method="_on_Player_requesting_door_to_open"]
 
 [connection signal="player_requesting_door_to_open" from="Player" to="Basement" method="_on_Player_requesting_door_to_open"]
-
-[connection signal="player_requesting_door_to_open" from="Player" to="GroundFloor" method="_on_Player_requesting_door_to_open"]
 
 

@@ -46,6 +46,8 @@ var MainroomTile = preload("res://Tiles/MainhallTile.tscn")
 var RoundhallTile = preload("res://Tiles/RoundhallTile.tscn")
 var ThreewaycrossTile = preload("res://Tiles/ThreewaycrossTile.tscn")
 
+var all_items = ["Lead Pipe","Dark dice","Cheese","Pack of Smokes","Holy Book","Bloody Note","Severed finger","Strange Book","Keys"] #add item from player
+var items_spawned
 var tile_list = [BasicTile, HallwayTile, CrossingTile, BallroomTile, KitchenTile, StorageTile, BedroomTile,
 		DiningroomTile, LaundromatTile, OldpassageTile, WinecellarTile, ChapeTile, ArtgalleryTile,
 		GuestbedroomTile, TreasuryTile, ClosetTile, WashroomTile, OldroomTile, MainroomTile, RoundhallTile, ThreewaycrossTile]
@@ -54,6 +56,7 @@ var instanced_tiles = []
 export(Array) var tiles_placed
 
 func reset():
+	self.items_spawned = []
 	sanity = 3
 	strength = 3
 	tile_list = [BasicTile, HallwayTile, CrossingTile, BallroomTile, KitchenTile, StorageTile, BedroomTile,
@@ -73,6 +76,7 @@ func reset():
 	TempBg = ""
 
 func _ready():
+	self.items_spawned = []
 	for tile in tile_list:
 		self.instanced_tiles.append(tile.instance())
 	
@@ -124,7 +128,14 @@ func get_tiles_left(floor_name):
 #	then the resources tab and set the export mode to 
 #	Export all resources in the project to 
 #	make godot include the JSON file in the build
-	
+
+func get_items_left():
+	var items_left = []
+	for item in self.all_items:
+		if self.items_spawned.find(item) == -1:
+			items_left.append(item)
+	return items_left
+
 func update_hud():
 	emit_signal("hud_update")
 
