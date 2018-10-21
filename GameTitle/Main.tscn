@@ -11,7 +11,7 @@
 [ext_resource path="res://Tiles/Basement.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Asset Lib/Sounds/walking_on_stairs.wav" type="AudioStream" id=10]
 
-[node name="Main" type="Node2D" index="0"]
+[node name="Main" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause", "Transform", "Visibility", "Z Index" ]
