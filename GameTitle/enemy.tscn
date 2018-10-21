@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://playerGrey_walk1.png" type="Texture" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 7.36195
+
+[node name="Node2D" type="Node2D" index="0"]
+
+scale = Vector2( 0.5, 0.5 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="enemy" type="Area2D" parent="." index="1"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy" index="0"]
+
+position = Vector2( 0.400578, -0.517662 )
+scale = Vector2( 24.627, 24.627 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+

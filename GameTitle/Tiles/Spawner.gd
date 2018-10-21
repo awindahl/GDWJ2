@@ -1,6 +1,7 @@
 extends Node2D
 
 var pickup = preload("res://pickup.tscn")
+var enemy = preload("res://enemy.tscn")
 var temp
 
 func _ready():
@@ -10,7 +11,7 @@ func _ready():
 		
 	# If last tile then spawn keys for sure. Else item spawn chance is 20%
 	var all_tiles_spawned = GameDirector.tiles_placed.size() == GameDirector.tile_list.size()
-	if all_tiles_spawned || randi() % 100 < 100:
+	if all_tiles_spawned || randi() % 100 < 30:
 		var item_to_spawn
 		if all_tiles_spawned || GameDirector.items_spawned.size() == GameDirector.all_items.size() - 1:
 			item_to_spawn = "Keys"

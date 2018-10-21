@@ -32,9 +32,6 @@ height = 98.4328
 
 rotation = 4.71239
 _sections_unfolded = [ "Collision", "Pickable", "Transform", "Visibility" ]
-is_basement = null
-is_ground_floor = null
-is_first_floor = null
 
 [node name="Floor" parent="." index="0"]
 

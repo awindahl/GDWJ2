@@ -5,6 +5,7 @@ var playing = true
 
 func _ready():
 	GameDirector.connect("change_objective", self, "_update_objective")
+	GameDirector.connect("spawn", self, "spawn_on_random_tiles")
 	playing = GameDirector.playing
 	$Player/CanvasLayer/pause/HSlider.value = GameDirector.volume
 	$background_music.volume_db = GameDirector.volume-25
@@ -67,3 +68,12 @@ func _on_Player_changing_floors(tile, stairs):
 	yield(t, "timeout")		# Finally, make the script stop with the yield
 	$Player.global_position = self.find_node(floor_name).find_tile(vector).get_node(stairs_name).get_node("CollisionShape2D").global_position
 	transition.fade_out()
+
+func spawn_on_random_tiles():
+	if GameDirector.spawnNr+3 < GameDirector.tiles_placed.size():
+		for i in GameDirector.spawnNr:
+			GameDirector.tiles_placed[randi() % (GameDirector.tiles_placed.size()-1)].get_node("Spawner").spawn_enemy()
+	
+	
+	
+	
