@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop_fast.wav-ede9ea2fd3e4b0726745f7eb55546972.sample"
+
+[deps]
+
+source_file="res://Asset Lib/Sounds/1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop_fast.wav"
+dest_files=[ "res://.import/1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop_fast.wav-ede9ea2fd3e4b0726745f7eb55546972.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
