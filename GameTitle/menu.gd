@@ -8,7 +8,7 @@ var position
 var swapping = true
 
 func _ready():
-	OS.set_window_title("Ekin's and Alexander's tilehouse")
+	OS.set_window_title("Mystery Mansion")
 	$AnimationPlayer.play("fadeInSplash1", -1)
 	
 	$Control/VolumeSlider.value = GameDirector.volume
