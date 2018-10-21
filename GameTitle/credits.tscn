@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Asset Lib/Art/menubackground.png" type="Texture" id=1]
+[ext_resource path="res://Asset Lib/Art/genericbuttonstyle.tres" type="StyleBox" id=2]
+[ext_resource path="res://Asset Lib/Font/TypewriterFont.tres" type="DynamicFont" id=3]
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -17,8 +19,101 @@ size_flags_vertical = 1
 
 [node name="TextureRect" type="Sprite" parent="." index="0"]
 
+modulate = Color( 0.304688, 0.304688, 0.304688, 1 )
 position = Vector2( 640.745, 360.426 )
 scale = Vector2( 0.669526, 0.674585 )
 texture = ExtResource( 1 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Button" type="Button" parent="." index="1"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -76.0
+margin_top = 257.0
+margin_right = 76.0
+margin_bottom = 323.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = ExtResource( 2 )
+custom_styles/disabled = ExtResource( 2 )
+custom_styles/normal = ExtResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Back"
+flat = false
+align = 1
+_sections_unfolded = [ "custom_styles" ]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+margin_left = 22.0
+margin_top = 26.0
+margin_right = 555.0
+margin_bottom = -25.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "Thank you to:
+Dim's enviromental and architectural textures
+Paper Textures, Darkwood67
+Doors, leeor_net - [url]https://opengameart.org/users/leeornet[/url]
+Texture Images, Eric Matyas - [url]https://soundimage.org/[/url]
+Font, RM Typerighter Old, Ray Meadows - [url]http://fontstruct.fontshop.com/fontstructions/show/263156[/url]"
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "Thank you to:
+Dim's enviromental and architectural textures
+Paper Textures, Darkwood67
+Doors, leeor_net - https://opengameart.org/users/leeornet
+Texture Images, Eric Matyas - https://soundimage.org/
+Font, RM Typerighter Old, Ray Meadows - http://fontstruct.fontshop.com/fontstructions/show/263156"
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "BBCode", "custom_fonts", "custom_styles" ]
+
+[node name="Label" type="Label" parent="." index="3"]
+
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -320.0
+margin_top = -327.0
+margin_right = -34.0
+margin_bottom = -278.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 

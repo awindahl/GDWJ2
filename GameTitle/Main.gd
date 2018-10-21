@@ -72,7 +72,7 @@ func _on_Player_changing_floors(tile, stairs):
 func spawn_on_random_tiles():
 	if GameDirector.tiles_placed.size() > 7:
 		var number = randi() % (GameDirector.tiles_placed.size()-1)
-		print(number)
+		#print(number)
 		var prevnr = -1
 #		for i in GameDirector.spawnNr:
 #			number = randi() % (GameDirector.tiles_placed.size()-1)

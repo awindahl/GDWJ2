@@ -362,8 +362,9 @@ func unstable_ground(nr):
 				#	roll_haunt()
 
 func fight(object):
+	
 	tempEvent = 0
-	if randi()% 6 + 1 > 3:
+	if (randi()%6)>2:
 		#you win
 		object.queue_free()
 		tempText = "you fought an enemy and [color=green]won![/color]"
