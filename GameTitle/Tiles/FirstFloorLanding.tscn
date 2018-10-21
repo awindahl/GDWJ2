@@ -23,10 +23,6 @@ editor/display_folded = false
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Pause", "Region", "Transform", "Visibility", "Z Index" ]
 
-[node name="Roof" parent="." index="1"]
-
-visible = false
-
 [node name="Lower Door" parent="." index="4"]
 
 visible = false
