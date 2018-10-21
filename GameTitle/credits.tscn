@@ -1,18 +1,23 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Asset Lib/Art/menubackground.png" type="Texture" id=1]
-[ext_resource path="res://Asset Lib/Art/genericbuttonstyle.tres" type="StyleBox" id=2]
-[ext_resource path="res://Asset Lib/Font/rm_typerighter_old.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://credits.gd" type="Script" id=1]
+[ext_resource path="res://Asset Lib/Art/menubackground.png" type="Texture" id=2]
+[ext_resource path="res://Asset Lib/Art/genericbuttonstyle.tres" type="StyleBox" id=3]
+[ext_resource path="res://Asset Lib/Font/TypewriterFont.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Asset Lib/Font/rm_typerighter_old.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Asset Lib/Art/real_player/sumaris.png" type="Texture" id=6]
+[ext_resource path="res://Asset Lib/Art/real_player/ekin.png" type="Texture" id=7]
+[ext_resource path="res://Asset Lib/Art/real_player/alewin.jpg" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 48
 use_mipmaps = true
 use_filter = true
-font_data = ExtResource( 3 )
+font_data = ExtResource( 5 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -24,13 +29,14 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+script = ExtResource( 1 )
 
 [node name="TextureRect" type="Sprite" parent="." index="0"]
 
 modulate = Color( 0.304688, 0.304688, 0.304688, 1 )
 position = Vector2( 640.745, 360.426 )
 scale = Vector2( 0.669526, 0.674585 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Button" type="Button" parent="." index="1"]
@@ -50,11 +56,13 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/hover = ExtResource( 2 )
-custom_styles/pressed = ExtResource( 2 )
-custom_styles/focus = ExtResource( 2 )
-custom_styles/disabled = ExtResource( 2 )
-custom_styles/normal = ExtResource( 2 )
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = ExtResource( 3 )
+custom_styles/disabled = ExtResource( 3 )
+custom_styles/normal = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -62,7 +70,7 @@ group = null
 text = "Back"
 flat = false
 align = 1
-_sections_unfolded = [ "custom_styles" ]
+_sections_unfolded = [ "custom_colors" ]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." index="2"]
 
@@ -72,8 +80,8 @@ anchor_right = 0.0
 anchor_bottom = 1.0
 margin_left = 22.0
 margin_top = 26.0
-margin_right = 848.0
-margin_bottom = -25.0
+margin_right = 698.0
+margin_bottom = -475.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
@@ -82,7 +90,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "Thank you to:
+bbcode_text = "Thanks to:
 Dim's enviromental and architectural textures
 Paper Textures, Darkwood67
 Doors, leeor_net - [url]https://opengameart.org/users/leeornet[/url]
@@ -92,7 +100,7 @@ visible_characters = -1
 percent_visible = 1.0
 meta_underlined = true
 tab_size = 4
-text = "Thank you to:
+text = "Thanks to:
 Dim's enviromental and architectural textures
 Paper Textures, Darkwood67
 Doors, leeor_net - https://opengameart.org/users/leeornet
@@ -104,24 +112,160 @@ selection_enabled = false
 override_selected_font_color = false
 _sections_unfolded = [ "Anchor", "BBCode", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
-[node name="Label" type="Label" parent="." index="3"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="." index="3"]
 
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = -320.0
-margin_top = -327.0
-margin_right = -34.0
-margin_bottom = -278.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+margin_left = 782.0
+margin_top = 26.0
+margin_right = 996.0
+margin_bottom = -599.0
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
+rect_clip_content = true
+mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
-size_flags_vertical = 4
+size_flags_vertical = 1
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "Made by:
+[img]{\"res://Asset Lib/Art/real_player/alewin.jpg\"}[/img]
+"
+visible_characters = -1
 percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
+meta_underlined = true
+tab_size = 4
+text = "Made by:
+
+"
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "Anchor", "BBCode", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+
+[node name="alew2" type="RichTextLabel" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+margin_left = 922.0
+margin_top = 124.0
+margin_right = 1276.0
+margin_bottom = -509.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "Alexander Windahl
+[url]https://github.com/awindahl[/url]
+[url]https://goldenapples.itch.io[/url]"
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "Alexander Windahl
+https://github.com/awindahl
+https://goldenapples.itch.io"
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "Anchor", "BBCode", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+
+[node name="ekin2" type="RichTextLabel" parent="." index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+margin_left = 922.0
+margin_top = 279.0
+margin_right = 1256.0
+margin_bottom = -354.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "Ekin Inceleme
+[url]https://github.com/Eks2[/url]
+[url]https://ekster.itch.io[/url]"
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "Ekin Inceleme
+https://github.com/Eks2
+https://ekster.itch.io"
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "Anchor", "BBCode", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+
+[node name="alra2" type="RichTextLabel" parent="." index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+margin_left = 922.0
+margin_top = 436.0
+margin_right = 1274.0
+margin_bottom = -197.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "Alfred Radu
+[url]https://github.com/Sumaris[/url]
+[url]https://sumaris.itch.io[/url]"
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "Alfred Radu
+https://github.com/Sumaris
+https://sumaris.itch.io"
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "Anchor", "BBCode", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+
+[node name="alew" type="Sprite" parent="." index="7"]
+
+position = Vector2( 840.962, 450.498 )
+scale = Vector2( 0.779167, 0.779167 )
+texture = ExtResource( 6 )
+
+[node name="ekin" type="Sprite" parent="." index="8"]
+
+position = Vector2( 840.199, 295.66 )
+scale = Vector2( 0.341104, 0.341104 )
+texture = ExtResource( 7 )
+
+[node name="alra" type="Sprite" parent="." index="9"]
+
+position = Vector2( 840.831, 140.123 )
+scale = Vector2( 0.557477, 0.557477 )
+texture = ExtResource( 8 )
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 
 

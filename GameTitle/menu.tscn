@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://menu.gd" type="Script" id=1]
 [ext_resource path="res://Asset Lib/Art/menubackground.png" type="Texture" id=2]
@@ -6,19 +6,21 @@
 [ext_resource path="res://Asset Lib/Art/play_highlight.png" type="Texture" id=4]
 [ext_resource path="res://Asset Lib/Art/play_clicked.png" type="Texture" id=5]
 [ext_resource path="res://Asset Lib/Art/play_idle.png" type="Texture" id=6]
-[ext_resource path="res://Asset Lib/Art/quitbutton_highlighted.png" type="Texture" id=7]
-[ext_resource path="res://Asset Lib/Art/quitbutton_clicked.png" type="Texture" id=8]
-[ext_resource path="res://Asset Lib/Art/quitbutton_idle.png" type="Texture" id=9]
-[ext_resource path="res://Asset Lib/Art/fullscreenicon.png" type="Texture" id=10]
-[ext_resource path="res://Asset Lib/Art/mute_btn_active.png" type="Texture" id=11]
-[ext_resource path="res://Asset Lib/Art/slider button.png" type="Texture" id=12]
-[ext_resource path="res://Asset Lib/Art/volumeslider.tres" type="StyleBox" id=13]
-[ext_resource path="res://Asset Lib/Art/volumesliderbright.tres" type="StyleBox" id=14]
-[ext_resource path="res://Asset Lib/Animations/fadeInSplash1.tres" type="Animation" id=15]
-[ext_resource path="res://Asset Lib/Animations/fadeInSplash2.tres" type="Animation" id=16]
-[ext_resource path="res://Asset Lib/Art/splash2.png" type="Texture" id=17]
-[ext_resource path="res://Asset Lib/Art/9E1Yfr.png" type="Texture" id=18]
-[ext_resource path="res://Asset Lib/Art/black.png" type="Texture" id=19]
+[ext_resource path="res://Asset Lib/Art/genericbuttonstyle.tres" type="StyleBox" id=7]
+[ext_resource path="res://Asset Lib/Font/TypewriterFont.tres" type="DynamicFont" id=8]
+[ext_resource path="res://Asset Lib/Art/quitbutton_highlighted.png" type="Texture" id=9]
+[ext_resource path="res://Asset Lib/Art/quitbutton_clicked.png" type="Texture" id=10]
+[ext_resource path="res://Asset Lib/Art/quitbutton_idle.png" type="Texture" id=11]
+[ext_resource path="res://Asset Lib/Art/fullscreenicon.png" type="Texture" id=12]
+[ext_resource path="res://Asset Lib/Art/mute_btn_active.png" type="Texture" id=13]
+[ext_resource path="res://Asset Lib/Art/slider button.png" type="Texture" id=14]
+[ext_resource path="res://Asset Lib/Art/volumeslider.tres" type="StyleBox" id=15]
+[ext_resource path="res://Asset Lib/Art/volumesliderbright.tres" type="StyleBox" id=16]
+[ext_resource path="res://Asset Lib/Animations/fadeInSplash1.tres" type="Animation" id=17]
+[ext_resource path="res://Asset Lib/Animations/fadeInSplash2.tres" type="Animation" id=18]
+[ext_resource path="res://Asset Lib/Art/splash2.png" type="Texture" id=19]
+[ext_resource path="res://Asset Lib/Art/9E1Yfr.png" type="Texture" id=20]
+[ext_resource path="res://Asset Lib/Art/black.png" type="Texture" id=21]
 
 [sub_resource type="StyleBoxTexture" id=1]
 
@@ -83,7 +85,7 @@ content_margin_left = -1.0
 content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 region_rect = Rect2( 0, 0, 128, 128 )
 margin_left = 0.0
 margin_right = 0.0
@@ -102,7 +104,7 @@ content_margin_left = -1.0
 content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 region_rect = Rect2( 0, 0, 128, 128 )
 margin_left = 0.0
 margin_right = 0.0
@@ -121,7 +123,7 @@ content_margin_left = -1.0
 content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
-texture = ExtResource( 9 )
+texture = ExtResource( 11 )
 region_rect = Rect2( 0, 0, 128, 128 )
 margin_left = 0.0
 margin_right = 0.0
@@ -214,7 +216,38 @@ flat = false
 align = 1
 _sections_unfolded = [ "Mouse", "Rect", "Size Flags", "custom_styles" ]
 
-[node name="quit_btn" type="Button" parent="Control/menu" index="1"]
+[node name="credits_btn" type="Button" parent="Control/menu" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_left = 1092.0
+margin_top = 339.0
+margin_right = 1048.0
+margin_bottom = 432.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/normal = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Credits"
+flat = false
+align = 1
+_sections_unfolded = [ "Mouse", "Rect", "Size Flags", "custom_fonts" ]
+
+[node name="quit_btn" type="Button" parent="Control/menu" index="2"]
 
 anchor_left = 0.0
 anchor_top = 1.0
@@ -247,7 +280,7 @@ _sections_unfolded = [ "custom_styles" ]
 editor/display_folded = true
 position = Vector2( 47.1672, 682.177 )
 scale = Vector2( 0.644575, 0.644575 )
-texture = ExtResource( 10 )
+texture = ExtResource( 12 )
 
 [node name="fullscreen_btn" type="Button" parent="Control/fullscreen_sprite" index="0"]
 
@@ -279,7 +312,7 @@ _sections_unfolded = [ "Visibility" ]
 
 position = Vector2( 83.3519, 686.968 )
 scale = Vector2( 0.582062, 0.569653 )
-texture = ExtResource( 11 )
+texture = ExtResource( 13 )
 
 [node name="music_btn" type="Button" parent="Control/music_sprite" index="0"]
 
@@ -325,12 +358,12 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 0
-custom_icons/tick = ExtResource( 12 )
-custom_icons/grabber_disabled = ExtResource( 12 )
-custom_icons/grabber_highlight = ExtResource( 12 )
-custom_icons/grabber = ExtResource( 12 )
-custom_styles/slider = ExtResource( 13 )
-custom_styles/grabber_area = ExtResource( 14 )
+custom_icons/tick = ExtResource( 14 )
+custom_icons/grabber_disabled = ExtResource( 14 )
+custom_icons/grabber_highlight = ExtResource( 14 )
+custom_icons/grabber = ExtResource( 14 )
+custom_styles/slider = ExtResource( 15 )
+custom_styles/grabber_area = ExtResource( 16 )
 min_value = 0.0
 max_value = 49.0
 step = 1.0
@@ -351,8 +384,8 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/fadeInSplash1 = ExtResource( 15 )
-anims/fadeInSplash2 = ExtResource( 16 )
+anims/fadeInSplash1 = ExtResource( 17 )
+anims/fadeInSplash2 = ExtResource( 18 )
 blend_times = [  ]
 
 [node name="splash2" type="TextureRect" parent="." index="2"]
@@ -369,7 +402,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 17 )
+texture = ExtResource( 19 )
 stretch_mode = 2
 _sections_unfolded = [ "Rect", "Visibility" ]
 
@@ -389,7 +422,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 18 )
+texture = ExtResource( 20 )
 stretch_mode = 2
 _sections_unfolded = [ "Visibility" ]
 
@@ -410,7 +443,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 19 )
+texture = ExtResource( 21 )
 stretch_mode = 2
 _sections_unfolded = [ "Visibility" ]
 
@@ -424,6 +457,8 @@ autostart = false
 [connection signal="finished" from="Control/AudioStreamPlayer2D" to="." method="_on_AudioStreamPlayer2D_finished"]
 
 [connection signal="button_down" from="Control/menu/play_btn" to="." method="_on_play_btn_down"]
+
+[connection signal="pressed" from="Control/menu/credits_btn" to="." method="_on_credits_btn_pressed"]
 
 [connection signal="button_down" from="Control/menu/quit_btn" to="." method="_on_quit_btn_down"]
 

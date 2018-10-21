@@ -91,3 +91,6 @@ func splash2():
 
 func hide_square():
 	$black_square.hide()
+
+func _on_credits_btn_pressed():
+	transition.fade_to("res://credits.tscn")
