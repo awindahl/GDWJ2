@@ -1,6 +1,8 @@
 extends Node2D
 var spawned_tiles
 
+onready var gamedirector = get_node("/root/GameDirector")
+
 var tiles
 
 func _init():

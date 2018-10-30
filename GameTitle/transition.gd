@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+onready var gamedirector = get_node("/root/GameDirector")
 var path = ""
 var time = 1.0
 var solo_fade = false

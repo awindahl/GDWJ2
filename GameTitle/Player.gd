@@ -3,6 +3,8 @@ signal player_requesting_door_to_open
 signal changing_floors
 var SPEED = 150
 
+onready var gamedirector = get_node("/root/GameDirector")
+
 func _process(delta):
 	
 	var LEFT = Input.is_action_pressed("ui_left")

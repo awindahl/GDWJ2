@@ -10,6 +10,7 @@ var is_open
 var is_wall
 var boarded_door = preload("res://Asset Lib/Art/boarded_door.png")
 var Tile	# Shouldn't rely on having Tile and Floor too much otherwise could be problems in the future (2-way comms)
+onready var gamedirector = get_node("/root/GameDirector")
 
 func _ready():
 	self.Tile = self.get_parent()

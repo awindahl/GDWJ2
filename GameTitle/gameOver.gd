@@ -1,5 +1,7 @@
 extends Control
 
+onready var gamedirector = get_node("/root/GameDirector")
+
 func _ready():
 	get_tree().paused = false
 

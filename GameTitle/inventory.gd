@@ -1,5 +1,7 @@
 extends Control
 
+onready var gamedirector = get_node("/root/GameDirector")
+
 var inventory = ["Lead Pipe","Dark dice","Cheese","Pack of Smokes","Holy Book","Bloody Note","Severed finger","Strange Book","Keys"] #add item from player
 
 func _on_Panel_mouse_entered(nr):

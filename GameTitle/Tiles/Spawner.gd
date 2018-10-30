@@ -1,5 +1,7 @@
 extends Node2D
 
+onready var gamedirector = get_node("/root/GameDirector")
+
 var pickup = preload("res://pickup.tscn")
 var enemy = preload("res://enemy.tscn")
 

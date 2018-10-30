@@ -2,6 +2,8 @@ extends Node2D
 
 signal moved
 
+onready var gamedirector = get_node("/root/GameDirector")
+
 const TYPE = "TILE"
 export(bool) var is_basement
 export(bool) var is_ground_floor

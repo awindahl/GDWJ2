@@ -1,5 +1,6 @@
 extends Control
 
+onready var gamedirector = get_node("/root/GameDirector")
 var position
 var muted = false
 func _ready():

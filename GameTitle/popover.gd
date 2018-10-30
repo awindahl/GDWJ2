@@ -3,11 +3,12 @@ extends Node
 var ev = false
 var evNr
 var evSt = 0
+onready var gamedirector = get_node("/root/GameDirector")
 
 func _ready():
-	self.connect("pop_display", self, "temp_displayer")
-	self.connect("pop_update", self, "temp_update_display")
-	self.connect("pop_haunt_display", self, "temp_haunt_displayer")
+	GameDirector.connect("pop_display", self, "temp_displayer")
+	GameDirector.connect("pop_update", self, "temp_update_display")
+	GameDirector.connect("pop_haunt_display", self, "temp_haunt_displayer")
 
 func display( text, img="", bg="", event=0):
 	#Probably needs work, or be careful how we send info

@@ -7,6 +7,8 @@ var playing = true
 var position
 var swapping = true
 
+onready var gamedirector = get_node("/root/GameDirector")
+
 func _ready():
 	OS.set_window_title("Mystery Mansion")
 	$AnimationPlayer.play("fadeInSplash1", -1)
