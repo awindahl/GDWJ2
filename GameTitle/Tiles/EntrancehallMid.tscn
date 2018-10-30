@@ -39,7 +39,7 @@ polygon = PoolVector2Array( 37.7693, 254.89, 254.078, 256.121 )
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Tile" instance=ExtResource( 1 )]
+[node name="EntrencehallMid" instance=ExtResource( 1 )]
 
 rotation = 1.5708
 _sections_unfolded = [ "Collision", "Pickable", "Transform", "Visibility" ]

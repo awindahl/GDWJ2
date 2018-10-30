@@ -23,6 +23,7 @@ var tempEvent
 var tempText
 var TempImage
 var TempBg
+var i = 0
 
 var BasicTile = preload("res://Tiles/BasicTile.tscn")
 var HallwayTile = preload("res://Tiles/HallwayTile.tscn")
@@ -60,6 +61,7 @@ var instanced_tiles = []
 export(Array) var tiles_placed
 
 func reset():
+	i = 0
 	self.items_spawned = []
 	sanity = 3
 	strength = 3
@@ -199,7 +201,7 @@ func activate_rule(iName):
 			strength = strength + 1
 		4: 
 			sanity = sanity + 1
-			strength = strength - 1
+			strBonus = strBonus - 1
 		5: 
 			sanBonus = sanBonus + 1
 		6:
@@ -241,7 +243,7 @@ func haunted_hand(nr):
 			emit_signal("pop_display")
 		1:
 			if sanity + sanBonus !=0 or strength + strBonus != 0:
-				var num = randi() % ((strength+strBonus)*3)
+				var num = randi() % ((strength+strBonus + 1)*3)
 				if num > 6:
 					strength = strength + 1
 					tempText = evDict["The haunted hand"]["desc"] + " \n\n You manage to control your own hand through strength alone. [color=green]Gained 1 strength[/color]."
@@ -265,7 +267,7 @@ func creak(nr):
 			emit_signal("pop_display")
 		1:
 			if sanity + sanBonus !=0 or strength + strBonus != 0:
-				var num = randi() % ((sanity+sanBonus)*3)
+				var num = randi() % ((sanity+sanBonus + 1)*3)
 				if num > 6:
 					sanity = sanity + 1
 					tempText = evDict["A creak, a crack!"]["desc"] + " \n\n You sigh in relief. [color=green]Gained 1 sanity[/color]."
@@ -285,7 +287,7 @@ func chill_wind(nr):
 			emit_signal("pop_display")
 		1:
 			if sanity + sanBonus !=0 or strength + strBonus != 0:
-				var num = randi() % ((sanity+sanBonus)*3)
+				var num = randi() % ((sanity+sanBonus + 1)*3)
 				if num > 5:
 					tempText = evDict["A chill wind blows"]["desc"] + " \n\n Everything around you seems fine, your head hurts a bit but other than that you're fine."
 				elif num > 2:
@@ -305,7 +307,7 @@ func bloody_walls(nr):
 			emit_signal("pop_display")
 		1:
 			if sanity + sanBonus !=0 or strength + strBonus != 0:
-				var num = randi() % ((sanity+sanBonus)*3)
+				var num = randi() % ((sanity+sanBonus + 1)*3)
 				var num2 = randi() % ((strength+strBonus)*3)
 				if num > num2:
 					sanity = sanity + 1
@@ -327,7 +329,7 @@ func strange_potion(nr):
 			emit_signal("pop_display")
 		1:
 			if sanity + sanBonus !=0 or strength + strBonus != 0:
-				var num = randi() % ((strength+strBonus)*3)
+				var num = randi() % ((strength+strBonus + 1)*3)
 				if num > 5:
 					strength = strength + 2
 					sanity = sanity + 1
@@ -353,7 +355,7 @@ func unstable_ground(nr):
 			emit_signal("pop_display")
 		1:
 			if sanity + sanBonus !=0 or strength + strBonus != 0:
-				var num = randi() % ((strength+strBonus)*3)
+				var num = randi() % ((strength+strBonus + 1)*3)
 				if num > 5:
 					strength = strength - 2
 					tempText = evDict["Unstable ground"]["desc"] + " \n\n The planks give way. [color=red]Lost 2 strength[/color]."
@@ -378,6 +380,7 @@ func fight(object):
 	else:
 		strength = strength - 1
 		tempText = "you fought an enemy and [color=red]lost![/color]"
+		object.queue_free()
 		#you lose
 	emit_signal("pop_haunt_display")
 	update_hud()

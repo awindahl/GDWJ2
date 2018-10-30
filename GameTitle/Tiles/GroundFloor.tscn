@@ -6,7 +6,7 @@
 [ext_resource path="res://Tiles/EntrancehallMid.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Tiles/EntrancehallTop.tscn" type="PackedScene" id=5]
 
-[node name="GroundFloor" type="Node2D"]
+[node name="GroundFloor" type="Node2D" index="0"]
 
 light_mask = 3
 position = Vector2( 0, 256.669 )
@@ -38,13 +38,13 @@ shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
 
-[node name="Tile" parent="." index="1" instance=ExtResource( 3 )]
+[node name="EntrencehallBot" parent="." index="1" instance=ExtResource( 3 )]
 
-[node name="Tile2" parent="." index="2" instance=ExtResource( 4 )]
+[node name="EntrencehallMid" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 0, -512 )
 
-[node name="Tile3" parent="." index="3" instance=ExtResource( 5 )]
+[node name="EntrencehallTop" parent="." index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 0, -1024 )
 

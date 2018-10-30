@@ -6,31 +6,40 @@ var pickup = preload("res://pickup.tscn")
 var enemy = preload("res://enemy.tscn")
 
 func _ready():
-	print(self.get_parent().name)
-	if ["EntranceHallBot", "EntranceHallMid", "EntranceHallTop", "Landing", "StairwayTile"].find(self.get_parent().name) >= 0:
-		return
+	GameDirector.i += 1
+	print (get_parent().name)
+	if get_parent().name == "EntrencehallBot" or get_parent().name == "EntrencehallMid" or get_parent().name == "EntrencehallTop" or get_parent().name == "Landing" or get_parent().name == "StairwayTile":
+		queue_free()
 	
 	if get_parent().name == "ChapelTile" or get_parent().name == "ArtgalleryTile" or get_parent().name == "BallroomTile" or get_parent().name == "ClosetTile" or get_parent().name == "KitchenTile" or get_parent().name == "Laundromat" or get_parent().name == "RoundhallTile" or get_parent().name == "TreasuryTile" or get_parent().name == "WashroomTile" or get_parent().name == "WinecellarTile":
 		var event = randi() % 6 + 1
 		GameDirector.activate_event(event,0)
-		
-	# If last tile then spawn keys for sure. Else item spawn chance is 20%
-	var all_tiles_spawned = GameDirector.tiles_placed.size() - 1 == GameDirector.tile_list.size() - 1
-	if all_tiles_spawned || randi() % 100 < 35:
-		var item_to_spawn
-		if all_tiles_spawned || GameDirector.items_spawned.size() == GameDirector.all_items.size() - 1:
-			item_to_spawn = 8
-		elif GameDirector.items_spawned.size() < GameDirector.all_items.size() - 1:
-			var items_left = GameDirector.get_items_left()
-			if items_left.find(8):
-				items_left.remove(items_left.find(8))
-			item_to_spawn = randi() % items_left.size()
+
+	var rand = randi() % 100 
+	var item = randi() % 8 + 1
+	var new_pickup = pickup.instance()
+
+	var all_tiles_spawned
+	
+	if  GameDirector.i == GameDirector.tile_list.size() - 1 or  GameDirector.i > GameDirector.tile_list.size() - 1:
+		all_tiles_spawned = true
+
+	if all_tiles_spawned:
+		item = 9
+		new_pickup.itemNr = item
+		add_child(new_pickup)
+	elif !all_tiles_spawned:
 			
-		if item_to_spawn:
-			GameDirector.items_spawned.append(item_to_spawn)
-			var new_pickup = pickup.instance()
-			new_pickup.itemNr = item_to_spawn
-			add_child(new_pickup)
+		if rand < 70:
+			if !get_parent().get_parent().get_parent().get_node("Player/CanvasLayer/hud").get_node("Control").get_node("Container/item" + str(item-1)).is_visible_in_tree():
+				new_pickup.itemNr = item
+				add_child(new_pickup)
+			else:
+				item = randi() % 8 + 1
+				if !get_parent().get_parent().get_parent().get_node("Player/CanvasLayer/hud").get_node("Control").get_node("Container/item" + str(item-1)).is_visible_in_tree():
+					new_pickup.itemNr = item
+					add_child(new_pickup)
+
 
 func spawn_enemy(type = ""):
 	var new_enemy = enemy.instance()
